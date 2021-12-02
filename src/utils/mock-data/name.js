@@ -3,8 +3,8 @@
 export const fullName = [
   'Axie Infinity',
   'Splinterlands',
-  'Ember Sword',
   'Plant vs Undead',
+  'Ember Sword',
   'Dragonary',
   'Light Nite',
   'Chumbi Valley',
