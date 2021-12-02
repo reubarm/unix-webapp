@@ -47,7 +47,7 @@ function BookingItem({ item }) {
   return (
     <Paper sx={{ mx: 1.5, borderRadius: 2, bgcolor: 'background.neutral' }}>
       <Stack spacing={2.5} sx={{ p: 3, pb: 2.5 }}>
-        <Stack direction="row" alignItems="center" spacing={2}>
+        <Stack direction="row" alignItems="center" justifyContent="center" spacing={2}>
           <Avatar alt={name} src={avatar} />
           <div>
             <Typography variant="subtitle2">{name}</Typography>
@@ -57,13 +57,13 @@ function BookingItem({ item }) {
           </div>
         </Stack>
 
-        <Stack direction="row" alignItems="center" spacing={3} sx={{ color: 'text.secondary' }}>
-          <Stack direction="row" alignItems="center" spacing={1}>
+        <Stack direction="row" alignItems="center" justifyContent="center" spacing={3} sx={{ color: 'text.secondary' }}>
+          <Stack direction="row" alignItems="center" sjustifyContent="center" pacing={1}>
             <Icon icon={roundVpnKey} width={16} height={16} />
             <Typography variant="caption">{roomNumber}</Typography>
           </Stack>
 
-          <Stack direction="row" alignItems="center" spacing={1}>
+          <Stack direction="row" alignItems="center" justifyContent="center" spacing={1}>
             <Icon icon={peopleFill} width={16} height={16} />
             <Typography variant="caption">{person}</Typography>
           </Stack>
@@ -71,7 +71,11 @@ function BookingItem({ item }) {
       </Stack>
 
       <Box sx={{ p: 1, position: 'relative' }}>
-        <Box component="img" src={cover} sx={{ borderRadius: 1.5, height: '100px' }} />
+        <Box
+          component="img"
+          src={cover}
+          sx={{ borderRadius: 1.5, height: '100px', margin: '0 auto', textAlign: 'center' }}
+        />
         <br />
         <br />
         <br />
@@ -94,7 +98,7 @@ export default function BookingCustomerReviews() {
   const settings = {
     dots: false,
     arrows: false,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     rtl: Boolean(theme.direction === 'rtl'),
     responsive: [

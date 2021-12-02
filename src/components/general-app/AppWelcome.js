@@ -4,6 +4,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import { Typography, Button, Card, CardContent } from '@mui/material';
 import { SeoIllustration } from '../../assets';
+import './test.css';
 
 // ----------------------------------------------------------------------
 
@@ -64,6 +65,7 @@ export default function AppWelcome({ displayName }) {
       </CardContent>
 
       <img
+        className="test"
         src="https://unixgaming.org/wp-content/uploads/2021/10/new-unix-logo-sq_circle.png"
         alt="unixgaming"
         width="250"

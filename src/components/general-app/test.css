@@ -1,3 +1,5 @@
-.timeline-Tweet-text {
-    color: white!important;
+@media only screen and (max-width: 968px) {
+  .test {
+    display: none !important;
   }
+}
