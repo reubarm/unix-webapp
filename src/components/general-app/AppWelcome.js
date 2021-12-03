@@ -59,7 +59,7 @@ export default function AppWelcome({ displayName }) {
           Available on Uniswap
         </Button>
         &nbsp;&nbsp;&nbsp;
-        <Button variant="contained" href="https://yield.unixgaming.org" color="primary" target="_blank">
+        <Button variant="contained" href="https://yield.unixgaming.org" color="secondary" target="_blank">
           Staking Platform
         </Button>
       </CardContent>
