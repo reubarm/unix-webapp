@@ -69,7 +69,7 @@ export default function DashboardNavbar({ onOpenSidebar }) {
         <Stack direction="row" alignItems="center" spacing={{ xs: 0.5, sm: 1.5 }}>
           <Button
             variant="contained"
-            href="https://unixgaming.org/wp-content/uploads/2021/11/UniX-Litepaper_29.11.21_v1.0.pdf"
+            href="https://unixgaming.org/wp-content/uploads/2021/12/UniX-Litepaper_03.12.21_v1.0.pdf"
             target="_blank"
           >
             Download Litepaper
