@@ -55,7 +55,7 @@ export default function AppWelcome({ displayName }) {
           target="_blank"
           href="https://app.uniswap.org/#/swap?inputCurrency=0xddd6a0ecc3c6f6c102e5ea3d8af7b801d1a77ac8&outputCurrency=ETH"
           color="secondary"
-          style={{ width: '230px', marginBottom: '15px', marginRight: '12px' }}
+          style={{ width: '230px', marginBottom: '15px', marginRight: '10px' }}
         >
           Available on Uniswap
         </Button>
@@ -64,7 +64,7 @@ export default function AppWelcome({ displayName }) {
           href="https://yield.unixgaming.org"
           color="secondary"
           target="_blank"
-          style={{ width: '230px', marginBottom: '15px', marginRight: '12px' }}
+          style={{ width: '230px', marginBottom: '15px', marginRight: '10px' }}
         >
           Staking Platform
         </Button>
