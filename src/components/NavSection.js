@@ -176,6 +176,7 @@ export default function NavSection({ navConfig, isShow = true, ...other }) {
 
     <Box>
       <List disablePadding>
+        <ListSubheaderStyle>UniX Gaming</ListSubheaderStyle>
         <a href="/" style={{ textDecoration: 'none' }}>
           <ListItemStyle>
             <ListItemIconStyle>
@@ -218,6 +219,43 @@ export default function NavSection({ navConfig, isShow = true, ...other }) {
               <SvgIconStyle src="/static/icons/navbar/ic_calendar.svg" sx={{ width: '100%', height: '100%' }} />
             </ListItemIconStyle>
             <ListItemText disableTypography primary="Roadmap" />
+            <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
+          </ListItemStyle>
+        </a>
+        <ListSubheaderStyle>Socials</ListSubheaderStyle>
+        <a href="http://t.me/unix_token" style={{ textDecoration: 'none' }}>
+          <ListItemStyle>
+            <ListItemIconStyle>
+              <SvgIconStyle src="/static/icons/navbar/ic_user.svg" sx={{ width: '100%', height: '100%' }} />
+            </ListItemIconStyle>
+            <ListItemText disableTypography primary="Telegram" />
+            <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
+          </ListItemStyle>
+        </a>
+        <a href="http://discord.gg/unix" style={{ textDecoration: 'none' }}>
+          <ListItemStyle>
+            <ListItemIconStyle>
+              <SvgIconStyle src="/static/icons/navbar/ic_blog.svg" sx={{ width: '100%', height: '100%' }} />
+            </ListItemIconStyle>
+            <ListItemText disableTypography primary="Discord" />
+            <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
+          </ListItemStyle>
+        </a>
+        <a href="https://twitter.com/unixplaytoearn" style={{ textDecoration: 'none' }}>
+          <ListItemStyle>
+            <ListItemIconStyle>
+              <SvgIconStyle src="/static/icons/navbar/ic_chat.svg" sx={{ width: '100%', height: '100%' }} />
+            </ListItemIconStyle>
+            <ListItemText disableTypography primary="Twitter" />
+            <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
+          </ListItemStyle>
+        </a>
+        <a href="https://medium.com/@unixgaming" style={{ textDecoration: 'none' }}>
+          <ListItemStyle>
+            <ListItemIconStyle>
+              <SvgIconStyle src="/static/icons/navbar/ic_mail.svg" sx={{ width: '100%', height: '100%' }} />
+            </ListItemIconStyle>
+            <ListItemText disableTypography primary="Medium" />
             <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
           </ListItemStyle>
         </a>
