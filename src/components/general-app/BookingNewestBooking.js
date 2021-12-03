@@ -134,8 +134,6 @@ export default function BookingCustomerReviews() {
   return (
     <Box sx={{ py: 2 }}>
       <CardHeader
-        title="Our Partners"
-        subheader="Leading Play to Earn Community"
         action={
           <CarouselControlsArrowsBasic1
             arrowLine

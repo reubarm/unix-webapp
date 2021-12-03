@@ -23,8 +23,8 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const PERCENT = -0.06;
-const TOTAL_DOWNLOAD = 280000;
+const PERCENT = 1.2;
+const TOTAL_DOWNLOAD = 806327;
 const CHART_DATA = [{ data: [8, 9, 31, 8, 16, 37, 8, 33, 46, 31] }];
 
 export default function AppTotalDownloads() {
@@ -50,7 +50,7 @@ export default function AppTotalDownloads() {
   return (
     <Card sx={{ display: 'flex', alignItems: 'center', p: 3 }}>
       <Box sx={{ flexGrow: 1 }}>
-        <Typography variant="subtitle2">$ Profit / Month</Typography>
+        <Typography variant="subtitle2">Viewers on Stream</Typography>
 
         <Stack direction="row" alignItems="center" spacing={1} sx={{ mt: 2, mb: 1 }}>
           <IconWrapperStyle
@@ -69,7 +69,7 @@ export default function AppTotalDownloads() {
           </Typography>
         </Stack>
 
-        <Typography variant="h3">${fNumber(TOTAL_DOWNLOAD)}</Typography>
+        <Typography variant="h3">{fNumber(TOTAL_DOWNLOAD)}</Typography>
       </Box>
 
       <ReactApexChart type="bar" series={CHART_DATA} options={chartOptions} width={60} height={36} />

@@ -16,8 +16,10 @@ export const PATH_DASHBOARD = {
   root: ROOTS_DASHBOARD,
   general: {
     pageOne: path(ROOTS_DASHBOARD, '/unix'),
-    pageTwo: social('https://unixplaytoearn.com'),
-    pageThree: social('https://yield.unixgaming.org')
+    pageTwo: path(ROOTS_DASHBOARD, '/two'),
+    pageThree: path(ROOTS_DASHBOARD, '/three')
+    // pageTwo: social('https://unixplaytoearn.com'),
+    // pageThree: social('https://yield.unixgaming.org')
   },
   app: {
     pageFour: social('http://t.me/unix_token'),

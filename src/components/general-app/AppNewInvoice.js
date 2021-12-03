@@ -149,7 +149,10 @@ export default function AppNewInvoice() {
 
   return (
     <Card>
-      <CardHeader title="Partner Play to Earn Games" sx={{ mb: 3, textAlign: 'center', margin: '0 auto 20px' }} />
+      <CardHeader
+        title="Partnerships and Games of Unix Gaming"
+        sx={{ mb: 3, textAlign: 'center', margin: '0 auto 20px' }}
+      />
       <Scrollbar>
         <TableContainer sx={{ minWidth: 720 }}>
           <Table>

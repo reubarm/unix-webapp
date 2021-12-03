@@ -31,23 +31,19 @@ export default function GeneralApp() {
               <Grid item xs={12} md={12}>
                 <AppWelcome displayName="asdfasdfasdf" />
               </Grid>
-              <Grid item xs={12} md={3}>
+              <Grid item xs={12} md={4}>
                 <AppTotalActiveUsers />
               </Grid>
 
-              <Grid item xs={12} md={3}>
+              <Grid item xs={12} md={4}>
                 <AppTotalInstalled />
               </Grid>
 
-              <Grid item xs={12} md={3}>
+              <Grid item xs={12} md={4}>
                 <AppTotalDownloads />
               </Grid>
 
-              <Grid item xs={12} md={3}>
-                <AppTotalActiveUsers />
-              </Grid>
-
-              <Grid item xs={12}>
+              <Grid item xs={12} style={{ paddingTop: '0' }}>
                 <BookingNewestBooking />
               </Grid>
 

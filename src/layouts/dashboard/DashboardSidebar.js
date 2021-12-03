@@ -178,7 +178,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
         )}
       </Stack>
 
-      <NavSection navConfig={sidebarConfig} isShow={!isCollapse} />
+      <NavSection />
     </Scrollbar>
   );
 

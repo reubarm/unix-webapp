@@ -1,78 +1,60 @@
 // material
-import { Grid, Container } from '@mui/material';
-// hooks
-import useSettings from '../hooks/useSettings';
+import { Container, Grid, Stack } from '@mui/material';
 // components
 import Page from '../components/Page';
 import {
-  BookingTotal,
-  BookingCheckIn,
-  BookingDetails,
-  BookingCheckOut,
-  BookingBookedRoom,
-  BookingTotalIncomes,
-  BookingRoomAvailable,
+  AppWelcome,
+  AppWidgets1,
+  AppWidgets2,
+  AppFeatured,
+  AppNewInvoice,
+  AppTopAuthors,
+  AppTopRelated,
+  AppAreaInstalled,
   BookingNewestBooking,
-  BookingCheckInWidgets,
-  BookingCustomerReviews,
-  BookingReservationStats
-} from '../components/general-booking';
+  AppTotalDownloads,
+  AppTotalInstalled,
+  AppCurrentDownload,
+  AppTotalActiveUsers,
+  AppTopInstalledCountries
+} from '../components/general-app';
 
 // ----------------------------------------------------------------------
 
-export default function GeneralBooking() {
-  const { themeStretch } = useSettings();
-
+export default function GeneralApp() {
   return (
-    <Page title="General: Banking | Minimal-UI">
-      <Container maxWidth={themeStretch ? false : 'xl'}>
+    <Page title="Unix Gaming | Unixverse">
+      <Container maxWidth="xl">
         <Grid container spacing={3}>
-          <Grid item xs={12} md={4}>
-            <BookingTotal />
-          </Grid>
-
-          <Grid item xs={12} md={4}>
-            <BookingCheckIn />
-          </Grid>
-
-          <Grid item xs={12} md={4}>
-            <BookingCheckOut />
-          </Grid>
-
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} md={9}>
             <Grid container spacing={3}>
-              <Grid item xs={12} md={6}>
-                <BookingTotalIncomes />
-              </Grid>
-
-              <Grid item xs={12} md={6}>
-                <BookingBookedRoom />
-              </Grid>
-
               <Grid item xs={12} md={12}>
-                <BookingCheckInWidgets />
+                <AppWelcome displayName="asdfasdfasdf" />
+              </Grid>
+              <Grid item xs={12} md={4}>
+                <AppTotalActiveUsers />
+              </Grid>
+
+              <Grid item xs={12} md={4}>
+                <AppTotalInstalled />
+              </Grid>
+
+              <Grid item xs={12} md={4}>
+                <AppTotalDownloads />
+              </Grid>
+
+              <Grid item xs={12} style={{ paddingTop: '0' }}>
+                <img src="/launchpad.jpeg" alt="launchpad" style={{ width: '100%', margin: '20px auto' }} />
               </Grid>
             </Grid>
           </Grid>
 
-          <Grid item xs={12} md={4}>
-            <BookingRoomAvailable />
-          </Grid>
-
-          <Grid item xs={12} md={8}>
-            <BookingReservationStats />
-          </Grid>
-
-          <Grid item xs={12} md={4}>
-            <BookingCustomerReviews />
-          </Grid>
-
-          <Grid item xs={12}>
-            <BookingNewestBooking />
-          </Grid>
-
-          <Grid item xs={12}>
-            <BookingDetails />
+          <Grid item xs={12} md={3} lg={3}>
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <AppTopInstalledCountries />
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </Container>

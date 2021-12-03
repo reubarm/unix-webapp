@@ -8,6 +8,7 @@ import arrowIosDownwardFill from '@iconify/icons-eva/arrow-ios-downward-fill';
 import { alpha, useTheme, styled } from '@mui/material/styles';
 import { Box, List, Collapse, ListItemText, ListItemIcon, ListSubheader, ListItemButton } from '@mui/material';
 
+import SvgIconStyle from './SvgIconStyle';
 // ----------------------------------------------------------------------
 
 const ListSubheaderStyle = styled((props) => <ListSubheader disableSticky disableGutters {...props} />)(
@@ -92,61 +93,43 @@ function NavItem({ item, isShow }) {
         >
           <ListItemIconStyle>{icon && icon}</ListItemIconStyle>
 
-          {isShow && (
-            <>
-              <ListItemText disableTypography primary={title} />
-              {info && info}
-              <Box
-                component={Icon}
-                icon={open ? arrowIosDownwardFill : arrowIosForwardFill}
-                sx={{ width: 16, height: 16, ml: 1 }}
-              />
-            </>
-          )}
+          <>
+            <ListItemText disableTypography primary={title} />
+            {info && info}
+            <Box
+              component={Icon}
+              icon={open ? arrowIosDownwardFill : arrowIosForwardFill}
+              sx={{ width: 16, height: 16, ml: 1 }}
+            />
+          </>
         </ListItemStyle>
 
-        {isShow && (
-          <Collapse in={open} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              {children.map((item) => {
-                const { title, path } = item;
-                const isActiveSub = path ? !!matchPath({ path, end: false }, pathname) : false;
-
-                return (
-                  <ListItemStyle
-                    key={title}
-                    component={RouterLink}
-                    to={path}
-                    sx={{
-                      ...(isActiveSub && activeSubStyle)
-                    }}
-                  >
-                    <ListItemIconStyle>
-                      <Box
-                        component="span"
-                        sx={{
-                          width: 4,
-                          height: 4,
-                          display: 'flex',
-                          borderRadius: '50%',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          bgcolor: 'text.disabled',
-                          transition: (theme) => theme.transitions.create('transform'),
-                          ...(isActiveSub && {
-                            transform: 'scale(2)',
-                            bgcolor: 'primary.main'
-                          })
-                        }}
-                      />
-                    </ListItemIconStyle>
-                    <ListItemText disableTypography primary={title} />
-                  </ListItemStyle>
-                );
-              })}
-            </List>
-          </Collapse>
-        )}
+        <Collapse in={open} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItemStyle>
+              <ListItemIconStyle>
+                <Box
+                  component="span"
+                  sx={{
+                    width: 4,
+                    height: 4,
+                    display: 'flex',
+                    borderRadius: '50%',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    bgcolor: 'text.disabled',
+                    transition: (theme) => theme.transitions.create('transform')
+                    // ...(isActiveSub && {
+                    //   transform: 'scale(2)',
+                    //   bgcolor: 'primary.main'
+                    // })
+                  }}
+                />
+              </ListItemIconStyle>
+              <ListItemText disableTypography primary="rimary" />
+            </ListItemStyle>
+          </List>
+        </Collapse>
       </>
     );
   }
@@ -177,18 +160,68 @@ NavSection.propTypes = {
 
 export default function NavSection({ navConfig, isShow = true, ...other }) {
   return (
-    <Box {...other}>
-      {navConfig.map((list) => {
-        const { subheader, items } = list;
-        return (
-          <List key={subheader} disablePadding>
-            {isShow && <ListSubheaderStyle>{subheader}</ListSubheaderStyle>}
-            {items.map((item) => (
-              <NavItem key={item.title} item={item} isShow={isShow} />
-            ))}
-          </List>
-        );
-      })}
+    // <Box {...other}>
+    //   {navConfig.map((list) => {
+    //     const { subheader, items }i = list;
+    //     return (
+    //       <List key={subheader} disablePadding>
+    //         {isShow && <ListSubheaderStyle>{subheader}</ListSubheaderStyle>}
+    //         {items.map((item) => (
+    //           <NavItem key={item.title} item={item} isShow={isShow} />
+    //         ))}
+    //       </List>
+    //     );
+    //   })}
+    // </Box>
+
+    <Box>
+      <List disablePadding>
+        <a href="/" style={{ textDecoration: 'none' }}>
+          <ListItemStyle>
+            <ListItemIconStyle>
+              <SvgIconStyle src="/static/icons/navbar/ic_dashboard.svg" sx={{ width: '100%', height: '100%' }} />
+            </ListItemIconStyle>
+            <ListItemText disableTypography primary="Dashboard" />
+            <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
+          </ListItemStyle>
+        </a>
+        <a href="http://yield.unixgaming.org/" style={{ textDecoration: 'none' }}>
+          <ListItemStyle>
+            <ListItemIconStyle>
+              <SvgIconStyle src="/static/icons/navbar/ic_ecommerce.svg" sx={{ width: '100%', height: '100%' }} />
+            </ListItemIconStyle>
+            <ListItemText disableTypography primary="Staking" />
+            <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
+          </ListItemStyle>
+        </a>
+        <a href="/launchpad" style={{ textDecoration: 'none' }}>
+          <ListItemStyle>
+            <ListItemIconStyle>
+              <SvgIconStyle src="/static/icons/navbar/ic_analytics.svg" sx={{ width: '100%', height: '100%' }} />
+            </ListItemIconStyle>
+            <ListItemText disableTypography primary="Launchpad" />
+            <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
+          </ListItemStyle>
+        </a>
+        <a href="/dao" style={{ textDecoration: 'none' }}>
+          <ListItemStyle>
+            <ListItemIconStyle>
+              <SvgIconStyle src="/static/icons/navbar/ic_blog.svg" sx={{ width: '100%', height: '100%' }} />
+            </ListItemIconStyle>
+            <ListItemText disableTypography primary="DAO" />
+            <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
+          </ListItemStyle>
+        </a>
+        <a href="/roadmap" style={{ textDecoration: 'none' }}>
+          <ListItemStyle>
+            <ListItemIconStyle>
+              <SvgIconStyle src="/static/icons/navbar/ic_calendar.svg" sx={{ width: '100%', height: '100%' }} />
+            </ListItemIconStyle>
+            <ListItemText disableTypography primary="Roadmap" />
+            <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
+          </ListItemStyle>
+        </a>
+      </List>
     </Box>
   );
 }

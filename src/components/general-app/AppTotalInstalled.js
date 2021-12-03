@@ -24,7 +24,7 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 const PERCENT = 0.15;
-const TOTAL_INSTALLED = 1200;
+const TOTAL_INSTALLED = 1331;
 const CHART_DATA = [{ data: [5, 18, 12, 51, 68, 11, 39, 37, 27, 20] }];
 
 export default function AppTotalInstalled() {

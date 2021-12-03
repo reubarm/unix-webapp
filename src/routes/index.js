@@ -43,9 +43,11 @@ export default function Router() {
       children: [
         { element: <Navigate to="/unix" replace /> },
         { path: 'unix', element: <PageOne /> },
-        { path: 'https://yield.unixgaming.org' },
-        { path: 'https://yield.unixgaming.org' },
-        { path: 'https://yield.unixgaming.org' },
+        { path: 'launchpad', element: <PageTwo /> },
+        { path: 'dao', element: <PageThree /> },
+        { path: 'roadmap', element: <PageFour /> },
+        // { path: 'five', element: <PageFive /> },
+
         {
           path: 'app',
           children: [

@@ -29,10 +29,10 @@ const sidebarConfig = [
   {
     subheader: 'Unixverse',
     items: [
-      { title: 'Dashboard', path: 'https://yield.unixgaming.org', icon: ICONS.dashboard },
-      { title: 'Staking', path: 'https://yield.unixgaming.org', icon: ICONS.analytics },
-      { title: 'Analytics', path: 'https://yield.unixgaming.org', icon: ICONS.ecommerce },
-      { title: 'Play to Earn', path: 'https://yield.unixgaming.org', icon: ICONS.facebook }
+      { title: 'Dashboard', path: PATH_DASHBOARD.general.pageOne, icon: ICONS.dashboard },
+      { title: 'Staking', path: PATH_DASHBOARD.general.pageThree, icon: ICONS.analytics },
+      { title: 'Analytics', path: PATH_DASHBOARD.general.pageThree, icon: ICONS.ecommerce },
+      { title: 'Play to Earn', path: PATH_DASHBOARD.general.pageTwo, icon: ICONS.facebook }
     ]
   },
 
