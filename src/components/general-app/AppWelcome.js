@@ -56,7 +56,7 @@ export default function AppWelcome({ displayName }) {
           href="https://app.uniswap.org/#/swap?inputCurrency=0xddd6a0ecc3c6f6c102e5ea3d8af7b801d1a77ac8&outputCurrency=ETH"
           color="secondary"
         >
-          Buy on Uniswap
+          Available on Uniswap
         </Button>
         &nbsp;&nbsp;&nbsp;
         <Button variant="contained" href="https://yield.unixgaming.org" color="primary" target="_blank">

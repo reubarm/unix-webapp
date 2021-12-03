@@ -1,5 +1,5 @@
 // material
-import { Container, Grid, Stack } from '@mui/material';
+import { Container, Grid, Stack, Typography } from '@mui/material';
 // components
 import Page from '../components/Page';
 import {
@@ -45,6 +45,20 @@ export default function GeneralApp() {
 
               <Grid item xs={12} style={{ paddingTop: '0' }}>
                 <img src="/launchpad.jpeg" alt="launchpad" style={{ width: '100%', margin: '20px auto' }} />
+                <br />
+                <br />
+                <Typography
+                  gutterBottom
+                  variant="h4"
+                  sx={{ color: 'white!important', textAlign: 'center', margin: '0 auto' }}
+                >
+                  Unix Gaming Launchpad
+                </Typography>
+                <img
+                  src="https://unixgaming.org/wp-content/uploads/2021/11/UNIX_Launchpad.002.png"
+                  alt="launchpad"
+                  style={{ width: '100%', margin: '0 auto' }}
+                />
               </Grid>
             </Grid>
           </Grid>
