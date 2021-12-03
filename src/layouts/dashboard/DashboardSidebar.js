@@ -140,11 +140,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       >
         <Stack direction="row" alignItems="center" justifyContent="space-between">
           <Box component={RouterLink} to="/" sx={{ display: 'inline-flex' }}>
-            <img
-              src="https://unixgaming.org/wp-content/uploads/2021/08/U-Unix_no-bg-300x169.png"
-              alt="logo"
-              width="150"
-            />
+            <img src="/logo.png" alt="logo" width="150" />
           </Box>
 
           <MHidden width="lgDown">
@@ -155,16 +151,13 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
         {isCollapse ? (
           <Avatar
             alt="My Avatar"
-            src="https://unixgaming.org/wp-content/uploads/2021/10/new-unix-logo-sq_circle.png"
+            src="https://img.api.cryptorank.io/coins/unix%20gaming1637920085802.png"
             sx={{ mx: 'auto', mb: 2 }}
           />
         ) : (
           <Link underline="none" component={RouterLink} to="#">
             <AccountStyle>
-              <Avatar
-                alt="My Avatar"
-                src="https://unixgaming.org/wp-content/uploads/2021/10/new-unix-logo-sq_circle.png"
-              />
+              <Avatar alt="My Avatar" src="https://img.api.cryptorank.io/coins/unix%20gaming1637920085802.png" />
               <Box sx={{ ml: 2 }}>
                 <Typography variant="subtitle1" sx={{ color: 'text.primary' }}>
                   <b>${test}</b>
