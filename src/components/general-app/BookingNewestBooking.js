@@ -45,20 +45,20 @@ function BookingItem({ item }) {
   const { avatar, name, roomNumber, bookdAt, person, cover, roomType } = item;
 
   return (
-    <Paper sx={{ mx: 1.5, borderRadius: 2, bgcolor: 'background.neutral' }}>
+    <Paper sx={{ mx: 1.5, borderRadius: 2, bgcolor: 'background.neutral', maxHeight: '300px' }}>
       <Stack spacing={2.5} sx={{ p: 3, pb: 2.5 }}>
-        <Stack direction="row" alignItems="center" justifyContent="center" spacing={2}>
+        <Stack direction="row" alignItems="center" justifyContent="center" spacing={1}>
           <Avatar alt={name} src={avatar} />
           <div>
             <Typography variant="subtitle2">{name}</Typography>
-            <Typography variant="caption" sx={{ color: 'text.disabled', mt: 0.5, display: 'block' }}>
+            {/* <Typography variant="caption" sx={{ color: 'text.disabled', mt: 0.5, display: 'block' }}>
               {fDateTime(bookdAt)}
-            </Typography>
+            </Typography> */}
           </div>
         </Stack>
 
         <Stack direction="row" alignItems="center" justifyContent="center" spacing={3} sx={{ color: 'text.secondary' }}>
-          <Stack direction="row" alignItems="center" sjustifyContent="center" pacing={1}>
+          {/* <Stack direction="row" alignItems="center" sjustifyContent="center" pacing={1}>
             <Icon icon={roundVpnKey} width={16} height={16} />
             <Typography variant="caption">{roomNumber}</Typography>
           </Stack>
@@ -66,7 +66,7 @@ function BookingItem({ item }) {
           <Stack direction="row" alignItems="center" justifyContent="center" spacing={1}>
             <Icon icon={peopleFill} width={16} height={16} />
             <Typography variant="caption">{person}</Typography>
-          </Stack>
+          </Stack> */}
         </Stack>
       </Stack>
 
@@ -79,13 +79,13 @@ function BookingItem({ item }) {
         <br />
         <br />
         <br />
-        <Label
+        {/* <Label
           variant="filled"
           color={(roomType === 'king' && 'secondary') || (roomType === 'double' && 'primary') || 'secondary'}
           sx={{ position: 'absolute', left: 50, right: 50, bottom: 10, textTransform: 'capitalize' }}
         >
           {roomType}
-        </Label>
+        </Label> */}
       </Box>
     </Paper>
   );
