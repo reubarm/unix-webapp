@@ -44,11 +44,7 @@ export default function GeneralApp() {
               </Grid>
 
               <Grid item xs={12} style={{ paddingTop: '0' }}>
-                <img
-                  src="https://unixgaming.org/wp-content/uploads/2021/09/DAO-Token-1-2048x1317.jpg"
-                  alt="launchpad"
-                  style={{ width: '100%', margin: '20px auto' }}
-                />
+                <img src="/dao.jpeg" alt="launchpad" style={{ width: '100%', margin: '20px auto' }} />
               </Grid>
             </Grid>
           </Grid>

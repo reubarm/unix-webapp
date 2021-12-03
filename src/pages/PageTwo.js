@@ -54,11 +54,7 @@ export default function GeneralApp() {
                 >
                   Unix Gaming Launchpad
                 </Typography>
-                <img
-                  src="https://unixgaming.org/wp-content/uploads/2021/11/UNIX_Launchpad.002.png"
-                  alt="launchpad"
-                  style={{ width: '100%', margin: '0 auto' }}
-                />
+                <img src="/launchpad.png" alt="launchpad" style={{ width: '100%', margin: '0 auto' }} />
               </Grid>
             </Grid>
           </Grid>
