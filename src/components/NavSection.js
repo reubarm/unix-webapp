@@ -186,7 +186,12 @@ export default function NavSection({ navConfig, isShow = true, ...other }) {
             <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
           </ListItemStyle>
         </a>
-        <a href="https://yield.unixgaming.org/yield-farming" target="_blank" style={{ textDecoration: 'none' }}>
+        <a
+          href="https://yield.unixgaming.org/yield-farming"
+          target="_blank"
+          rel="noreferrer"
+          style={{ textDecoration: 'none' }}
+        >
           <ListItemStyle>
             <ListItemIconStyle>
               <SvgIconStyle src="/static/icons/navbar/ic_ecommerce.svg" sx={{ width: '100%', height: '100%' }} />

@@ -64,13 +64,7 @@ export default function AppWelcome({ displayName }) {
         </Button>
       </CardContent>
 
-      <img
-        className="test"
-        src="https://unixgaming.org/wp-content/uploads/2021/10/new-unix-logo-sq_circle.png"
-        alt="unixgaming"
-        width="250"
-        style={{ margin: '30px' }}
-      />
+      <img className="test" src="/logo.png" alt="unixgaming" width="300" style={{ margin: '30px' }} />
     </RootStyle>
   );
 }
