@@ -46,6 +46,7 @@ export default function Router() {
         { path: 'launchpad', element: <PageTwo /> },
         { path: 'dao', element: <PageThree /> },
         { path: 'roadmap', element: <PageFour /> },
+        { path: 'team', element: <PageFive /> },
         // { path: 'five', element: <PageFive /> },
 
         {

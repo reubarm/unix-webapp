@@ -1,35 +1,49 @@
+import { useEffect } from 'react';
 // material
-import { Container, Typography } from '@mui/material';
+import { Container, Grid, Skeleton } from '@mui/material';
+// redux
+import { useDispatch, useSelector } from '../redux/store';
+import { getUsers } from '../redux/slices/user';
+// routes
+import { PATH_DASHBOARD } from '../routes/paths';
 // hooks
 import useSettings from '../hooks/useSettings';
 // components
 import Page from '../components/Page';
+import { UserCard } from '../components/cards';
 
 // ----------------------------------------------------------------------
 
-export default function PageFive() {
+const SkeletonLoad = (
+  <>
+    {[...Array(8)].map((_, index) => (
+      <Grid item xs={12} sm={6} md={4} key={index}>
+        <Skeleton variant="rectangular" width="100%" sx={{ paddingTop: '115%', borderRadius: 2 }} />
+      </Grid>
+    ))}
+  </>
+);
+
+export default function UserCards() {
   const { themeStretch } = useSettings();
+  const dispatch = useDispatch();
+  const { users } = useSelector((state) => state.user);
+
+  useEffect(() => {
+    dispatch(getUsers());
+  }, [dispatch]);
 
   return (
-    <Page title="Page Five | Minimal-UI">
-      <Container maxWidth={themeStretch ? false : 'xl'}>
-        <Typography variant="h3" component="h1" paragraph>
-          Page Five
-        </Typography>
-        <Typography gutterBottom>
-          Curabitur turpis. Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod
-          ligula urna in dolor. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Phasellus blandit leo
-          ut odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id
-          purus. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. In consectetuer turpis ut velit.
-          Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.
-          Vestibulum suscipit nulla quis orci. Nam commodo suscipit quam. Sed a libero.
-        </Typography>
-        <Typography>
-          Praesent ac sem eget est egestas volutpat. Phasellus viverra nulla ut metus varius laoreet. Curabitur
-          ullamcorper ultricies nisi. Ut non enim eleifend felis pretium feugiat. Donec mi odio, faucibus at,
-          scelerisque quis, convallis in, nisi. Fusce vel dui. Quisque libero metus, condimentum nec, tempor a, commodo
-          mollis, magna. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Cras dapibus.
-        </Typography>
+    <Page title="Unix Gaming Team">
+      <Container maxWidth={themeStretch ? false : 'lg'}>
+        <Grid container spacing={3}>
+          {/* {users.map((user) => ( */}
+
+          <UserCard />
+          {/* ))} */}
+
+          {!users.length && SkeletonLoad}
+        </Grid>
       </Container>
     </Page>
   );
