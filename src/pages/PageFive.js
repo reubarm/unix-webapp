@@ -38,11 +38,9 @@ export default function UserCards() {
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <Grid container spacing={3}>
           {/* {users.map((user) => ( */}
-
           <UserCard />
           {/* ))} */}
-
-          {!users.length && SkeletonLoad}
+          {/* {!users.length && SkeletonLoad} */}
         </Grid>
       </Container>
     </Page>

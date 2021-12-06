@@ -36,39 +36,50 @@ const SOCIALS = [
 const TEAMS = [
   {
     name: 'Mirko Basil',
-    position: 'CEO'
+    position: 'CEO',
+    image: 'https://ca.slack-edge.com/T02GVT6J84D-U02H139RMGC-cd2106d26531-512'
   },
   {
     name: 'Nick Tieu',
-    position: 'COO'
+    position: 'COO',
+    image: '/photo/1.jpg'
   },
   {
     name: 'Erik Mayer',
-    position: 'Co-Founder'
+    position: 'Co-Founder',
+    image: '/photo/11-01.jpg'
   },
   {
     name: 'Sindy Tang',
-    position: 'CFO'
+    position: 'CFO',
+    image: '/photo/22-01.jpg'
   },
   {
     name: 'Joe Moore',
-    position: 'Co-Founder and Head of Education'
+    position: 'Co-Founder and Head of Education',
+    image: '/photo/10-01.jpg'
   },
   {
     name: 'Andrew Thomas',
-    position: 'Head of Commercial Partnerships'
+    position: 'Head of Commercial Partnerships',
+    image: '/photo/19-01.jpg'
   },
   {
     name: 'Anri Davids',
-    position: 'Head of Marketing'
+    position: 'Head of Marketing',
+    image:
+      'https://media-exp1.licdn.com/dms/image/C5603AQEzTEV1wpFd4g/profile-displayphoto-shrink_400_400/0/1607421504476?e=1644451200&v=beta&t=neJkd7vyHFJozd0I2fvTvvo2n9xHc2czZ5RAXlOJWo8'
   },
   {
     name: 'Conor Noone',
-    position: 'Head of Partnerships & Sales'
+    position: 'Head of Partnerships & Sales',
+    image: '/photo/7-01.jpg'
   },
   {
     name: 'Reuben Armstrong',
-    position: 'Head of Engineering'
+    position: 'Head of Web Development',
+    image:
+      'https://media-exp1.licdn.com/dms/image/C4E03AQEYT2oWYRDhCA/profile-displayphoto-shrink_800_800/0/1516476274738?e=1644451200&v=beta&t=I01qq53nSo6OyCSuM1f77TRPOMuAeWgWamC4N2wiG3M'
   }
 ];
 
@@ -140,7 +151,7 @@ export default function UserCard() {
                   }}
                 />
                 <Avatar
-                  src="asdf"
+                  src={team.image}
                   sx={{
                     width: 64,
                     height: 64,
@@ -149,7 +160,7 @@ export default function UserCard() {
                     transform: 'translateY(-50%)'
                   }}
                 />
-                <CoverImgStyle alt="cover" src="asdf" />
+                <CoverImgStyle alt="cover" src={team.image} />
               </CardMediaStyle>
               <Typography variant="subtitle1" align="center" sx={{ mt: 6 }}>
                 {team.name}

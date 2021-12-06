@@ -85,7 +85,8 @@ export default function LoadingScreen({ ...other }) {
             repeat: Infinity
           }}
         >
-          <Logo sx={{ width: 64, height: 64 }} />
+          {/* <Logo sx={{ width: 64, height: 64 }} /> */}
+          <img src="https://img.api.cryptorank.io/coins/unix%20gaming1637920085802.png" alt="unix" width="200" />
         </motion.div>
 
         <Box
