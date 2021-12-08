@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 // material
@@ -31,6 +32,24 @@ AppWelcome.propTypes = {
   displayName: PropTypes.string
 };
 
+// const ticket = `<coingecko-coin-price-marquee-widget coin-ids="unix,axie-infinity,smooth-love-potion,star-atlas,the-sandbox" currency="usd" background-color="#ffffff" locale="en"></coingecko-coin-price-marquee-widget>`;
+
+// const Advert = () => {
+//   useEffect(() => {
+//     window.onload = () => {
+//       const script = document.createElement('script');
+//       script.src = 'https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js';
+//       script.async = true;
+//       document.getElementById('advert').appendChild(script);
+//       return () => {
+//         console.log('wooop');
+//       };
+//     };
+//   }, []);
+
+//   return <div id="advert" />;
+// };
+
 export default function AppWelcome({ displayName }) {
   return (
     <RootStyle>
@@ -41,6 +60,8 @@ export default function AppWelcome({ displayName }) {
           color: 'grey.800'
         }}
       >
+        {/* <Advert />
+        <div dangerouslySetInnerHTML={{ __html: ticket }} /> */}
         <Typography gutterBottom variant="h3" sx={{ color: 'white!important' }}>
           Join the Play to Earn Revolution
         </Typography>
