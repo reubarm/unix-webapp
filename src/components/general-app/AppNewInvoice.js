@@ -182,7 +182,7 @@ export default function AppNewInvoice() {
             <hr />
             <br />
             <h1>
-              Social Score: <span style={{ color: '#e481ff' }}>9.5/10</span>
+              Social Score: <span style={{ color: '#e481ff' }}>{selectedGame[0].Score}</span>
             </h1>
             <br />
             <hr />

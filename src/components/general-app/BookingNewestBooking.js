@@ -23,7 +23,11 @@ const MOCK_BOOKINGS = [...Array(5)].map((_, index) => ({
   avatar: mockData.image.avatar(index),
   bookdAt: mockData.time(index),
   roomNumber: 'Ethereum',
-  roomType: (index === 1 && 'Card, DeFi, Fantasy') || (index === 3 && 'Arcade, Puzzle') || 'Action, RPG',
+  roomType:
+    (index === 0 && 'Card, DeFi, Fantasy') ||
+    (index === 1 && 'Card, Collectible, PVP') ||
+    (index === 1 && 'Tower Defense') ||
+    'Adventure',
   person: 'NFT, P2P',
   cover: `/static/mock-images/rooms/room-${index + 1}.jpg`,
   icon: `/static/mock-images/covers/cover_${index + 1}.jpg`
