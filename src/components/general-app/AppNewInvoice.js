@@ -37,6 +37,7 @@ import mockData from '../../utils/mock-data';
 import Label from '../Label';
 import Scrollbar from '../Scrollbar';
 import { MIconButton } from '../@material-extend';
+import './test.css';
 
 // ----------------------------------------------------------------------
 
@@ -139,6 +140,21 @@ export default function AppNewInvoice() {
     openExtra(!extra);
   }
 
+  // ----------------------------------------------------------------------
+
+  const [axie, setAxie] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('https://api.coingecko.com/api/v3/simple/price?ids=axie-infinity&vs_currencies=usd')
+      .then((res) => {
+        setAxie(res.data['axie-infinity'].usd);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  // ----------------------------------------------------------------------
+
   return (
     <>
       {/* eslint-disable */}
@@ -203,17 +219,17 @@ export default function AppNewInvoice() {
         <Scrollbar>
           <TableContainer sx={{ minWidth: 720 }}>
             <Table>
-              {/* <TableHead>
-              <TableRow>
-                <TableCell>Name</TableCell>
-                <TableCell>Genre</TableCell>
-                <TableCell>Blockchain</TableCell>
-                <TableCell>NFT</TableCell>
-                <TableCell>Device</TableCell>
-                <TableCell>Status</TableCell>
-                <TableCell />
-              </TableRow>
-            </TableHead> */}
+              <TableHead sx={{ background: '#10171f!important' }}>
+                <TableRow sx={{ background: '#10171f!important' }}>
+                  <TableCell>Name</TableCell>
+                  <TableCell>Access</TableCell>
+                  <TableCell>Device</TableCell>
+                  <TableCell>Blockchain</TableCell>
+                  <TableCell>Score</TableCell>
+                  <TableCell>Status</TableCell>
+                  {/* <TableCell>Price</TableCell> */}
+                </TableRow>
+              </TableHead>
 
               {filteredGames.map((game, keys) => (
                 <TableBody
@@ -227,19 +243,23 @@ export default function AppNewInvoice() {
                     <span onClick={() => setCount(keys)}>
                       <a id={keys} onClick={showTokenDetail} style={{ cursor: 'pointer' }}>
                         <TableCell sx={{ display: 'flex' }}>
-                          <Avatar src={game.Image} alt={game.Name} />
-                          <span style={{ margin: '10px 20px', fontSize: '16px', fontWeight: '900' }}>{game.Name}</span>
+                          <img
+                            src={game.Image}
+                            alt={game.Name}
+                            style={{ height: '60px', width: '60px', borderRadius: '10px', marginLeft: '-15px' }}
+                          />
+                          <span style={{ margin: '20px', fontSize: '16px', fontWeight: '900' }}>{game.Name}</span>
                         </TableCell>
                       </a>
                     </span>
-                    {/* <TableCell>{game.Genre}</TableCell> */}
                     {/* <TableCell>{game.Blockchain}</TableCell> */}
                     <TableCell>{game.F2P}</TableCell>
-                    <TableCell>{game.P2E}</TableCell>
+                    <TableCell>{game.Device}</TableCell>
                     <TableCell>
                       <Avatar src={game.Blockicon} alt={game.Name} />
                     </TableCell>
-                    <TableCell sx={{ textAlign: 'right' }}>
+                    <TableCell>{game.Score}</TableCell>
+                    <TableCell sx={{ textAlign: 'left' }}>
                       <Label
                         variant={theme.palette.mode === 'light' ? 'ghost' : 'filled'}
                         color={
@@ -249,9 +269,10 @@ export default function AppNewInvoice() {
                         {game.Status}
                       </Label>
                     </TableCell>
-                    <TableCell align="right">
+                    {/* <TableCell>${axie}</TableCell> */}
+                    {/* <TableCell align="right">
                       <MoreMenuButton />
-                    </TableCell>
+                    </TableCell> */}
                   </TableRow>
                 </TableBody>
               ))}

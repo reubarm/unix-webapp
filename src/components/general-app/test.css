@@ -8,6 +8,18 @@
   .test {
     display: none !important;
   }
+  .hide-mb {
+    display: none!important;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .test {
+    display: none !important;
+  }
+  .hide-mb {
+    display: none!important;
+  }
 }
 
 .cg-marquee {
@@ -17,4 +29,10 @@
 .moeda-img {
   display: inline-block;
   margin: -20px 10px 0px 0px!important;
+}
+
+a:hover {
+  text-decoration: none!important;
+  color: white!important;
+  text-transform: none!important;
 }

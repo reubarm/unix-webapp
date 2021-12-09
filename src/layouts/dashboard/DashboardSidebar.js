@@ -109,11 +109,11 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       )
       .then((res) => {
         setMoedas(res.data.market_data.current_price.usd);
-        console.log(res.data.market_data.current_price.usd);
+        // console.log(res.data.market_data.current_price.usd);
       })
       .catch((error) => console.log(error));
   }, []);
-  console.log(moedas);
+  // console.log(moedas);
   const test = JSON.stringify(moedas);
 
   const renderContent = (

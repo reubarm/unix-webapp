@@ -41,7 +41,7 @@ export default function ContainerView({ isText, isMulti, selectVariant, ...other
     >
       {isText ? (
         <MotionContainer open initial="initial">
-          <TextAnimate text="Minimals" variants={getVariant(selectVariant)} />
+          <TextAnimate text="Unix Gaming" variants={getVariant(selectVariant)} />
         </MotionContainer>
       ) : (
         <MotionContainer open initial="initial">

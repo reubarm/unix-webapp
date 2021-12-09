@@ -62,7 +62,7 @@ function BookingItem({ item }) {
           mx: 1.5,
           borderRadius: 2,
           bgcolor: 'background.neutral',
-          background: `linear-gradient(180deg, rgba(169,0,252,0.3) 50%, rgba(68,17,78,1) 70%), url(${cover}) center no-repeat`,
+          background: `linear-gradient(180deg, rgba(169,0,252,0.1) 70%, rgb(25, 20, 39, 0.9) 70%), url(${cover}) center no-repeat`,
           backgroundSize: 'cover',
           maxHeight: '300px'
         }}

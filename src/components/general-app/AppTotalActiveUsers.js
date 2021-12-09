@@ -7,6 +7,7 @@ import { alpha, useTheme, styled } from '@mui/material/styles';
 import { Box, Card, Typography, Stack } from '@mui/material';
 // utils
 import { fNumber, fPercent } from '../../utils/formatNumber';
+import './test.css';
 
 // ----------------------------------------------------------------------
 
@@ -71,7 +72,14 @@ export default function AppTotalActiveUsers() {
         <Typography variant="h3">{fNumber(TOTAL_USER)}+</Typography>
       </Box>
 
-      <ReactApexChart type="bar" series={CHART_DATA} options={chartOptions} width={60} height={36} />
+      <ReactApexChart
+        type="bar"
+        series={CHART_DATA}
+        options={chartOptions}
+        width={60}
+        height={36}
+        className="hide-mb"
+      />
     </Card>
   );
 }

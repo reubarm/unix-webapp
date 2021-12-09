@@ -1,6 +1,6 @@
 {
-  "name": "@minimal/minimal-kit-react",
-  "author": "minimals.cc",
+  "name": "unix-webapp",
+  "author": "Reuben Armstrong",
   "version": "2.6.0",
   "private": true,
   "scripts": {
