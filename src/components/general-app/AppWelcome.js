@@ -62,12 +62,19 @@ export default function AppWelcome({ displayName }) {
       >
         {/* <Advert />
         <div dangerouslySetInnerHTML={{ __html: ticket }} /> */}
-        <Typography gutterBottom variant="h3" sx={{ color: 'white!important' }}>
+        <Typography gutterBottom variant="h3" sx={{ color: 'white!important', lineHeight: '1', marginBottom: '20px' }}>
           Join the Play to Earn Revolution
         </Typography>
         <Typography
           variant="body2"
-          sx={{ pb: { xs: 3, xl: 5 }, maxWidth: 480, mx: 'auto', color: 'white!important', fontSize: '16px' }}
+          sx={{
+            pb: { xs: 3, xl: 5 },
+            maxWidth: 480,
+            mx: 'auto',
+            color: 'white!important',
+            fontSize: '16px',
+            lineHeight: '1.3'
+          }}
         >
           Our mission is to be the biggest play to earn guild optimising its community owned assets for maximum utility.
         </Typography>
@@ -76,7 +83,7 @@ export default function AppWelcome({ displayName }) {
           target="_blank"
           href="https://app.uniswap.org/#/swap?inputCurrency=0xddd6a0ecc3c6f6c102e5ea3d8af7b801d1a77ac8&outputCurrency=ETH"
           color="secondary"
-          style={{ width: '230px', marginBottom: '15px', marginRight: '10px' }}
+          style={{ width: '200px', marginBottom: '15px', marginRight: '10px' }}
         >
           Available on Uniswap
         </Button>
@@ -85,13 +92,18 @@ export default function AppWelcome({ displayName }) {
           href="https://yield.unixgaming.org"
           color="secondary"
           target="_blank"
-          style={{ width: '230px', marginBottom: '15px', marginRight: '10px' }}
+          style={{ width: '200px', marginBottom: '15px', marginRight: '10px' }}
         >
           Staking Platform
         </Button>
       </CardContent>
 
-      <img className="test" src="/logo.png" alt="unixgaming" width="300" style={{ margin: '30px' }} />
+      <img
+        className="test"
+        src="/logo.png"
+        alt="unixgaming"
+        style={{ margin: '30px', width: '100%', maxWidth: '300px' }}
+      />
     </RootStyle>
   );
 }

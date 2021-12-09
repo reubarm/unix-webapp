@@ -67,6 +67,10 @@ export default function DashboardNavbar({ onOpenSidebar }) {
         <Box sx={{ flexGrow: 1 }} />
 
         <Stack direction="row" alignItems="center" spacing={{ xs: 0.5, sm: 1.5 }}>
+          <a href="http://t.me/unix_token" style={{ color: 'white', textTransform: 'none', textDecoration: 'none' }}>
+            Join our Telegram
+          </a>
+          &nbsp;&nbsp;&nbsp;
           <Button variant="contained" href="/litepaper.pdf" target="_blank">
             Download Litepaper
           </Button>

@@ -14,7 +14,7 @@ import { CarouselControlsPaging1, CarouselControlsArrowsBasic1 } from '../carous
 
 // ----------------------------------------------------------------------
 
-const TITLES = ['Harry Potter and the Deathly Hallows - Part 2', 'Disney Zombies 2', 'Lightroom mobile - Koloro'];
+const TITLES = ['These exchanges coming soon', 'UniX Axie Infinity Cup', 'Over 4000 UniX Holders'];
 
 const MOCK_APPS = [...Array(3)].map((_, index) => ({
   id: mockData.id(index),
@@ -24,11 +24,11 @@ const MOCK_APPS = [...Array(3)].map((_, index) => ({
 }));
 
 const CarouselImgStyle = styled('img')(({ theme }) => ({
-  height: '280px',
+  height: '300px',
   width: '100%',
   objectFit: 'cover',
   [theme.breakpoints.up('xl')]: {
-    height: 320
+    height: 300
   }
 }));
 
@@ -54,7 +54,7 @@ function CarouselItem({ item, isActive }) {
             bgcolor: (theme) => alpha(theme.palette.grey[900], 0.72)
           }}
         />
-        {/* <CarouselImgStyle alt="asdf" src="https://shootq.com/wp-content/uploads/2017/05/PhotographDefinitionPost-940x425.png" /> */}
+        <CarouselImgStyle alt="asdf" src={image} />
         <CardContent
           sx={{
             bottom: 0,
@@ -74,7 +74,7 @@ function CarouselItem({ item, isActive }) {
                   display: 'block'
                 }}
               >
-                Featured App
+                Featured News
               </Typography>
             </motion.div>
             <motion.div variants={varFadeInRight}>

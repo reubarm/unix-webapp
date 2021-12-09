@@ -43,7 +43,7 @@ export default function GeneralApp() {
                 <AppTotalDownloads />
               </Grid>
 
-              <Grid item xs={12} style={{ paddingTop: '0' }}>
+              <Grid item xs={12} style={{ paddingTop: '10px' }}>
                 <BookingNewestBooking />
               </Grid>
 
@@ -55,6 +55,9 @@ export default function GeneralApp() {
 
           <Grid item xs={12} md={3} lg={3}>
             <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <AppFeatured />
+              </Grid>
               <Grid item xs={12}>
                 <AppTopInstalledCountries />
               </Grid>
