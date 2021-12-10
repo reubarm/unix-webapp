@@ -8,9 +8,9 @@ import { styled } from '@mui/material/styles';
 import { Button, Box, Link, Container, Typography, Stack, TextField } from '@mui/material';
 // routes
 import axios from 'axios';
-import { PATH_DASHBOARD } from '../../../routes/paths';
+import { PATH_DASHBOARD } from '../routes/paths';
 //
-import { varFadeIn, varFadeInUp, varWrapEnter, varFadeInRight } from '../../animate';
+import { varFadeIn, varFadeInUp, varWrapEnter, varFadeInRight } from '../components/animate';
 
 // ----------------------------------------------------------------------
 

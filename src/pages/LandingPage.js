@@ -31,15 +31,6 @@ export default function LandingPage() {
   return (
     <RootStyle title="Unix Gaming" id="move_top">
       <LandingHero />
-      <ContentStyle>
-        <LandingMinimal />
-        <LandingHugePackElements />
-        <LandingDarkMode />
-        <LandingThemeColor />
-        <LandingCleanInterfaces />
-        <LandingPricingPlans />
-        <LandingAdvertisement />
-      </ContentStyle>
     </RootStyle>
   );
 }

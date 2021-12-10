@@ -19,9 +19,9 @@ export const PATH_DASHBOARD = {
     pageTwo: path(ROOTS_DASHBOARD, '/launchpad'),
     pageThree: path(ROOTS_DASHBOARD, '/dao'),
     pageFour: path(ROOTS_DASHBOARD, '/roadmap'),
-    pageFive: path(ROOTS_DASHBOARD, '/team')
-    // pageTwo: social('https://unixplaytoearn.com'),
-    // pageThree: social('https://yield.unixgaming.org')
+    pageFive: path(ROOTS_DASHBOARD, '/team'),
+    Register: path(ROOTS_DASHBOARD, '/register'),
+    LandingPage: path(ROOTS_DASHBOARD, '/landing')
   },
   app: {
     pageFour: social('http://t.me/unix_token'),

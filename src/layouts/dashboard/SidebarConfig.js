@@ -32,7 +32,9 @@ const sidebarConfig = [
       { title: 'Dashboard', path: PATH_DASHBOARD.general.pageOne, icon: ICONS.dashboard },
       { title: 'Staking', path: PATH_DASHBOARD.general.pageThree, icon: ICONS.analytics },
       { title: 'Analytics', path: PATH_DASHBOARD.general.pageThree, icon: ICONS.ecommerce },
-      { title: 'Play to Earn', path: PATH_DASHBOARD.general.pageTwo, icon: ICONS.facebook }
+      { title: 'Play to Earn', path: PATH_DASHBOARD.general.pageTwo, icon: ICONS.facebook },
+      { title: 'Register', path: PATH_DASHBOARD.general.Register, icon: ICONS.facebook },
+      { title: 'landing', path: PATH_DASHBOARD.general.LandingPage, icon: ICONS.facebook }
     ]
   },
 

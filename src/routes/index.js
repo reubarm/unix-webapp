@@ -47,7 +47,8 @@ export default function Router() {
         { path: 'dao', element: <PageThree /> },
         { path: 'roadmap', element: <PageFour /> },
         { path: 'team', element: <PageFive /> },
-        // { path: 'five', element: <PageFive /> },
+        { path: 'register', element: <Register /> },
+        { path: 'landing', element: <LandingPage /> },
 
         {
           path: 'app',
@@ -87,7 +88,7 @@ const PageTwo = Loadable(lazy(() => import('../pages/PageTwo')));
 const PageThree = Loadable(lazy(() => import('../pages/PageThree')));
 const PageFour = Loadable(lazy(() => import('../pages/PageFour')));
 const PageFive = Loadable(lazy(() => import('../pages/PageFive')));
-const PageSix = Loadable(lazy(() => import('../pages/PageSix')));
+const Register = Loadable(lazy(() => import('../pages/Register')));
 const NotFound = Loadable(lazy(() => import('../pages/Page404')));
 // Main
 const LandingPage = Loadable(lazy(() => import('../pages/LandingPage')));
