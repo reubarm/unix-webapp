@@ -72,7 +72,7 @@ const Form = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [telegram, setTelegram] = useState('');
-  const [wallet, setWallet] = useState('');
+  // const [wallet, setWallet] = useState('');
 
   const [success, setSuccess] = useState(false);
 
@@ -83,8 +83,8 @@ const Form = () => {
       Id: 10,
       Name: name,
       Email: email,
-      Telegram: telegram,
-      Wallet: wallet
+      Telegram: telegram
+      // Wallet: wallet
     };
 
     // Add one line to the sheet
@@ -101,6 +101,7 @@ const Form = () => {
         // The response comes here
         console.log(data);
         setSuccess(true);
+        window.location.href = 'https://docs.google.com/forms/d/10KsyMWBGYv46sLcquphsRX13qoODGIqvob4icf7VkSY/edit';
       })
       .catch((error) => {
         // Errors are reported there
@@ -135,12 +136,12 @@ const Form = () => {
           onChange={(e) => setTelegram(e.target.value)}
           className="mobile"
         />
-        <TextField
+        {/* <TextField
           label="ERC20 Wallet Address"
           id="outlined-size-normal"
           onChange={(e) => setWallet(e.target.value)}
           className="mobile"
-        />
+        /> */}
       </Stack>
       <br />
 
