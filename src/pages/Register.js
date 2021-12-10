@@ -69,9 +69,10 @@ const HeroImgStyle = styled(motion.img)(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 const Form = () => {
-  const [name, setName] = useState('asdf');
-  const [email, setEmail] = useState('asdf');
-  const [telegram, setTelegram] = useState('asdf');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [telegram, setTelegram] = useState('');
+  const [wallet, setWallet] = useState('');
 
   const [success, setSuccess] = useState(false);
 
@@ -82,7 +83,8 @@ const Form = () => {
       Id: 10,
       Name: name,
       Email: email,
-      Telegram: telegram
+      Telegram: telegram,
+      Wallet: wallet
     };
 
     // Add one line to the sheet
@@ -111,7 +113,7 @@ const Form = () => {
       <Stack
         component={motion.div}
         variants={varFadeInRight}
-        direction="row"
+        direction="column"
         spacing={1}
         justifyContent={{ xs: 'center', md: 'flex-start' }}
       >
@@ -133,6 +135,12 @@ const Form = () => {
           onChange={(e) => setTelegram(e.target.value)}
           className="mobile"
         />
+        <TextField
+          label="ERC20 Wallet Address"
+          id="outlined-size-normal"
+          onChange={(e) => setWallet(e.target.value)}
+          className="mobile"
+        />
       </Stack>
       <br />
 
@@ -142,7 +150,7 @@ const Form = () => {
           variant="contained"
           type="submit"
           onClick={handleSubmit}
-          startIcon={<Icon icon={flashFill} width={20} height={20} />}
+          endIcon={<Icon icon={flashFill} width={20} height={20} />}
         >
           Register to Win
         </Button>
@@ -175,17 +183,17 @@ export default function LandingHero() {
           <ContentStyle>
             <motion.div variants={varFadeInRight}>
               <Typography variant="h1" sx={{ color: 'common.white' }}>
-                Register to win todays
+                UniX X Nitro
                 <Typography component="span" variant="h1" sx={{ color: 'primary.main' }}>
-                  &nbsp;Airdrop
+                  &nbsp;250 NFT Airdrop
                 </Typography>
               </Typography>
             </motion.div>
 
             <motion.div variants={varFadeInRight}>
               <Typography sx={{ color: 'common.white' }}>
-                Curabitur turpis. Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod
-                ligula urna in dolor. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.
+                We are happy to announce a new partnership with Nitro League ($NITRO) 🕹 and for this partnership we can
+                give our UniX community an exclusive NFT airdrop of 250 NFTs!
               </Typography>
             </motion.div>
 
