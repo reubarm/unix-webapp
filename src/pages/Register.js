@@ -11,13 +11,14 @@ import axios from 'axios';
 import { PATH_DASHBOARD } from '../routes/paths';
 //
 import { varFadeIn, varFadeInUp, varWrapEnter, varFadeInRight } from '../components/animate';
+import '../components/general-app/test.css';
 
 // ----------------------------------------------------------------------
 
 const RootStyle = styled(motion.div)(({ theme }) => ({
   position: 'relative',
   backgroundColor: theme.palette.grey[400],
-  [theme.breakpoints.up('md')]: {
+  [theme.breakpoints.up('xl')]: {
     top: 0,
     left: 0,
     width: '100%',
@@ -114,9 +115,24 @@ const Form = () => {
         spacing={1}
         justifyContent={{ xs: 'center', md: 'flex-start' }}
       >
-        <TextField label="Name" id="outlined-size-normal" onChange={(e) => setName(e.target.value)} />
-        <TextField label="Email" id="outlined-size-normal" onChange={(e) => setEmail(e.target.value)} />
-        <TextField label="Telegram" id="outlined-size-normal" onChange={(e) => setTelegram(e.target.value)} />
+        <TextField
+          label="Name"
+          id="outlined-size-normal"
+          onChange={(e) => setName(e.target.value)}
+          className="mobile"
+        />
+        <TextField
+          label="Email"
+          id="outlined-size-normal"
+          onChange={(e) => setEmail(e.target.value)}
+          className="mobile"
+        />
+        <TextField
+          label="Telegram"
+          id="outlined-size-normal"
+          onChange={(e) => setTelegram(e.target.value)}
+          className="mobile"
+        />
       </Stack>
       <br />
 
@@ -152,6 +168,7 @@ export default function LandingHero() {
           alt="hero"
           src="https://miro.medium.com/max/1400/1*6A_cOfu7NqZZl16RJxEwSw.png"
           variants={varFadeInUp}
+          className="hide-mb"
         />
 
         <Container maxWidth="lg">
