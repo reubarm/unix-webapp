@@ -184,9 +184,9 @@ export default function LandingHero() {
           <ContentStyle>
             <motion.div variants={varFadeInRight}>
               <Typography variant="h1" sx={{ color: 'common.white' }}>
-                UniX X Nitro 250
+                UniX X Nitro
                 <Typography component="span" variant="h1" sx={{ color: 'primary.main' }}>
-                  &nbsp;NFT Airdrop
+                  &nbsp;250 NFT Airdrop
                 </Typography>
               </Typography>
             </motion.div>
