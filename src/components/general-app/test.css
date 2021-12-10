@@ -12,7 +12,7 @@
     display: none!important;
   }
   .mobile {
-    display: block;
+    width: 100%!important;
   }
 }
 
