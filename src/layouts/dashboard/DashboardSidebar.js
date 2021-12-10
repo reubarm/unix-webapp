@@ -140,7 +140,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       >
         <Stack direction="row" alignItems="center" justifyContent="space-between">
           <Box component={RouterLink} to="/" sx={{ display: 'inline-flex' }}>
-            <img src="/logo.png" alt="logo" width="150" />
+            <img src="/logo.png" alt="logo" width="150" className="hide-mb" />
           </Box>
 
           <MHidden width="lgDown">
@@ -153,6 +153,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
             alt="My Avatar"
             src="https://img.api.cryptorank.io/coins/unix%20gaming1637920085802.png"
             sx={{ mx: 'auto', mb: 2 }}
+            className="hide-mb"
           />
         ) : (
           <Link underline="none" component={RouterLink} to="#">
