@@ -154,6 +154,7 @@ export default function AppNewInvoice() {
   }, []);
 
   // ----------------------------------------------------------------------
+  let test;
 
   return (
     <>
@@ -248,13 +249,39 @@ export default function AppNewInvoice() {
                             alt={game.Name}
                             style={{ height: '60px', width: '60px', borderRadius: '10px', marginLeft: '-15px' }}
                           />
+
                           <span style={{ margin: '20px', fontSize: '16px', fontWeight: '900' }}>{game.Name}</span>
                         </TableCell>
                       </a>
                     </span>
                     {/* <TableCell>{game.Blockchain}</TableCell> */}
                     <TableCell>{game.F2P}</TableCell>
-                    <TableCell>{game.Device}</TableCell>
+                    <TableCell sx={{ textAlign: 'left' }}>
+                      <img
+                        src={game.Device.includes('Web') ? '/web.png' : '/none.png'}
+                        className={game.Device.includes('Web') ? '' : 'hide'}
+                        alt={game.Name}
+                        style={{ height: '20px', marginLeft: '10px', display: 'inline' }}
+                      />
+                      <img
+                        src={game.Device.includes('Android') ? '/android.png' : '/none.png'}
+                        className={game.Device.includes('Android') ? '' : 'hide'}
+                        alt={game.Name}
+                        style={{ height: '20px', marginLeft: '10px', display: 'inline' }}
+                      />
+                      <img
+                        src={game.Device.includes('Windows') ? '/windows.png' : '/none.png'}
+                        className={game.Device.includes('Windows') ? '' : 'hide'}
+                        alt={game.Name}
+                        style={{ height: '20px', marginLeft: '10px', display: 'inline' }}
+                      />
+                      <img
+                        src={game.Device.includes('iOS') ? '/apple.png' : '/none.png'}
+                        className={game.Device.includes('iOS') ? '' : 'hide'}
+                        alt={game.Name}
+                        style={{ height: '20px', marginLeft: '10px', display: 'inline' }}
+                      />
+                    </TableCell>
                     <TableCell>
                       <Avatar src={game.Blockicon} alt={game.Name} />
                     </TableCell>

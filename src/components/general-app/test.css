@@ -39,3 +39,7 @@ a:hover {
   color: white!important;
   text-transform: none!important;
 }
+
+.hide {
+  display: none!important;
+}

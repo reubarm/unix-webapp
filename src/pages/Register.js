@@ -186,7 +186,7 @@ export default function LandingHero() {
               <Typography variant="h1" sx={{ color: 'common.white' }}>
                 UniX X Nitro
                 <Typography component="span" variant="h1" sx={{ color: 'primary.main' }}>
-                  &nbsp;250 NFT Airdrop
+                  &nbsp;200 NFT Airdrop
                 </Typography>
               </Typography>
             </motion.div>
