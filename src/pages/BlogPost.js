@@ -101,7 +101,7 @@ export default function BlogPost() {
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <Card>
           <BlogPostHero post={post} />
-          <div style={{ padding: '50px' }}>
+          <div style={{ padding: '27px' }}>
             <Typography variant="h3">
               UniX Gaming Fundraise Has Officially Reached $28 Million
               <br />
