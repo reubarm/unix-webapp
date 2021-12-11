@@ -111,8 +111,9 @@ const modalPopup = {
 
 export default function AppNewInvoice() {
   const theme = useTheme();
-
   const [games, setGames] = useState([]);
+  const [extra, openExtra] = useState(false);
+  const [stats, setStats] = useState([]);
 
   useEffect(() => {
     axios
@@ -127,48 +128,144 @@ export default function AppNewInvoice() {
 
   const [count, setCount] = useState(0);
   const select = (count + 1).toString();
-  console.log(select);
-
-  // const thegame = "1";
   const selectedGame = games.filter((game) => game.Order === select);
-  // var keys = Object.keys(selectedGame);
-  // console.log(keys)
+  console.log(selectedGame);
 
-  const [extra, openExtra] = useState(false);
-
-  function showTokenDetail() {
+  function ShowTokenDetail() {
+    /* eslint-disable */
+    fetch(
+      `https://api.coingecko.com/api/v3/simple/price?ids=${selectedGame[0].Ticker}&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true`,
+      {
+        method: 'GET'
+      }
+    )
+      .then((r) => r.json())
+      .then((data) => {
+        setStats(data[selectedGame[0].Ticker]);
+        console.log(data[selectedGame[0].Ticker]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     openExtra(!extra);
   }
 
   // ----------------------------------------------------------------------
 
-  const [axie, setAxie] = useState([]);
+  const [axies, setAxies] = useState([]);
+  const [staratlas, setStaratlas] = useState([]);
+  const [sipher, setSipher] = useState([]);
+  const [splinterlands, setSplinterlands] = useState([]);
+  const [sandbox, setSandbox] = useState([]);
+  const [alienworlds, setAlienworlds] = useState([]);
+  const [plant, setPlant] = useState([]);
+  const [binemon, setBinemon] = useState([]);
+  const [heroes, setHeroes] = useState([]);
 
   useEffect(() => {
     axios
       .get('https://api.coingecko.com/api/v3/simple/price?ids=axie-infinity&vs_currencies=usd')
       .then((res) => {
-        setAxie(res.data['axie-infinity'].usd);
+        setAxies(res.data['axie-infinity'].usd);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get('https://api.coingecko.com/api/v3/simple/price?ids=star-atlas&vs_currencies=usd')
+      .then((res) => {
+        setStaratlas(res.data['star-atlas'].usd);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get('https://api.coingecko.com/api/v3/simple/price?ids=sipher&vs_currencies=usd')
+      .then((res) => {
+        setSipher(res.data['sipher'].usd);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get('https://api.coingecko.com/api/v3/simple/price?ids=splinterlands&vs_currencies=usd')
+      .then((res) => {
+        setSplinterlands(res.data['splinterlands'].usd);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get('https://api.coingecko.com/api/v3/simple/price?ids=the-sandbox&vs_currencies=usd')
+      .then((res) => {
+        setSandbox(res.data['the-sandbox'].usd);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get('https://api.coingecko.com/api/v3/simple/price?ids=alien-worlds&vs_currencies=usd')
+      .then((res) => {
+        setAlienworlds(res.data['alien-worlds'].usd);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get('https://api.coingecko.com/api/v3/simple/price?ids=plant-vs-undead-token&vs_currencies=usd')
+      .then((res) => {
+        setPlant(res.data['plant-vs-undead-token'].usd);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get('https://api.coingecko.com/api/v3/simple/price?ids=binemon&vs_currencies=usd')
+      .then((res) => {
+        setBinemon(res.data['binemon'].usd);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get('https://api.coingecko.com/api/v3/simple/price?ids=heroes-empires&vs_currencies=usd')
+      .then((res) => {
+        setHeroes(res.data['heroes-empires'].usd);
       })
       .catch((error) => console.log(error));
   }, []);
 
   // ----------------------------------------------------------------------
-  let test;
 
   return (
     <>
       {/* eslint-disable */}
-      <Modal isOpen={extra} onRequestClose={showTokenDetail} style={modalPopup}>
+      <Modal isOpen={extra} onRequestClose={ShowTokenDetail} style={modalPopup}>
         {/* <CloseModal onClick={showTokenDetail} className="close-modal">✖</CloseModal> */}
 
         {selectedGame[0] && (
           <>
             <div style={{ display: 'flex' }}>
               <Avatar src={selectedGame[0].Image} alt={selectedGame[0].Name} sx={{ height: '100px', width: '100px' }} />
-
               <h1 style={{ margin: '20px' }}>{selectedGame[0].Name}</h1>
             </div>
+
+            <br />
+            {/* <h1 style={{ margin: '20px' }}>{stats.usd}</h1>
+            <br />
+            <h1 style={{ margin: '20px' }}>{stats.usd_24h_change}</h1>
+            <br />
+            <h1 style={{ margin: '20px' }}>{stats.usd_24h_vol}</h1>
+            <br />
+            <h1 style={{ margin: '20px' }}>{stats.usd_market_cap}</h1> */}
             <br />
             <br />
             <hr />
@@ -228,7 +325,7 @@ export default function AppNewInvoice() {
                   <TableCell>Blockchain</TableCell>
                   <TableCell>Score</TableCell>
                   <TableCell>Status</TableCell>
-                  {/* <TableCell>Price</TableCell> */}
+                  <TableCell>Price</TableCell>
                 </TableRow>
               </TableHead>
 
@@ -242,14 +339,13 @@ export default function AppNewInvoice() {
                 >
                   <TableRow key={game.Order}>
                     <span onClick={() => setCount(keys)}>
-                      <a id={keys} onClick={showTokenDetail} style={{ cursor: 'pointer' }}>
+                      <a id={keys} onClick={ShowTokenDetail} style={{ cursor: 'pointer' }}>
                         <TableCell sx={{ display: 'flex' }}>
                           <img
                             src={game.Image}
                             alt={game.Name}
                             style={{ height: '60px', width: '60px', borderRadius: '10px', marginLeft: '-15px' }}
                           />
-
                           <span style={{ margin: '20px', fontSize: '16px', fontWeight: '900' }}>{game.Name}</span>
                         </TableCell>
                       </a>
@@ -283,7 +379,7 @@ export default function AppNewInvoice() {
                       />
                     </TableCell>
                     <TableCell>
-                      <Avatar src={game.Blockicon} alt={game.Name} />
+                      <Avatar src={game.Blockicon} alt={game.Name} sx={{ height: '30px', width: '30px' }} />
                     </TableCell>
                     <TableCell>{game.Score}</TableCell>
                     <TableCell sx={{ textAlign: 'left' }}>
@@ -295,6 +391,35 @@ export default function AppNewInvoice() {
                       >
                         {game.Status}
                       </Label>
+                    </TableCell>
+                    <TableCell>
+                      <div className={game.Ticker.includes('axie-infinity') ? '' : 'hide'}>
+                        <b>${game.Ticker.includes('axie-infinity') ? axies : 'NA'}</b>
+                      </div>
+                      <div className={game.Ticker.includes('star-atlas') ? '' : 'hide'}>
+                        <b>${game.Ticker.includes('star-atlas') ? staratlas : 'NA'}</b>
+                      </div>
+                      <div className={game.Ticker.includes('sipher') ? '' : 'hide'}>
+                        <b>${game.Ticker.includes('sipher') ? sipher : 'NA'}</b>
+                      </div>
+                      <div className={game.Ticker.includes('splinterlands') ? '' : 'hide'}>
+                        <b>${game.Ticker.includes('splinterlands') ? splinterlands : 'NA'}</b>
+                      </div>
+                      <div className={game.Ticker.includes('sandbox') ? '' : 'hide'}>
+                        <b>${game.Ticker.includes('sandbox') ? sandbox : 'NA'}</b>
+                      </div>
+                      <div className={game.Ticker.includes('alien-worlds') ? '' : 'hide'}>
+                        <b>${game.Ticker.includes('alien-worlds') ? alienworlds : 'NA'}</b>
+                      </div>
+                      <div className={game.Ticker.includes('plant-vs-undead-token') ? '' : 'hide'}>
+                        <b>${game.Ticker.includes('plant-vs-undead-token') ? plant : 'NA'}</b>
+                      </div>
+                      <div className={game.Ticker.includes('binemon') ? '' : 'hide'}>
+                        <b>${game.Ticker.includes('binemon') ? binemon : 'NA'}</b>
+                      </div>
+                      <div className={game.Ticker.includes('heroes-empires') ? '' : 'hide'}>
+                        <b>${game.Ticker.includes('heroes-empires') ? heroes : 'NA'}</b>
+                      </div>
                     </TableCell>
                     {/* <TableCell>${axie}</TableCell> */}
                     {/* <TableCell align="right">
