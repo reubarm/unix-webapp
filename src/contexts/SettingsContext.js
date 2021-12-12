@@ -18,7 +18,7 @@ const PRIMARY_COLOR = [
     name: 'purple',
     lighter: '#EBD6FD',
     light: '#B985F4',
-    main: '#7635dc',
+    main: '#a081c3',
     dark: '#431A9E',
     darker: '#200A69',
     contrastText: '#fff'

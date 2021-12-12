@@ -50,6 +50,7 @@ export default function Router() {
         { path: 'register', element: <Register /> },
         { path: 'landing', element: <LandingPage /> },
         { path: 'blog', element: <BlogPost /> },
+        { path: 'add', element: <BlogNewPost /> },
 
         {
           path: 'app',
@@ -92,5 +93,6 @@ const PageFive = Loadable(lazy(() => import('../pages/PageFive')));
 const Register = Loadable(lazy(() => import('../pages/Register')));
 const NotFound = Loadable(lazy(() => import('../pages/Page404')));
 const BlogPost = Loadable(lazy(() => import('../pages/BlogPost')));
+const BlogNewPost = Loadable(lazy(() => import('../pages/BlogNewPost')));
 // Main
 const LandingPage = Loadable(lazy(() => import('../pages/LandingPage')));
