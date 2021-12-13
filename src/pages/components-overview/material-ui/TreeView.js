@@ -69,7 +69,7 @@ const StyledTreeItem = styled((props) => <TreeItem {...props} TransitionComponen
 
 export default function TreesViewComponent() {
   return (
-    <RootStyle title="Components: Tree View | Minimal-UI">
+    <RootStyle title="Components: Tree View | Unix Gaming">
       <Box
         sx={{
           pt: 6,

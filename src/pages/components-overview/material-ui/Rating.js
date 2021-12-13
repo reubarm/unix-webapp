@@ -84,7 +84,7 @@ export default function RatingComponent() {
   const [hover, setHover] = useState(-1);
 
   return (
-    <RootStyle title="Components: Rating | Minimal-UI">
+    <RootStyle title="Components: Rating | Unix Gaming">
       <Box
         sx={{
           pt: 6,

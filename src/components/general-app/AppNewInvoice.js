@@ -441,7 +441,7 @@ export default function AppNewInvoice() {
             color="inherit"
             endIcon={<Icon icon={arrowIosForwardFill} />}
           >
-            Add a New Game
+            Add New Games
           </Button>
         </Box>
       </Card>

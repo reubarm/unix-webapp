@@ -25,7 +25,7 @@ const RootStyle = styled(Page)(({ theme }) => ({
 
 export default function Carousel() {
   return (
-    <RootStyle title="Components: Carousel | Minimal-UI">
+    <RootStyle title="Components: Carousel | Unix Gaming">
       <Box
         sx={{
           pt: 6,

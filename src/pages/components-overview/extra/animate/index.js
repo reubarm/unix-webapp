@@ -40,7 +40,7 @@ export default function Animate() {
   };
 
   return (
-    <RootStyle title="Components: Animate | Minimal-UI">
+    <RootStyle title="Components: Animate | Unix Gaming">
       <Box
         sx={{
           pt: 6,

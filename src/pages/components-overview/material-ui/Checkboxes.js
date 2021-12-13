@@ -45,7 +45,7 @@ export default function RadioButtons() {
   };
 
   return (
-    <RootStyle title="Components: Checkboxes | Minimal-UI">
+    <RootStyle title="Components: Checkboxes | Unix Gaming">
       <Box
         sx={{
           pt: 6,

@@ -95,7 +95,7 @@ export default function BlogNewPost() {
   };
 
   return (
-    <Page title="Page Three | Minimal-UI">
+    <Page title="Add a New Game to Unix">
       <Container maxWidth="lg">
         <Grid container sx={{ margin: '0 auto' }}>
           <Grid item xs={12} xl={10}>
