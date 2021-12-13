@@ -266,11 +266,11 @@ export default function AppNewInvoice() {
             <h1 style={{ margin: '20px' }}>{stats.usd_24h_vol}</h1>
             <br />
             <h1 style={{ margin: '20px' }}>{stats.usd_market_cap}</h1>
-            <br />
+            <br />*/}
             <br />
             <hr />
             <br />
-            <h3>{selectedGame[0].Description}</h3>*/}
+            <h3>{selectedGame[0].Description}</h3>
             <br /> 
             <hr />
             <br />
