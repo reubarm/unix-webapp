@@ -1,3 +1,5 @@
+import { useRef, useState, useEffect } from 'react';
+import axios from 'axios';
 import { Icon } from '@iconify/react';
 import ReactApexChart from 'react-apexcharts';
 import trendingUpFill from '@iconify/icons-eva/trending-up-fill';
@@ -29,6 +31,17 @@ const TOTAL_USER = 191546;
 const CHART_DATA = [{ data: [20, 41, 63, 33, 28, 35, 50, 46, 11, 26] }];
 
 export default function AppTotalActiveUsers() {
+  const [amount, setAmount] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('https://opensheet.vercel.app/1q2ty_Xk1sy-SuasEDzEwHPc6w2U8mcqrXs9HrPA6R_Y/Amounts')
+      .then((res) => {
+        setAmount(res.data[0]['Community Members']);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
   const theme = useTheme();
 
   const chartOptions = {
@@ -69,7 +82,7 @@ export default function AppTotalActiveUsers() {
           </Typography>
         </Stack>
 
-        <Typography variant="h3">{fNumber(TOTAL_USER)}+</Typography>
+        <Typography variant="h3">{fNumber(amount)}+</Typography>
       </Box>
 
       <ReactApexChart

@@ -50,7 +50,7 @@ export default function Router() {
         { path: 'register', element: <Register /> },
         { path: 'landing', element: <LandingPage /> },
         { path: 'blog', element: <BlogPost /> },
-        { path: 'add', element: <BlogNewPost /> },
+        { path: 'add-game', element: <BlogNewPost /> },
 
         {
           path: 'app',

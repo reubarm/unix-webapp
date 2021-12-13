@@ -7,8 +7,6 @@ import { Link as RouterLink } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import {
   Button,
-  Box,
-  Link,
   Container,
   Typography,
   Stack,
@@ -16,10 +14,12 @@ import {
   Select,
   MenuItem,
   InputLabel,
+  FormLabel,
   TextField,
   Grid,
+  ToggleButtonGroup,
   Card,
-  CardHeader,
+  ToggleButton,
   CardContent
 } from '@mui/material';
 // routes
@@ -38,9 +38,15 @@ export default function BlogNewPost() {
   const [genre, setGenre] = useState('');
   const [blockchain, setBlockchain] = useState('');
   const [website, setWebsite] = useState('');
-  const [device, setDevice] = useState('');
+  const [ticker, setTicker] = useState('');
   const [status, setStatus] = useState('');
   const [contract, setContract] = useState('');
+
+  const [formats, setFormats] = React.useState(() => []);
+
+  const handleFormat = (event, newFormats) => {
+    setFormats(newFormats);
+  };
 
   const [success, setSuccess] = useState(false);
 
@@ -54,7 +60,8 @@ export default function BlogNewPost() {
       Genre: genre,
       Blockchain: blockchain,
       Web: website,
-      Device: device,
+      Ticker: ticker,
+      Device: formats,
       Status: status,
       Contract: contract
     };
@@ -140,11 +147,28 @@ export default function BlogNewPost() {
                       className="mobile"
                     />
                     <TextField
-                      label="Devices"
+                      label="API Name"
                       id="outlined-size-normal"
-                      onChange={(e) => setDevice(e.target.value)}
+                      onChange={(e) => setTicker(e.target.value)}
                       className="mobile"
                     />
+
+                    <FormLabel component="legend">Devices</FormLabel>
+                    <ToggleButtonGroup value={formats} onChange={handleFormat} aria-label="text formatting">
+                      <ToggleButton value="Web" aria-label="Web">
+                        Web
+                      </ToggleButton>
+                      <ToggleButton value="Android" aria-label="Android">
+                        Android
+                      </ToggleButton>
+                      <ToggleButton value="iOS" aria-label="iOS">
+                        iOS
+                      </ToggleButton>
+                      <ToggleButton value="Windows" aria-label="Windows">
+                        Windows
+                      </ToggleButton>
+                    </ToggleButtonGroup>
+
                     <FormControl fullWidth>
                       <InputLabel id="demo-simple-select-label">Status</InputLabel>
                       <Select
