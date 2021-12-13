@@ -40,7 +40,7 @@ export default function BlogNewPost() {
   const [website, setWebsite] = useState('');
   const [device, setDevice] = useState('');
   const [status, setStatus] = useState('');
-  // const [wallet, setWallet] = useState('');
+  const [contract, setContract] = useState('');
 
   const [success, setSuccess] = useState(false);
 
@@ -55,7 +55,8 @@ export default function BlogNewPost() {
       Blockchain: blockchain,
       Web: website,
       Device: device,
-      Status: status
+      Status: status,
+      Contract: contract
     };
 
     // Add one line to the sheet
@@ -144,10 +145,26 @@ export default function BlogNewPost() {
                       onChange={(e) => setDevice(e.target.value)}
                       className="mobile"
                     />
+                    <FormControl fullWidth>
+                      <InputLabel id="demo-simple-select-label">Status</InputLabel>
+                      <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        value={status}
+                        label="Age"
+                        onChange={(e) => setStatus(e.target.value)}
+                      >
+                        <MenuItem value="Alpha">Alpha</MenuItem>
+                        <MenuItem value="Binance">Beta</MenuItem>
+                        <MenuItem value="Development">Development</MenuItem>
+                        <MenuItem value="Live">Live</MenuItem>
+                        <MenuItem value="Presale">Presale</MenuItem>
+                      </Select>
+                    </FormControl>
                     <TextField
-                      label="Status"
+                      label="Contract Address"
                       id="outlined-size-normal"
-                      onChange={(e) => setStatus(e.target.value)}
+                      onChange={(e) => setContract(e.target.value)}
                       className="mobile"
                     />
                     <br />

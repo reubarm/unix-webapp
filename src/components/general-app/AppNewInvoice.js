@@ -258,7 +258,7 @@ export default function AppNewInvoice() {
               <h1 style={{ margin: '20px' }}>{selectedGame[0].Name}</h1>
             </div>
 
-            <br />
+            {/* <br />
             <h1 style={{ margin: '20px' }}>{stats.usd}</h1>
             <br />
             <h1 style={{ margin: '20px' }}>{stats.usd_24h_change}</h1>
@@ -270,8 +270,8 @@ export default function AppNewInvoice() {
             <br />
             <hr />
             <br />
-            <h3>{selectedGame[0].Description}</h3>
-            <br />
+            <h3>{selectedGame[0].Description}</h3>*/}
+            <br /> 
             <hr />
             <br />
             <h3>
