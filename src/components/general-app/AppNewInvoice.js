@@ -436,13 +436,12 @@ export default function AppNewInvoice() {
 
         <Box sx={{ p: 2, textAlign: 'right' }}>
           <Button
-            to="#"
+            href="/add-game"
             size="small"
             color="inherit"
-            component={RouterLink}
             endIcon={<Icon icon={arrowIosForwardFill} />}
           >
-            View All
+            Add a New Game
           </Button>
         </Box>
       </Card>

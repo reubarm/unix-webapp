@@ -48,6 +48,12 @@ export default function BlogNewPost() {
     setFormats(newFormats);
   };
 
+  const [models, setModels] = React.useState(() => []);
+
+  const handleModel = (event, newModels) => {
+    setModels(newModels);
+  };
+
   const [success, setSuccess] = useState(false);
 
   const handleSubmit = (e) => {
@@ -63,6 +69,7 @@ export default function BlogNewPost() {
       Ticker: ticker,
       Device: formats,
       Status: status,
+      Label: models,
       Contract: contract
     };
 
@@ -185,6 +192,21 @@ export default function BlogNewPost() {
                         <MenuItem value="Presale">Presale</MenuItem>
                       </Select>
                     </FormControl>
+                    <FormLabel component="legend">Model</FormLabel>
+                    <ToggleButtonGroup value={models} onChange={handleModel} aria-label="text formatting">
+                      <ToggleButton value="Free To Play" aria-label="Free To Play">
+                        Free To Play
+                      </ToggleButton>
+                      <ToggleButton value="Play To Earn" aria-label="Play To Earn">
+                        Play To Earn
+                      </ToggleButton>
+                      <ToggleButton value="Crypto" aria-label="Crypto">
+                        Crypto Support
+                      </ToggleButton>
+                      <ToggleButton value="NFT" aria-label="NFT">
+                        NFT Support
+                      </ToggleButton>
+                    </ToggleButtonGroup>
                     <TextField
                       label="Contract Address"
                       id="outlined-size-normal"
