@@ -36,10 +36,22 @@
 
 a:hover {
   text-decoration: none!important;
-  color: #e3e3e3!important;
+  color: #a0a0a0!important;
   text-transform: none!important;
 }
 
 .hide {
   display: none!important;
+}
+
+.video-responsive {
+  padding-bottom: 10px;
+  display: flex;
+}
+
+.video-responsive iframe {
+  height: 100%;
+  width: 100%;
+  max-width: 426px;
+  max-height: 240px;
 }

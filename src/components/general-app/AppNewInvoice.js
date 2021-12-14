@@ -49,46 +49,17 @@ const MOCK_INVOICES = [...Array(5)].map((_, index) => ({
 
 // ----------------------------------------------------------------------
 
-function MoreMenuButton() {
-  const menuRef = useRef(null);
-  const [open, setOpen] = useState(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  return (
-    <>
-      <>
-        <MIconButton ref={menuRef} size="large" onClick={handleOpen}>
-          <Icon icon={moreVerticalFill} width={20} height={20} />
-        </MIconButton>
-      </>
-
-      <Menu
-        open={open}
-        anchorEl={menuRef.current}
-        onClose={handleClose}
-        PaperProps={{
-          sx: { width: 200, maxWidth: '100%' }
-        }}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      >
-        <MenuItem>
-          <Icon icon={shareFill} width={20} height={20} />
-          <Typography variant="body2" sx={{ ml: 2 }}>
-            Share
-          </Typography>
-        </MenuItem>
-      </Menu>
-    </>
-  );
-}
+const YoutubeEmbed = ({ embedId }) => (
+  <div className="video-responsive">
+    <iframe
+      src={`https://www.youtube.com/embed/${embedId}`}
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      title="YouTube Video"
+    />
+  </div>
+);
 
 const modalPopup = {
   content: {
@@ -306,9 +277,12 @@ export default function AppNewInvoice() {
             <br />
             <hr style={{ borderColor: '#5a6b7a' }} />
             <br />
-            <h1>
-              Social Score: <span style={{ color: '#e481ff' }}>{selectedGame[0].Score}</span>
-            </h1>
+            <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
+              <h1>
+                Social Score: <span style={{ color: '#e481ff' }}>{selectedGame[0].Score}</span>
+              </h1>
+              <YoutubeEmbed embedId="-l9QzjghXi0" />
+            </div>
             <br />
             <hr style={{ borderColor: '#5a6b7a' }} />
             <br />
@@ -369,7 +343,6 @@ export default function AppNewInvoice() {
                         </a>
                       </span>
                       <TableCell>{game.Label.replace(/[\[\]"]+/g, '')}</TableCell>
-                      <TableCell>{game.F2P}</TableCell>
                       <TableCell sx={{ textAlign: 'left' }}>
                         <img
                           src={game.Device.includes('Web') ? '/web.png' : '/none.png'}
