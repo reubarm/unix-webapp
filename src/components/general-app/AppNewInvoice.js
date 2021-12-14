@@ -44,8 +44,7 @@ import './test.css';
 const MOCK_INVOICES = [...Array(5)].map((_, index) => ({
   id: mockData.id(index),
   price: mockData.number.price(index),
-  category: (index === 0 && 'Android') || (index === 2 && 'Mac') || 'Windows',
-  status: (index === 0 && 'paid') || (index === 2 && 'out_of_date') || 'in_progress'
+  category: (index === 0 && 'Android') || (index === 2 && 'Mac') || 'Windows'
 }));
 
 // ----------------------------------------------------------------------
@@ -133,20 +132,20 @@ export default function AppNewInvoice() {
 
   function ShowTokenDetail() {
     /* eslint-disable */
-    fetch(
-      `https://api.coingecko.com/api/v3/simple/price?ids=${selectedGame[0].Ticker}&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true`,
-      {
-        method: 'GET'
-      }
-    )
-      .then((r) => r.json())
-      .then((data) => {
-        setStats(data[selectedGame[0].Ticker]);
-        console.log(data[selectedGame[0].Ticker]);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // fetch(
+    //   `https://api.coingecko.com/api/v3/simple/price?ids=${selectedGame[0].Ticker}&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true`,
+    //   {
+    //     method: 'GET'
+    //   }
+    // )
+    //   .then((r) => r.json())
+    //   .then((data) => {
+    //     setStats(data[selectedGame[0].Ticker]);
+    //     console.log(data[selectedGame[0].Ticker]);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
     openExtra(!extra);
   }
 
@@ -254,7 +253,13 @@ export default function AppNewInvoice() {
         {selectedGame[0] && (
           <>
             <div style={{ display: 'flex' }}>
-              <Avatar src={selectedGame[0].Image} alt={selectedGame[0].Name} sx={{ height: '100px', width: '100px' }} />
+              <img
+                src={selectedGame[0].Image}
+                alt={selectedGame[0].Name}
+                sx={{ height: '50px!important', width: '200px!important', borderRadius: '30px' }}
+                height="5 0"
+                width="150"
+              />
               <h1 style={{ margin: '20px' }}>{selectedGame[0].Name}</h1>
             </div>
 
@@ -271,7 +276,7 @@ export default function AppNewInvoice() {
             <hr />
             <br />
             <h3>{selectedGame[0].Description}</h3>
-            <br /> 
+            <br />
             <hr />
             <br />
             <h3>
@@ -337,95 +342,101 @@ export default function AppNewInvoice() {
                     borderTop: '10px solid #212B36'
                   }}
                 >
-                  <TableRow key={game.Order}>
-                    <span onClick={() => setCount(keys)}>
-                      <a id={keys} onClick={ShowTokenDetail} style={{ cursor: 'pointer' }}>
-                        <TableCell sx={{ display: 'flex' }}>
-                          <img
-                            src={game.Image}
-                            alt={game.Name}
-                            style={{ height: '50px', width: '50px', borderRadius: '10px', marginLeft: '-15px' }}
-                          />
-                          <span style={{ margin: '10px 15px', fontSize: '16px', fontWeight: '900' }}>{game.Name}</span>
-                        </TableCell>
-                      </a>
-                    </span>
-                    {/* <TableCell>{game.Blockchain}</TableCell> */}
-                    <TableCell>{game.F2P}</TableCell>
-                    <TableCell sx={{ textAlign: 'left' }}>
-                      <img
-                        src={game.Device.includes('Web') ? '/web.png' : '/none.png'}
-                        className={game.Device.includes('Web') ? '' : 'hide'}
-                        alt={game.Name}
-                        style={{ height: '20px', marginLeft: '10px', display: 'inline' }}
-                      />
-                      <img
-                        src={game.Device.includes('Android') ? '/android.png' : '/none.png'}
-                        className={game.Device.includes('Android') ? '' : 'hide'}
-                        alt={game.Name}
-                        style={{ height: '20px', marginLeft: '10px', display: 'inline' }}
-                      />
-                      <img
-                        src={game.Device.includes('Windows') ? '/windows.png' : '/none.png'}
-                        className={game.Device.includes('Windows') ? '' : 'hide'}
-                        alt={game.Name}
-                        style={{ height: '20px', marginLeft: '10px', display: 'inline' }}
-                      />
-                      <img
-                        src={game.Device.includes('iOS') ? '/apple.png' : '/none.png'}
-                        className={game.Device.includes('iOS') ? '' : 'hide'}
-                        alt={game.Name}
-                        style={{ height: '20px', marginLeft: '10px', display: 'inline' }}
-                      />
-                    </TableCell>
-                    <TableCell>
-                      <Avatar src={game.Blockicon} alt={game.Name} sx={{ height: '30px', width: '30px' }} />
-                    </TableCell>
-                    <TableCell>{game.Score}</TableCell>
-                    <TableCell sx={{ textAlign: 'left' }}>
-                      <Label
-                        variant={theme.palette.mode === 'light' ? 'ghost' : 'filled'}
-                        color={
-                          (game.Status === 'Develop' && 'warning') || (game.Status === 'BETA' && 'error') || 'success'
-                        }
-                      >
-                        {game.Status}
-                      </Label>
-                    </TableCell>
-                    <TableCell>
-                      <div className={game.Ticker.includes('axie-infinity') ? '' : 'hide'}>
-                        <b>${game.Ticker.includes('axie-infinity') ? axies : 'NA'}</b>
-                      </div>
-                      <div className={game.Ticker.includes('star-atlas') ? '' : 'hide'}>
-                        <b>${game.Ticker.includes('star-atlas') ? staratlas : 'NA'}</b>
-                      </div>
-                      <div className={game.Ticker.includes('sipher') ? '' : 'hide'}>
-                        <b>${game.Ticker.includes('sipher') ? sipher : 'NA'}</b>
-                      </div>
-                      <div className={game.Ticker.includes('splinterlands') ? '' : 'hide'}>
-                        <b>${game.Ticker.includes('splinterlands') ? splinterlands : 'NA'}</b>
-                      </div>
-                      <div className={game.Ticker.includes('sandbox') ? '' : 'hide'}>
-                        <b>${game.Ticker.includes('sandbox') ? sandbox : 'NA'}</b>
-                      </div>
-                      <div className={game.Ticker.includes('alien-worlds') ? '' : 'hide'}>
-                        <b>${game.Ticker.includes('alien-worlds') ? alienworlds : 'NA'}</b>
-                      </div>
-                      <div className={game.Ticker.includes('plant-vs-undead-token') ? '' : 'hide'}>
-                        <b>${game.Ticker.includes('plant-vs-undead-token') ? plant : 'NA'}</b>
-                      </div>
-                      <div className={game.Ticker.includes('binemon') ? '' : 'hide'}>
-                        <b>${game.Ticker.includes('binemon') ? binemon : 'NA'}</b>
-                      </div>
-                      <div className={game.Ticker.includes('heroes-empires') ? '' : 'hide'}>
-                        <b>${game.Ticker.includes('heroes-empires') ? heroes : 'NA'}</b>
-                      </div>
-                    </TableCell>
-                    {/* <TableCell>${axie}</TableCell> */}
-                    {/* <TableCell align="right">
+                  {game.Order && (
+                    <TableRow key={game.Order}>
+                      <span onClick={() => setCount(keys)}>
+                        <a id={keys} onClick={ShowTokenDetail} style={{ cursor: 'pointer' }}>
+                          <TableCell sx={{ display: 'flex' }}>
+                            <img
+                              src={game.Image}
+                              alt={game.Name}
+                              style={{ height: '50px', width: '50px', borderRadius: '10px', marginLeft: '-15px' }}
+                            />
+                            <span style={{ margin: '10px 15px', fontSize: '16px', fontWeight: '900' }}>
+                              {game.Name}
+                            </span>
+                          </TableCell>
+                        </a>
+                      </span>
+                      <TableCell>{game.Label.replace(/[\[\]"]+/g, '')}</TableCell>
+                      <TableCell>{game.F2P}</TableCell>
+                      <TableCell sx={{ textAlign: 'left' }}>
+                        <img
+                          src={game.Device.includes('Web') ? '/web.png' : '/none.png'}
+                          className={game.Device.includes('Web') ? '' : 'hide'}
+                          alt={game.Name}
+                          style={{ height: '20px', marginLeft: '10px', display: 'inline' }}
+                        />
+                        <img
+                          src={game.Device.includes('Android') ? '/android.png' : '/none.png'}
+                          className={game.Device.includes('Android') ? '' : 'hide'}
+                          alt={game.Name}
+                          style={{ height: '20px', marginLeft: '10px', display: 'inline' }}
+                        />
+                        <img
+                          src={game.Device.includes('Windows') ? '/windows.png' : '/none.png'}
+                          className={game.Device.includes('Windows') ? '' : 'hide'}
+                          alt={game.Name}
+                          style={{ height: '20px', marginLeft: '10px', display: 'inline' }}
+                        />
+                        <img
+                          src={game.Device.includes('iOS') ? '/apple.png' : '/none.png'}
+                          className={game.Device.includes('iOS') ? '' : 'hide'}
+                          alt={game.Name}
+                          style={{ height: '20px', marginLeft: '10px', display: 'inline' }}
+                        />
+                      </TableCell>
+                      <TableCell>
+                        <Avatar src={game.Blockicon} alt={game.Name} sx={{ height: '30px', width: '30px' }} />
+                      </TableCell>
+                      <TableCell>{game.Score}</TableCell>
+                      <TableCell sx={{ textAlign: 'left' }}>
+                        <Label
+                          variant={theme.palette.mode === 'light' ? 'ghost' : 'filled'}
+                          color={
+                            (game.Status === 'Presale' && 'warning') ||
+                            (game.Status === 'Develop' && 'error') ||
+                            'success'
+                          }
+                        >
+                          {game.Status}
+                        </Label>
+                      </TableCell>
+                      <TableCell>
+                        <div className={game.Ticker.includes('axie-infinity') ? '' : 'hide'}>
+                          <b>${game.Ticker.includes('axie-infinity') ? axies : 'NA'}</b>
+                        </div>
+                        <div className={game.Ticker.includes('star-atlas') ? '' : 'hide'}>
+                          <b>${game.Ticker.includes('star-atlas') ? staratlas : 'NA'}</b>
+                        </div>
+                        <div className={game.Ticker.includes('sipher') ? '' : 'hide'}>
+                          <b>${game.Ticker.includes('sipher') ? sipher : 'NA'}</b>
+                        </div>
+                        <div className={game.Ticker.includes('splinterlands') ? '' : 'hide'}>
+                          <b>${game.Ticker.includes('splinterlands') ? splinterlands : 'NA'}</b>
+                        </div>
+                        <div className={game.Ticker.includes('sandbox') ? '' : 'hide'}>
+                          <b>${game.Ticker.includes('sandbox') ? sandbox : 'NA'}</b>
+                        </div>
+                        <div className={game.Ticker.includes('alien-worlds') ? '' : 'hide'}>
+                          <b>${game.Ticker.includes('alien-worlds') ? alienworlds : 'NA'}</b>
+                        </div>
+                        <div className={game.Ticker.includes('plant-vs-undead-token') ? '' : 'hide'}>
+                          <b>${game.Ticker.includes('plant-vs-undead-token') ? plant : 'NA'}</b>
+                        </div>
+                        <div className={game.Ticker.includes('binemon') ? '' : 'hide'}>
+                          <b>${game.Ticker.includes('binemon') ? binemon : 'NA'}</b>
+                        </div>
+                        <div className={game.Ticker.includes('heroes-empires') ? '' : 'hide'}>
+                          <b>${game.Ticker.includes('heroes-empires') ? heroes : 'NA'}</b>
+                        </div>
+                      </TableCell>
+                      {/* <TableCell>${axie}</TableCell> */}
+                      {/* <TableCell align="right">
                       <MoreMenuButton />
                     </TableCell> */}
-                  </TableRow>
+                    </TableRow>
+                  )}
                 </TableBody>
               ))}
             </Table>
@@ -435,12 +446,7 @@ export default function AppNewInvoice() {
         <Divider />
 
         <Box sx={{ p: 2, textAlign: 'right' }}>
-          <Button
-            href="/add-game"
-            size="small"
-            color="inherit"
-            endIcon={<Icon icon={arrowIosForwardFill} />}
-          >
+          <Button href="/add-game" size="small" color="inherit" endIcon={<Icon icon={arrowIosForwardFill} />}>
             Add New Games
           </Button>
         </Box>

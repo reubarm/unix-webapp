@@ -35,12 +35,20 @@ import Page from '../components/Page';
 export default function BlogNewPost() {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
+  const [image, setImage] = useState('');
   const [genre, setGenre] = useState('');
   const [blockchain, setBlockchain] = useState('');
   const [website, setWebsite] = useState('');
   const [ticker, setTicker] = useState('');
   const [status, setStatus] = useState('');
   const [contract, setContract] = useState('');
+  const [litepaper, setLitepaper] = useState('');
+  const [investors, setInvestors] = useState('');
+  const [youtube, setYoutube] = useState('');
+  const [twitter, setTwitter] = useState('');
+  const [telegram, setTelegram] = useState('');
+  const [discord, setDiscord] = useState('');
+  const [facebook, setFacebook] = useState('');
 
   const [formats, setFormats] = React.useState(() => []);
 
@@ -63,6 +71,7 @@ export default function BlogNewPost() {
       Id: 10,
       Name: name,
       Description: description,
+      Image: image,
       Genre: genre,
       Blockchain: blockchain,
       Web: website,
@@ -70,7 +79,14 @@ export default function BlogNewPost() {
       Device: formats,
       Status: status,
       Label: models,
-      Contract: contract
+      Contract: contract,
+      Litepaper: litepaper,
+      Investors: investors,
+      Youtube: youtube,
+      Twitter: twitter,
+      Telegram: telegram,
+      Discord: discord,
+      Facebook: facebook
     };
 
     // Add one line to the sheet
@@ -126,6 +142,12 @@ export default function BlogNewPost() {
                       className="mobile"
                     />
                     <TextField
+                      label="Logo/Game Image URL"
+                      id="outlined-size-normal"
+                      onChange={(e) => setImage(e.target.value)}
+                      className="mobile"
+                    />
+                    <TextField
                       label="Genre"
                       id="outlined-size-normal"
                       onChange={(e) => setGenre(e.target.value)}
@@ -158,6 +180,7 @@ export default function BlogNewPost() {
                       id="outlined-size-normal"
                       onChange={(e) => setTicker(e.target.value)}
                       className="mobile"
+                      required
                     />
 
                     <FormLabel component="legend">Devices</FormLabel>
@@ -185,8 +208,8 @@ export default function BlogNewPost() {
                         label="Age"
                         onChange={(e) => setStatus(e.target.value)}
                       >
-                        <MenuItem value="Alpha">Alpha</MenuItem>
-                        <MenuItem value="Binance">Beta</MenuItem>
+                        <MenuItem value="ALPHA">ALPHA</MenuItem>
+                        <MenuItem value="BETA">BETA</MenuItem>
                         <MenuItem value="Development">Development</MenuItem>
                         <MenuItem value="Live">Live</MenuItem>
                         <MenuItem value="Presale">Presale</MenuItem>
@@ -208,9 +231,51 @@ export default function BlogNewPost() {
                       </ToggleButton>
                     </ToggleButtonGroup>
                     <TextField
+                      label="Litepaper"
+                      id="outlined-size-normal"
+                      onChange={(e) => setLitepaper(e.target.value)}
+                      className="mobile"
+                    />
+                    <TextField
+                      label="Backers/Investors/Advisors"
+                      id="outlined-size-normal"
+                      onChange={(e) => setInvestors(e.target.value)}
+                      className="mobile"
+                    />
+                    <TextField
                       label="Contract Address"
                       id="outlined-size-normal"
                       onChange={(e) => setContract(e.target.value)}
+                      className="mobile"
+                    />
+                    <TextField
+                      label="YouTube"
+                      id="outlined-size-normal"
+                      onChange={(e) => setYoutube(e.target.value)}
+                      className="mobile"
+                    />
+                    <TextField
+                      label="Twitter"
+                      id="outlined-size-normal"
+                      onChange={(e) => setTwitter(e.target.value)}
+                      className="mobile"
+                    />
+                    <TextField
+                      label="Telegram"
+                      id="outlined-size-normal"
+                      onChange={(e) => setTelegram(e.target.value)}
+                      className="mobile"
+                    />
+                    <TextField
+                      label="Discord"
+                      id="outlined-size-normal"
+                      onChange={(e) => setDiscord(e.target.value)}
+                      className="mobile"
+                    />
+                    <TextField
+                      label="Facebook"
+                      id="outlined-size-normal"
+                      onChange={(e) => setFacebook(e.target.value)}
                       className="mobile"
                     />
                     <br />

@@ -18,7 +18,7 @@ export default function Table(theme) {
       styleOverrides: {
         root: {
           borderBottom: 'none',
-          padding: '10px 20px!important'
+          padding: '5px 20px!important'
         },
         head: {
           color: theme.palette.text.secondary,
