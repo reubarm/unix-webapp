@@ -17,7 +17,8 @@ export default function Table(theme) {
     MuiTableCell: {
       styleOverrides: {
         root: {
-          borderBottom: 'none'
+          borderBottom: 'none',
+          padding: '10px 20px!important'
         },
         head: {
           color: theme.palette.text.secondary,

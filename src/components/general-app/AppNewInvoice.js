@@ -333,8 +333,8 @@ export default function AppNewInvoice() {
                 <TableBody
                   sx={{
                     background: '#303d4a',
-                    borderBottom: '15px solid #212B36',
-                    borderTop: '15px solid #212B36'
+                    borderBottom: '10px solid #212B36',
+                    borderTop: '10px solid #212B36'
                   }}
                 >
                   <TableRow key={game.Order}>
@@ -344,9 +344,9 @@ export default function AppNewInvoice() {
                           <img
                             src={game.Image}
                             alt={game.Name}
-                            style={{ height: '60px', width: '60px', borderRadius: '10px', marginLeft: '-15px' }}
+                            style={{ height: '50px', width: '50px', borderRadius: '10px', marginLeft: '-15px' }}
                           />
-                          <span style={{ margin: '20px', fontSize: '16px', fontWeight: '900' }}>{game.Name}</span>
+                          <span style={{ margin: '10px 15px', fontSize: '16px', fontWeight: '900' }}>{game.Name}</span>
                         </TableCell>
                       </a>
                     </span>
