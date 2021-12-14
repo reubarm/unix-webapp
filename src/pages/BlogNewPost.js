@@ -294,7 +294,8 @@ export default function BlogNewPost() {
                       {success && (
                         <h1>
                           <br />
-                          Thank you for adding a new game!
+                          Thank you for adding a new game! We will review this and publish soon. Please check our
+                          website later.
                         </h1>
                       )}
                     </div>

@@ -252,30 +252,49 @@ export default function AppNewInvoice() {
 
         {selectedGame[0] && (
           <>
-            <div style={{ display: 'flex' }}>
-              <img
-                src={selectedGame[0].Image}
-                alt={selectedGame[0].Name}
-                sx={{ height: '50px!important', width: '200px!important', borderRadius: '30px' }}
-                height="5 0"
-                width="150"
-              />
-              <h1 style={{ margin: '20px' }}>{selectedGame[0].Name}</h1>
+            <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <img
+                  src={selectedGame[0].Image}
+                  alt={selectedGame[0].Name}
+                  style={{
+                    height: '70px',
+                    width: '70px',
+                    borderRadius: '10px',
+                    display: 'inline'
+                  }}
+                />
+                <h1 style={{ margin: '0 20px', display: 'inline' }}>{selectedGame[0].Name}</h1>
+              </div>
+              <div style={{ float: 'right' }}>
+                <a href={selectedGame[0].Youtube}>
+                  <Icon icon="akar-icons:youtube-fill" width="30" />
+                </a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href={selectedGame[0].Twitter}>
+                  <Icon icon="akar-icons:twitter-fill" width="30" />
+                </a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href={selectedGame[0].Telegram}>
+                  <Icon icon="akar-icons:telegram-fill" width="30" />
+                </a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href={selectedGame[0].Discord}>
+                  <Icon icon="akar-icons:discord-fill" width="30" />
+                </a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href={selectedGame[0].Facebook}>
+                  <Icon icon="akar-icons:facebook-fill" width="30" />
+                </a>
+              </div>
             </div>
-
-            {/* <br />
-            <h1 style={{ margin: '20px' }}>{stats.usd}</h1>
-            <br />
-            <h1 style={{ margin: '20px' }}>{stats.usd_24h_change}</h1>
-            <br />
-            <h1 style={{ margin: '20px' }}>{stats.usd_24h_vol}</h1>
-            <br />
-            <h1 style={{ margin: '20px' }}>{stats.usd_market_cap}</h1>
-            <br />*/}
             <br />
             <hr />
             <br />
-            <h3>{selectedGame[0].Description}</h3>
+            <h4 style={{ fontWeight: '400' }}>{selectedGame[0].Description}</h4>
+            <br />
+            <h4>Backers, Investors &amp; Advisors: {selectedGame[0].Investors}</h4>
+            <h3>{selectedGame[0].Litepaper}</h3>
             <br />
             <hr />
             <br />
@@ -285,17 +304,10 @@ export default function AppNewInvoice() {
               &nbsp;&nbsp;
               <span style={{ color: '#e481ff' }}>{selectedGame[0].Blockchain}</span>
               &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Device:&nbsp;&nbsp;
-              <span style={{ color: '#e481ff' }}>{selectedGame[0].Device}</span>
+              <span style={{ color: '#e481ff' }}>{selectedGame[0].Device.replace(/[\[\]"]+/g, '')}</span>
               &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; Status:&nbsp;&nbsp;
               <span style={{ color: '#e481ff' }}>{selectedGame[0].Status}</span>
               <br />
-              <br />
-              NFT: &nbsp;&nbsp;
-              <span style={{ color: '#e481ff' }}>{selectedGame[0].NFT}</span>
-              &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; F2P: &nbsp;&nbsp;
-              <span style={{ color: '#e481ff' }}>{selectedGame[0].F2P}</span>
-              &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; P2E:&nbsp;&nbsp;
-              <span style={{ color: '#e481ff' }}>{selectedGame[0].P2E}</span>
             </h3>
             <br />
             <hr />
@@ -309,6 +321,9 @@ export default function AppNewInvoice() {
             <br />
             <Button variant="contained" href={selectedGame[0].Web} target="_blank">
               Visit {selectedGame[0].Name} Website
+            </Button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <Button variant="contained" href={selectedGame[0].Litepaper} target="_blank">
+              Litepaper
             </Button>
           </>
         )}

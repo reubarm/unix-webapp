@@ -85,7 +85,7 @@ export default function AppWelcome({ displayName }) {
           color="secondary"
           style={{ width: '200px', marginBottom: '15px', marginRight: '10px' }}
         >
-          Available on Uniswap
+          Available On Uniswap
         </Button>
         <Button
           variant="contained"

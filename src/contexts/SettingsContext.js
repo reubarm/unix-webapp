@@ -16,11 +16,11 @@ const PRIMARY_COLOR = [
   // PURPLE
   {
     name: 'purple',
-    lighter: '#EBD6FD',
-    light: '#B985F4',
+    lighter: '#a081c3',
+    light: '#a081c3',
     main: '#a081c3',
-    dark: '#431A9E',
-    darker: '#200A69',
+    dark: '#a081c3',
+    darker: '#a081c3',
     contrastText: '#fff'
   },
   // CYAN

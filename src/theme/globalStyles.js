@@ -28,6 +28,12 @@ export default function GlobalStyles() {
           width: '100%',
           height: '100%'
         },
+        a: {
+          color: 'white',
+          textDecoration: 'none',
+          textTransform: 'none',
+          fontWeight: 'bold'
+        },
         input: {
           '&[type=number]': {
             MozAppearance: 'textfield',
