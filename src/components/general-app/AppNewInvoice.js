@@ -92,12 +92,12 @@ function MoreMenuButton() {
 
 const modalPopup = {
   content: {
-    top: '100px',
-    left: '200px',
-    right: '200px',
-    bottom: '100px',
+    top: '10%',
+    left: '10%',
+    right: '10%',
+    bottom: '10%',
     color: '#fff!important',
-    padding: '50px 100px',
+    padding: '50px',
     background: '#212b36',
     borderRadius: '20px',
     border: 'none'
@@ -265,65 +265,60 @@ export default function AppNewInvoice() {
                   }}
                 />
                 <h1 style={{ margin: '0 20px', display: 'inline' }}>{selectedGame[0].Name}</h1>
+                <p style={{ margin: '0 20px', display: 'inline', alignItems: 'center' }}>
+                  <img src={selectedGame[0].Blockicon} height="20" style={{ display: 'inline' }} />
+                  &nbsp;&nbsp;
+                  <span style={{ color: '#e481ff' }}>{selectedGame[0].Blockchain}</span>
+                  &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                  <span style={{ color: '#e481ff' }}>{selectedGame[0].Device.replace(/[\[\]"]+/g, '')}</span>
+                  &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                  <span style={{ color: '#e481ff' }}>{selectedGame[0].Status}</span>
+                </p>
               </div>
               <div style={{ float: 'right' }}>
-                <a href={selectedGame[0].Youtube}>
+                <a href={selectedGame[0].Youtube} target="_blank">
                   <Icon icon="akar-icons:youtube-fill" width="30" />
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href={selectedGame[0].Twitter}>
+                <a href={selectedGame[0].Twitter} target="_blank">
                   <Icon icon="akar-icons:twitter-fill" width="30" />
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href={selectedGame[0].Telegram}>
+                <a href={selectedGame[0].Telegram} target="_blank">
                   <Icon icon="akar-icons:telegram-fill" width="30" />
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href={selectedGame[0].Discord}>
+                <a href={selectedGame[0].Discord} target="_blank">
                   <Icon icon="akar-icons:discord-fill" width="30" />
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href={selectedGame[0].Facebook}>
+                <a href={selectedGame[0].Facebook} target="_blank">
                   <Icon icon="akar-icons:facebook-fill" width="30" />
                 </a>
               </div>
             </div>
             <br />
-            <hr />
+            <hr style={{ borderColor: '#5a6b7a' }} />
             <br />
             <h4 style={{ fontWeight: '400' }}>{selectedGame[0].Description}</h4>
             <br />
             <h4>Backers, Investors &amp; Advisors: {selectedGame[0].Investors}</h4>
-            <h3>{selectedGame[0].Litepaper}</h3>
             <br />
-            <hr />
-            <br />
-            <h3>
-              Blockchain:&nbsp;&nbsp;
-              <img src={selectedGame[0].Blockicon} height="20" style={{ display: 'inline' }} />
-              &nbsp;&nbsp;
-              <span style={{ color: '#e481ff' }}>{selectedGame[0].Blockchain}</span>
-              &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Device:&nbsp;&nbsp;
-              <span style={{ color: '#e481ff' }}>{selectedGame[0].Device.replace(/[\[\]"]+/g, '')}</span>
-              &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; Status:&nbsp;&nbsp;
-              <span style={{ color: '#e481ff' }}>{selectedGame[0].Status}</span>
-              <br />
-            </h3>
-            <br />
-            <hr />
+            <hr style={{ borderColor: '#5a6b7a' }} />
             <br />
             <h1>
               Social Score: <span style={{ color: '#e481ff' }}>{selectedGame[0].Score}</span>
             </h1>
             <br />
-            <hr />
+            <hr style={{ borderColor: '#5a6b7a' }} />
             <br />
             <br />
-            <Button variant="contained" href={selectedGame[0].Web} target="_blank">
-              Visit {selectedGame[0].Name} Website
-            </Button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <Button variant="contained" href={selectedGame[0].Litepaper} target="_blank">
-              Litepaper
+            <Button color="info" variant="contained" href={selectedGame[0].Web} target="_blank">
+              {selectedGame[0].Name} Website
+            </Button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <Button color="success" variant="contained" href={selectedGame[0].Litepaper} target="_blank">
+              {selectedGame[0].Name} Whitepaper
             </Button>
           </>
         )}
