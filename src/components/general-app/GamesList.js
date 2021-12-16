@@ -2,14 +2,6 @@ import { useRef, useState, useEffect } from 'react';
 import axios from 'axios';
 import Modal from 'react-modal';
 import { Icon } from '@iconify/react';
-import { sentenceCase } from 'change-case';
-import { Link as RouterLink } from 'react-router-dom';
-import shareFill from '@iconify/icons-eva/share-fill';
-import printerFill from '@iconify/icons-eva/printer-fill';
-import archiveFill from '@iconify/icons-eva/archive-fill';
-import downloadFill from '@iconify/icons-eva/download-fill';
-import trash2Outline from '@iconify/icons-eva/trash-2-outline';
-import moreVerticalFill from '@iconify/icons-eva/more-vertical-fill';
 // material
 import { useTheme } from '@mui/material/styles';
 import arrowIosForwardFill from '@iconify/icons-eva/arrow-ios-forward-fill';
@@ -49,17 +41,17 @@ const MOCK_INVOICES = [...Array(5)].map((_, index) => ({
 
 // ----------------------------------------------------------------------
 
-const YoutubeEmbed = ({ embedId }) => (
-  <div className="video-responsive">
-    <iframe
-      src={`https://www.youtube.com/embed/${embedId}`}
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title="YouTube Video"
-    />
-  </div>
-);
+// const YoutubeEmbed = ({ embedId }) => (
+//   <div className="video-responsive">
+//     <iframe
+//       src={`https://www.youtube.com/embed/${embedId}`}
+//       frameBorder="0"
+//       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+//       allowFullScreen
+//       title="YouTube Video"
+//     />
+//   </div>
+// );
 
 const modalPopup = {
   content: {
@@ -79,7 +71,7 @@ const modalPopup = {
   }
 };
 
-export default function AppNewInvoice() {
+export default function GamesList() {
   const theme = useTheme();
   const [games, setGames] = useState([]);
   const [extra, openExtra] = useState(false);
@@ -102,21 +94,6 @@ export default function AppNewInvoice() {
   console.log(selectedGame);
 
   function ShowTokenDetail() {
-    /* eslint-disable */
-    // fetch(
-    //   `https://api.coingecko.com/api/v3/simple/price?ids=${selectedGame[0].Ticker}&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true`,
-    //   {
-    //     method: 'GET'
-    //   }
-    // )
-    //   .then((r) => r.json())
-    //   .then((data) => {
-    //     setStats(data[selectedGame[0].Ticker]);
-    //     console.log(data[selectedGame[0].Ticker]);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
     openExtra(!extra);
   }
 
@@ -154,7 +131,7 @@ export default function AppNewInvoice() {
     axios
       .get('https://api.coingecko.com/api/v3/simple/price?ids=sipher&vs_currencies=usd')
       .then((res) => {
-        setSipher(res.data['sipher'].usd);
+        setSipher(res.data.sipher.usd);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -163,7 +140,7 @@ export default function AppNewInvoice() {
     axios
       .get('https://api.coingecko.com/api/v3/simple/price?ids=splinterlands&vs_currencies=usd')
       .then((res) => {
-        setSplinterlands(res.data['splinterlands'].usd);
+        setSplinterlands(res.data.splinterlands.usd);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -199,7 +176,7 @@ export default function AppNewInvoice() {
     axios
       .get('https://api.coingecko.com/api/v3/simple/price?ids=binemon&vs_currencies=usd')
       .then((res) => {
-        setBinemon(res.data['binemon'].usd);
+        setBinemon(res.data.binemon.usd);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -212,6 +189,90 @@ export default function AppNewInvoice() {
       })
       .catch((error) => console.log(error));
   }, []);
+
+  // ----------------------------------------------------------------------
+
+  // const [moedas, setMoedas] = useState([]);
+
+  // useEffect(() => {
+  //   axios
+  //     .get(
+  //       'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10000&page=1&sparkline=false'
+  //     )
+  //     .then((res) => {
+  //       setMoedas(res.data);
+  //       // console.log(res.data);
+  //     })
+  //     .catch((error) => console.log(error));
+  // }, []);
+
+  // const filteredMoedas = moedas.filter((moeda) => moeda.symbol.toLowerCase().includes('axs'.toLowerCase()));
+
+  // const Moeda = ({
+  //   name,
+  //   price,
+  //   symbol,
+  //   marketcap,
+  //   volume,
+  //   image,
+  //   priceChange,
+  //   /* eslint-disable */
+  //   price_change_percentage_24h,
+  //   /* eslint-disable */
+  //   market_cap_change_percentage_24h
+  // }) => {
+  //   return (
+  //     <div className="moeda-row">
+  //       <TableContainer sx={{ minWidth: 720 }}>
+  //         <Table>
+  //           <TableRow sx={{ color: 'white!important' }}>
+  //             <TableCell>
+  //               <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+  //                 Symbol:{' '}
+  //               </span>
+  //               {symbol}
+  //             </TableCell>
+  //             <TableCell>
+  //               <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>Price: </span>
+  //               ${price}
+  //             </TableCell>
+  //             <TableCell>
+  //               <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+  //                 24hr Price Change %:{' '}
+  //               </span>
+  //               ${price_change_percentage_24h}
+  //             </TableCell>
+  //             <TableCell>
+  //               <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+  //                 Market Cap Change %:{' '}
+  //               </span>
+  //               ${market_cap_change_percentage_24h}
+  //             </TableCell>
+  //             <TableCell>
+  //               <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+  //                 Volume:{' '}
+  //               </span>
+  //               ${volume.toLocaleString()}
+  //             </TableCell>
+  //             <TableCell>
+  //               <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+  //                 Price Change:{' '}
+  //               </span>
+  //               {priceChange.toFixed(2)}%
+  //             </TableCell>
+  //             <TableCell>
+  //               {' '}
+  //               <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+  //                 Market Cap:{' '}
+  //               </span>{' '}
+  //               ${marketcap.toLocaleString()}
+  //             </TableCell>
+  //           </TableRow>
+  //         </Table>
+  //       </TableContainer>
+  //     </div>
+  //   );
+  // };
 
   // ----------------------------------------------------------------------
 
@@ -273,15 +334,33 @@ export default function AppNewInvoice() {
             <br />
             <h4 style={{ fontWeight: '400' }}>{selectedGame[0].Description}</h4>
             <br />
-            <h4>Backers, Investors &amp; Advisors: {selectedGame[0].Investors}</h4>
+            <h4>Contract Address: {selectedGame[0].Contract}</h4> <br />
+            <h2>
+              Social Score: <span style={{ color: '#e481ff' }}>{selectedGame[0].Score}</span>
+            </h2>
             <br />
             <hr style={{ borderColor: '#5a6b7a' }} />
             <br />
             <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
-              <h1>
-                Social Score: <span style={{ color: '#e481ff' }}>{selectedGame[0].Score}</span>
-              </h1>
-              <YoutubeEmbed embedId="-l9QzjghXi0" />
+              {/* <>
+                {filteredMoedas.map((moeda) => {
+                  return (
+                    <Moeda
+                      key={moeda.id}
+                      name={moeda.name}
+                      price={moeda.current_price}
+                      symbol={moeda.symbol}
+                      marketcap={moeda.market_cap}
+                      price_change_percentage_24h={moeda.price_change_percentage_24h}
+                      market_cap_change_percentage_24h={moeda.market_cap_change_percentage_24h}
+                      volume={moeda.total_volume}
+                      image={moeda.image}
+                      priceChange={moeda.price_change_percentage_24h}
+                    />
+                  );
+                })}
+              </> */}
+              {/* <YoutubeEmbed embedId="-l9QzjghXi0" /> */}
             </div>
             <br />
             <hr style={{ borderColor: '#5a6b7a' }} />

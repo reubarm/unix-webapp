@@ -2,22 +2,7 @@
 import { Container, Grid, Stack } from '@mui/material';
 // components
 import Page from '../components/Page';
-import {
-  AppWelcome,
-  AppWidgets1,
-  AppWidgets2,
-  AppFeatured,
-  AppNewInvoice,
-  AppTopAuthors,
-  AppTopRelated,
-  AppAreaInstalled,
-  BookingNewestBooking,
-  AppTotalDownloads,
-  AppTotalInstalled,
-  AppCurrentDownload,
-  AppTotalActiveUsers,
-  AppTopInstalledCountries
-} from '../components/general-app';
+import { AppWelcome, AppTotalViews, AppTotalInstalled, AppTotalActiveUsers, Twitter } from '../components/general-app';
 
 // ----------------------------------------------------------------------
 
@@ -40,7 +25,7 @@ export default function GeneralApp() {
               </Grid>
 
               <Grid item xs={12} md={4}>
-                <AppTotalDownloads />
+                <AppTotalViews />
               </Grid>
 
               <Grid item xs={12} style={{ paddingTop: '0' }}>
@@ -52,7 +37,7 @@ export default function GeneralApp() {
           <Grid item xs={12} md={3} lg={3}>
             <Grid container spacing={3}>
               <Grid item xs={12}>
-                <AppTopInstalledCountries />
+                <Twitter />
               </Grid>
             </Grid>
           </Grid>

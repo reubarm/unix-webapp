@@ -50,7 +50,7 @@ export default function Router() {
         { path: 'register', element: <Register /> },
         { path: 'landing', element: <LandingPage /> },
         { path: 'blog', element: <BlogPost /> },
-        { path: 'add-game', element: <BlogNewPost /> },
+        { path: 'add-game', element: <AddGame /> },
 
         {
           path: 'app',
@@ -93,6 +93,6 @@ const PageFive = Loadable(lazy(() => import('../pages/PageFive')));
 const Register = Loadable(lazy(() => import('../pages/Register')));
 const NotFound = Loadable(lazy(() => import('../pages/Page404')));
 const BlogPost = Loadable(lazy(() => import('../pages/BlogPost')));
-const BlogNewPost = Loadable(lazy(() => import('../pages/BlogNewPost')));
+const AddGame = Loadable(lazy(() => import('../pages/AddGame')));
 // Main
 const LandingPage = Loadable(lazy(() => import('../pages/LandingPage')));

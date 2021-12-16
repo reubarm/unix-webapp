@@ -23,7 +23,7 @@ export const PATH_DASHBOARD = {
     Register: path(ROOTS_DASHBOARD, '/register'),
     LandingPage: path(ROOTS_DASHBOARD, '/landing'),
     BlogPost: path(ROOTS_DASHBOARD, '/blog'),
-    BlogNewPost: path(ROOTS_DASHBOARD, '/add-game')
+    AddGame: path(ROOTS_DASHBOARD, '/add-game')
   },
   app: {
     pageFour: social('http://t.me/unix_token'),
