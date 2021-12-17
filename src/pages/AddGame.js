@@ -74,7 +74,7 @@ export default function AddGame() {
       Id: 10,
       Name: name,
       Description: description,
-      Image: image,
+      Image: values.images,
       Genre: genre,
       Blockchain: blockchain,
       Web: website,
@@ -118,6 +118,7 @@ export default function AddGame() {
       title: '',
       description: '',
       content: '',
+      images: [],
       cover: null,
       tags: ['Logan'],
       publish: true,
@@ -130,15 +131,30 @@ export default function AddGame() {
 
   const { errors, values, touched, isSubmitting, setFieldValue, getFieldProps } = formik;
 
-  const handleDrop = useCallback((acceptedFiles) => {
-    const file = acceptedFiles[0];
-    if (file) {
-      setFieldValue('cover', {
-        ...file,
-        preview: URL.createObjectURL(file)
-      });
-    }
-  }, []);
+  const handleDrop = useCallback(
+    (acceptedFiles) => {
+      setFieldValue(
+        'images',
+        acceptedFiles.map((file) =>
+          Object.assign(file, {
+            preview: URL.createObjectURL(file)
+          })
+        )
+      );
+    },
+    [setFieldValue]
+  );
+
+  const handleRemoveAll = () => {
+    setFieldValue('images', []);
+  };
+
+  const handleRemove = (file) => {
+    const filteredItems = values.images.filter((_file) => _file !== file);
+    setFieldValue('images', filteredItems);
+  };
+
+  console.log(values.images);
 
   return (
     <Page title="Add a New Game to Unix">
@@ -152,67 +168,88 @@ export default function AddGame() {
               <CardContent>
                 <FormikProvider value={formik}>
                   <form className="form">
-                    <Stack
+                    {/* <Stack
                       component={motion.div}
                       variants={varFadeInRight}
                       direction="column"
                       spacing={3}
                       sx={{ padding: '30px' }}
                       justifyContent={{ xs: 'center', md: 'flex-start' }}
-                    >
-                      <TextField
-                        label="Name"
-                        id="outlined-size-normal"
-                        onChange={(e) => setName(e.target.value)}
-                        className="mobile"
-                      />
-                      <TextField
-                        label="Description"
-                        id="outlined-size-normal"
-                        onChange={(e) => setDescription(e.target.value)}
-                        className="mobile"
-                      />
-                      <TextField
-                        label="Logo/Game Image URL"
-                        id="outlined-size-normal"
-                        onChange={(e) => setImage(e.target.value)}
-                        className="mobile"
-                      />
-                      <TextField
-                        label="Genre"
-                        id="outlined-size-normal"
-                        onChange={(e) => setGenre(e.target.value)}
-                        className="mobile"
-                      />
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Blockchain</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          value={blockchain}
-                          label="Age"
-                          onChange={(e) => setBlockchain(e.target.value)}
-                        >
-                          <MenuItem value="Ethereum">Ethereum</MenuItem>
-                          <MenuItem value="Binance">Binance</MenuItem>
-                          <MenuItem value="Solana">Solana</MenuItem>
-                          <MenuItem value="Polygon">Polygon</MenuItem>
-                          <MenuItem value="Hive">Hive</MenuItem>
-                        </Select>
-                      </FormControl>
-                      <TextField
-                        label="Website URL"
-                        id="outlined-size-normal"
-                        onChange={(e) => setWebsite(e.target.value)}
-                        className="mobile"
-                      />
-                      <TextField
-                        label="API Name"
-                        id="outlined-size-normal"
-                        onChange={(e) => setTicker(e.target.value)}
-                        className="mobile"
-                        required
-                      />
+                    > */}
+                    <Grid container spacing={2}>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Name"
+                          id="outlined-size-normal"
+                          onChange={(e) => setName(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Description"
+                          id="outlined-size-normal"
+                          onChange={(e) => setDescription(e.target.value)}
+                          className="mobile"
+                        />{' '}
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Logo/Game Image URL"
+                          id="outlined-size-normal"
+                          onChange={(e) => setImage(e.target.value)}
+                          className="mobile"
+                        />{' '}
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Genre"
+                          id="outlined-size-normal"
+                          onChange={(e) => setGenre(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <FormControl fullWidth>
+                          <InputLabel id="demo-simple-select-label">Blockchain</InputLabel>
+                          <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={blockchain}
+                            label="Age"
+                            onChange={(e) => setBlockchain(e.target.value)}
+                          >
+                            <MenuItem value="Ethereum">Ethereum</MenuItem>
+                            <MenuItem value="Binance">Binance</MenuItem>
+                            <MenuItem value="Solana">Solana</MenuItem>
+                            <MenuItem value="Polygon">Polygon</MenuItem>
+                            <MenuItem value="Hive">Hive</MenuItem>
+                          </Select>
+                        </FormControl>{' '}
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Website URL"
+                          id="outlined-size-normal"
+                          onChange={(e) => setWebsite(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="API Name"
+                          id="outlined-size-normal"
+                          onChange={(e) => setTicker(e.target.value)}
+                          className="mobile"
+                          required
+                        />
+                      </Grid>
 
                       {/* <UploadSingleFile
                         maxSize={3145728}
@@ -222,134 +259,274 @@ export default function AddGame() {
                         error={Boolean(touched.cover && errors.cover)}
                       /> */}
 
-                      {/* <UploadMultiFile
-                        showPreview
-                        maxSize={3145728}
-                        accept="image/*"
-                        files={values.images}
-                        onDrop={handleDrop}
-                        onRemove={handleRemove}
-                        onRemoveAll={handleRemoveAll}
-                        error={Boolean(touched.images && errors.images)}
-                      /> */}
+                      <Grid item xs={6}>
+                        <FormControl fullWidth>
+                          <InputLabel id="demo-simple-select-label">Status</InputLabel>
+                          <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={status}
+                            label="Age"
+                            onChange={(e) => setStatus(e.target.value)}
+                          >
+                            <MenuItem value="ALPHA">ALPHA</MenuItem>
+                            <MenuItem value="BETA">BETA</MenuItem>
+                            <MenuItem value="Development">Development</MenuItem>
+                            <MenuItem value="Live">Live</MenuItem>
+                            <MenuItem value="Presale">Presale</MenuItem>
+                          </Select>
+                        </FormControl>
+                      </Grid>
 
-                      <FormLabel component="legend">Devices</FormLabel>
-                      <ToggleButtonGroup value={formats} onChange={handleFormat} aria-label="text formatting">
-                        <ToggleButton value="Web" aria-label="Web">
-                          Web
-                        </ToggleButton>
-                        <ToggleButton value="Android" aria-label="Android">
-                          Android
-                        </ToggleButton>
-                        <ToggleButton value="iOS" aria-label="iOS">
-                          iOS
-                        </ToggleButton>
-                        <ToggleButton value="Windows" aria-label="Windows">
-                          Windows
-                        </ToggleButton>
-                      </ToggleButtonGroup>
+                      <Grid item xs={12}>
+                        <UploadMultiFile
+                          showPreview
+                          maxSize={3145728}
+                          accept="image/*"
+                          files={values.images}
+                          onDrop={handleDrop}
+                          onRemove={handleRemove}
+                          onRemoveAll={handleRemoveAll}
+                          error={Boolean(touched.images && errors.images)}
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <FormLabel component="legend" sx={{ marginBottom: '10px' }}>
+                          Devices
+                        </FormLabel>
+                        <ToggleButtonGroup value={formats} onChange={handleFormat} aria-label="text formatting">
+                          <ToggleButton value="Web" aria-label="Web">
+                            Web
+                          </ToggleButton>
+                          <ToggleButton value="Android" aria-label="Android">
+                            Android
+                          </ToggleButton>
+                          <ToggleButton value="iOS" aria-label="iOS">
+                            iOS
+                          </ToggleButton>
+                          <ToggleButton value="Windows" aria-label="Windows">
+                            Windows
+                          </ToggleButton>
+                        </ToggleButtonGroup>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <FormLabel component="legend" sx={{ marginBottom: '10px' }}>
+                          Model
+                        </FormLabel>
+                        <ToggleButtonGroup value={models} onChange={handleModel} aria-label="text formatting">
+                          <ToggleButton value="Free To Play" aria-label="Free To Play">
+                            Free To Play
+                          </ToggleButton>
+                          <ToggleButton value="Play To Earn" aria-label="Play To Earn">
+                            Play To Earn
+                          </ToggleButton>
+                          <ToggleButton value="Crypto" aria-label="Crypto">
+                            Crypto Support
+                          </ToggleButton>
+                          <ToggleButton value="NFT" aria-label="NFT">
+                            NFT Support
+                          </ToggleButton>
+                        </ToggleButtonGroup>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Litepaper"
+                          id="outlined-size-normal"
+                          onChange={(e) => setLitepaper(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Backers/Investors"
+                          id="outlined-size-normal"
+                          onChange={(e) => setInvestors(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Contract Address"
+                          id="outlined-size-normal"
+                          onChange={(e) => setContract(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
 
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Status</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          value={status}
-                          label="Age"
-                          onChange={(e) => setStatus(e.target.value)}
-                        >
-                          <MenuItem value="ALPHA">ALPHA</MenuItem>
-                          <MenuItem value="BETA">BETA</MenuItem>
-                          <MenuItem value="Development">Development</MenuItem>
-                          <MenuItem value="Live">Live</MenuItem>
-                          <MenuItem value="Presale">Presale</MenuItem>
-                        </Select>
-                      </FormControl>
-                      <FormLabel component="legend">Model</FormLabel>
-                      <ToggleButtonGroup value={models} onChange={handleModel} aria-label="text formatting">
-                        <ToggleButton value="Free To Play" aria-label="Free To Play">
-                          Free To Play
-                        </ToggleButton>
-                        <ToggleButton value="Play To Earn" aria-label="Play To Earn">
-                          Play To Earn
-                        </ToggleButton>
-                        <ToggleButton value="Crypto" aria-label="Crypto">
-                          Crypto Support
-                        </ToggleButton>
-                        <ToggleButton value="NFT" aria-label="NFT">
-                          NFT Support
-                        </ToggleButton>
-                      </ToggleButtonGroup>
-                      <TextField
-                        label="Litepaper"
-                        id="outlined-size-normal"
-                        onChange={(e) => setLitepaper(e.target.value)}
-                        className="mobile"
-                      />
-                      <TextField
-                        label="Backers/Investors/Advisors"
-                        id="outlined-size-normal"
-                        onChange={(e) => setInvestors(e.target.value)}
-                        className="mobile"
-                      />
-                      <TextField
-                        label="Contract Address"
-                        id="outlined-size-normal"
-                        onChange={(e) => setContract(e.target.value)}
-                        className="mobile"
-                      />
-                      <TextField
-                        label="YouTube"
-                        id="outlined-size-normal"
-                        onChange={(e) => setYoutube(e.target.value)}
-                        className="mobile"
-                      />
-                      <TextField
-                        label="Twitter"
-                        id="outlined-size-normal"
-                        onChange={(e) => setTwitter(e.target.value)}
-                        className="mobile"
-                      />
-                      <TextField
-                        label="Telegram"
-                        id="outlined-size-normal"
-                        onChange={(e) => setTelegram(e.target.value)}
-                        className="mobile"
-                      />
-                      <TextField
-                        label="Discord"
-                        id="outlined-size-normal"
-                        onChange={(e) => setDiscord(e.target.value)}
-                        className="mobile"
-                      />
-                      <TextField
-                        label="Facebook"
-                        id="outlined-size-normal"
-                        onChange={(e) => setFacebook(e.target.value)}
-                        className="mobile"
-                      />
-                      <br />
-                      <div sx={{ textAlign: 'center', margin: '0 auto' }}>
-                        <Button
-                          sx={{ textAlign: 'center', margin: '0 auto' }}
-                          size="large"
-                          variant="contained"
-                          type="submit"
-                          onClick={handleSubmit}
-                          endIcon={<Icon icon={flashFill} width={20} height={20} />}
-                        >
-                          Add a new game
-                        </Button>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Team"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Advisors"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Partners"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Launchpads"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Network"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Total Tokens"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Total Raise"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Token Generation Event"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Seed/Private/Strategic"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Listing Price"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="YouTube"
+                          id="outlined-size-normal"
+                          onChange={(e) => setYoutube(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Twitter"
+                          id="outlined-size-normal"
+                          onChange={(e) => setTwitter(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Telegram"
+                          id="outlined-size-normal"
+                          onChange={(e) => setTelegram(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Discord"
+                          id="outlined-size-normal"
+                          onChange={(e) => setDiscord(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Facebook"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      {/* <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label=""
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid> */}
 
-                        {success && (
-                          <h1>
-                            <br />
-                            Thank you for adding a new game! We will review this and publish soon. Please check our
-                            website later.
-                          </h1>
-                        )}
-                      </div>
-                    </Stack>
+                      <Grid item xs={12}>
+                        <br />
+                        <br />
+                        <div sx={{ textAlign: 'center', margin: '0 auto' }}>
+                          <Button
+                            sx={{ textAlign: 'center', margin: '0 auto' }}
+                            size="large"
+                            variant="contained"
+                            type="submit"
+                            onClick={handleSubmit}
+                            endIcon={<Icon icon={flashFill} width={20} height={20} />}
+                          >
+                            Add a new game
+                          </Button>
+
+                          {success && (
+                            <h1>
+                              <br />
+                              Thank you for adding a new game! We will review this and publish soon. Please check our
+                              website later.
+                            </h1>
+                          )}
+                        </div>
+                      </Grid>
+                    </Grid>
+                    {/* </Stack> */}
                   </form>
                 </FormikProvider>
               </CardContent>
