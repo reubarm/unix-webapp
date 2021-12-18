@@ -189,18 +189,18 @@ export default function AddGame() {
                       <Grid item xs={6}>
                         <TextField
                           fullWidth
-                          label="Description"
-                          id="outlined-size-normal"
-                          onChange={(e) => setDescription(e.target.value)}
-                          className="mobile"
-                        />{' '}
-                      </Grid>
-                      <Grid item xs={6}>
-                        <TextField
-                          fullWidth
                           label="Logo/Game Image URL"
                           id="outlined-size-normal"
                           onChange={(e) => setImage(e.target.value)}
+                          className="mobile"
+                        />{' '}
+                      </Grid>
+                      <Grid item xs={12}>
+                        <TextField
+                          fullWidth
+                          label="Description"
+                          id="outlined-size-normal"
+                          onChange={(e) => setDescription(e.target.value)}
                           className="mobile"
                         />{' '}
                       </Grid>
@@ -259,26 +259,10 @@ export default function AddGame() {
                         error={Boolean(touched.cover && errors.cover)}
                       /> */}
 
-                      <Grid item xs={6}>
-                        <FormControl fullWidth>
-                          <InputLabel id="demo-simple-select-label">Status</InputLabel>
-                          <Select
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            value={status}
-                            label="Age"
-                            onChange={(e) => setStatus(e.target.value)}
-                          >
-                            <MenuItem value="ALPHA">ALPHA</MenuItem>
-                            <MenuItem value="BETA">BETA</MenuItem>
-                            <MenuItem value="Development">Development</MenuItem>
-                            <MenuItem value="Live">Live</MenuItem>
-                            <MenuItem value="Presale">Presale</MenuItem>
-                          </Select>
-                        </FormControl>
-                      </Grid>
-
                       <Grid item xs={12}>
+                        <FormLabel component="legend" sx={{ marginBottom: '10px' }}>
+                          Game Images and Screenshots
+                        </FormLabel>
                         <UploadMultiFile
                           showPreview
                           maxSize={3145728}
@@ -327,6 +311,24 @@ export default function AddGame() {
                             NFT Support
                           </ToggleButton>
                         </ToggleButtonGroup>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <FormControl fullWidth>
+                          <InputLabel id="demo-simple-select-label">Status</InputLabel>
+                          <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={status}
+                            label="Age"
+                            onChange={(e) => setStatus(e.target.value)}
+                          >
+                            <MenuItem value="ALPHA">ALPHA</MenuItem>
+                            <MenuItem value="BETA">BETA</MenuItem>
+                            <MenuItem value="Development">Development</MenuItem>
+                            <MenuItem value="Live">Live</MenuItem>
+                            <MenuItem value="Presale">Presale</MenuItem>
+                          </Select>
+                        </FormControl>
                       </Grid>
                       <Grid item xs={6}>
                         <TextField
@@ -431,7 +433,25 @@ export default function AddGame() {
                       <Grid item xs={6}>
                         <TextField
                           fullWidth
-                          label="Seed/Private/Strategic"
+                          label="Seed Tokens"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Private Tokens"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Vesting for Seed, Private, IDO and Team"
                           id="outlined-size-normal"
                           onChange={(e) => setFacebook(e.target.value)}
                           className="mobile"
@@ -441,6 +461,39 @@ export default function AddGame() {
                         <TextField
                           fullWidth
                           label="Listing Price"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <FormLabel component="legend" sx={{ marginBottom: '10px' }}>
+                          Tokenomics
+                        </FormLabel>
+                        <UploadMultiFile
+                          showPreview
+                          maxSize={3145728}
+                          accept="image/*"
+                          files={values.images}
+                          onDrop={handleDrop}
+                          onRemove={handleRemove}
+                          onRemoveAll={handleRemoveAll}
+                          error={Boolean(touched.images && errors.images)}
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="NFTs to Purchase"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Special Features"
                           id="outlined-size-normal"
                           onChange={(e) => setFacebook(e.target.value)}
                           className="mobile"
@@ -486,6 +539,15 @@ export default function AddGame() {
                         <TextField
                           fullWidth
                           label="Facebook"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="LinkedIn (Team and Advisors)"
                           id="outlined-size-normal"
                           onChange={(e) => setFacebook(e.target.value)}
                           className="mobile"
