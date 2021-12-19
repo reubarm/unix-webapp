@@ -19,9 +19,9 @@ import BlogPostHero from '../components/BlogPostHero';
 const POST_BODY = `
 
 <p>We&nbsp;<a href="https://unixgaming.org/" rel="noopener ugc nofollow" target="_blank">@UniXGaming</a>&nbsp;proudly want to thank our early supporters and investors for the amazing achievements they have made so far. We feel very grateful to have our well-chosen partners on board who can help create a more accessible space, sharing a long-term vision to conquer the Metaverse industry as a strong alliance together. UniX has had amazing success so far and we have already completed our $10 million target raise &mdash; $8 million from their private sale and over $22 million on Copper Launch.</p>
-
+<br/>
 <p>UniX Gaming has&nbsp;a&nbsp;number of strong backers such as LD Capital and AU21 &mdash; two of the largest investors in the Metaverse space. LD was an early investor in Big Time, Star Atlas, and ImmutableX, and AU21 was an early investor in Axie Infinity, Chainguardians, Splinterlands and ThetanArena.</p>
-
+<br/>
 <p>In addition to these, we also have investment from Akash Network, Pluto Digital, Master Ventures, Synergia Capital, Akatsuki Inc, Paid Network, Scrypt, Banter Capital, Argo Blockchain, Base Two, Unvest, The Club, Guide Education, and Tuition Kit &mdash; more details on these are below.</p>
 
 <p>We are proud of our strong advisory team who have supported us all the way through to our current stage and will continue to help us grow further. We could not be more thrilled to have Kyle Chase, Eka Darville, Norman Wooding, Sylvan Martin, Tobias Sperrin, the Professor and Maziar Sadri, alongside our friends, Crypto Banter, and supporters of our project Alex Becker, and Cameron Fous.</p>
@@ -97,17 +97,15 @@ export default function BlogPost() {
   }, [dispatch, title]);
 
   return (
-    <Page title="Blog: Post Details | Unix Gaming">
-      <Container maxWidth={themeStretch ? false : 'lg'}>
+    <Page title="UniX Gaming Fundraise Has Officially Reached $28 Million">
+      <Container maxWidth="lg">
         <Card>
-          <BlogPostHero post={post} />
+          <BlogPostHero
+            title="
+      UniX Gaming Fundraise Has Officially Reached $28 Million"
+            image="https://miro.medium.com/max/1400/0*lhPQdN-n57iKiSGc"
+          />
           <div style={{ padding: '27px' }}>
-            <Typography variant="h3">
-              UniX Gaming Fundraise Has Officially Reached $28 Million
-              <br />
-              <br />
-            </Typography>
-
             <Markdown children={POST_BODY} />
           </div>
         </Card>

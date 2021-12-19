@@ -97,35 +97,32 @@ const CoverImgStyle = styled('img')({
 // ----------------------------------------------------------------------
 
 BlogPostHero.propTypes = {
-  post: PropTypes.object.isRequired
+  image: PropTypes.object.isRequired,
+  title: PropTypes.object.isRequired
 };
 
-export default function BlogPostHero({ post, ...other }) {
+export default function BlogPostHero({ title, image, ...other }) {
   // const { cover, title, author, createdAt } = post;
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <RootStyle {...other}>
-      <CoverImgStyle alt="post cover" src="https://miro.medium.com/max/1400/0*lhPQdN-n57iKiSGc" />
+      <CoverImgStyle alt="post cover" src={image} />
 
       <TitleStyle variant="h2" component="h1">
-        UniX Gaming Fundraise Has Officially Reached $28 Million
+        {title}
       </TitleStyle>
 
       <FooterStyle>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Avatar
-            alt="ASDF"
-            src="https://miro.medium.com/fit/c/1360/1360/0*OY3GQr8mcO36okUd.jpg"
-            sx={{ width: 48, height: 48 }}
-          />
+          <Avatar alt="Unix" src={image} sx={{ width: 48, height: 48 }} />
           <Box sx={{ ml: 2 }}>
             <Typography variant="subtitle1" sx={{ color: 'common.white' }}>
               Reuben Armstrong
             </Typography>
             <Typography variant="body2" sx={{ color: 'grey.500' }}>
-              November 25th
+              December 20th
             </Typography>
           </Box>
         </Box>

@@ -49,7 +49,11 @@ export default function Router() {
         { path: 'team', element: <PageFive /> },
         { path: 'register', element: <Register /> },
         { path: 'landing', element: <LandingPage /> },
-        { path: 'blog', element: <BlogPost /> },
+        { path: 'unix-launch', element: <BlogPost /> },
+        { path: 'top-5-games', element: <BlogPost1 /> },
+        { path: 'metaverse-crypto', element: <BlogPost2 /> },
+        { path: 'metaverse-gaming', element: <BlogPost3 /> },
+        { path: 'crypto-gaming', element: <BlogPost4 /> },
         { path: 'add-game', element: <AddGame /> },
 
         {
@@ -93,6 +97,10 @@ const PageFive = Loadable(lazy(() => import('../pages/PageFive')));
 const Register = Loadable(lazy(() => import('../pages/Register')));
 const NotFound = Loadable(lazy(() => import('../pages/Page404')));
 const BlogPost = Loadable(lazy(() => import('../pages/BlogPost')));
+const BlogPost1 = Loadable(lazy(() => import('../pages/BlogPost1')));
+const BlogPost2 = Loadable(lazy(() => import('../pages/BlogPost2')));
+const BlogPost3 = Loadable(lazy(() => import('../pages/BlogPost3')));
+const BlogPost4 = Loadable(lazy(() => import('../pages/BlogPost4')));
 const AddGame = Loadable(lazy(() => import('../pages/AddGame')));
 // Main
 const LandingPage = Loadable(lazy(() => import('../pages/LandingPage')));

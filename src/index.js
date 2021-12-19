@@ -4,6 +4,8 @@ import 'simplebar/src/simplebar.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+import ReactGA from 'react-ga';
+
 import ReactDOM from 'react-dom';
 import { Provider as ReduxProvider } from 'react-redux';
 import { StrictMode } from 'react';
@@ -17,6 +19,9 @@ import { CollapseDrawerProvider } from './contexts/CollapseDrawerContext';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+
+ReactGA.initialize('UA-212740748-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 // ----------------------------------------------------------------------
 

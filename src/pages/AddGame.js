@@ -198,6 +198,8 @@ export default function AddGame() {
                       <Grid item xs={12}>
                         <TextField
                           fullWidth
+                          multiline
+                          rows={4}
                           label="Description"
                           id="outlined-size-normal"
                           onChange={(e) => setDescription(e.target.value)}
@@ -385,6 +387,7 @@ export default function AddGame() {
                           className="mobile"
                         />
                       </Grid>
+
                       <Grid item xs={6}>
                         <TextField
                           fullWidth
@@ -451,7 +454,7 @@ export default function AddGame() {
                       <Grid item xs={6}>
                         <TextField
                           fullWidth
-                          label="Vesting for Seed, Private, IDO and Team"
+                          label="IDO"
                           id="outlined-size-normal"
                           onChange={(e) => setFacebook(e.target.value)}
                           className="mobile"
@@ -460,13 +463,46 @@ export default function AddGame() {
                       <Grid item xs={6}>
                         <TextField
                           fullWidth
-                          label="Listing Price"
+                          label="Vesting for Seed"
                           id="outlined-size-normal"
                           onChange={(e) => setFacebook(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
-                      <Grid item xs={12}>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Vesting for Private"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Vesting for IDO"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <FormLabel component="legend" sx={{ marginBottom: '10px' }}>
+                          Team and Advisors Photos
+                        </FormLabel>
+                        <UploadMultiFile
+                          showPreview
+                          maxSize={3145728}
+                          accept="image/*"
+                          files={values.images}
+                          onDrop={handleDrop}
+                          onRemove={handleRemove}
+                          onRemoveAll={handleRemoveAll}
+                          error={Boolean(touched.images && errors.images)}
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
                         <FormLabel component="legend" sx={{ marginBottom: '10px' }}>
                           Tokenomics
                         </FormLabel>
@@ -481,6 +517,25 @@ export default function AddGame() {
                           error={Boolean(touched.images && errors.images)}
                         />
                       </Grid>
+
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="LinkedIn (Team and Advisors)"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Listing Price"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
                       <Grid item xs={6}>
                         <TextField
                           fullWidth
@@ -493,9 +548,27 @@ export default function AddGame() {
                       <Grid item xs={6}>
                         <TextField
                           fullWidth
+                          label="Land to Purchase"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
                           label="Special Features"
                           id="outlined-size-normal"
                           onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Trailers and In-Game Videos"
+                          id="outlined-size-normal"
+                          onChange={(e) => setYoutube(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -547,7 +620,7 @@ export default function AddGame() {
                       <Grid item xs={6}>
                         <TextField
                           fullWidth
-                          label="LinkedIn (Team and Advisors)"
+                          label="Instagram"
                           id="outlined-size-normal"
                           onChange={(e) => setFacebook(e.target.value)}
                           className="mobile"
