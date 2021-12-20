@@ -227,6 +227,15 @@ export default function NavSection({ navConfig, isShow = true, ...other }) {
             <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
           </ListItemStyle>
         </a>
+        <a href="/blog" style={{ textDecoration: 'none' }}>
+          <ListItemStyle>
+            <ListItemIconStyle>
+              <SvgIconStyle src="/static/icons/navbar/ic_chat.svg" sx={{ width: '100%', height: '100%' }} />
+            </ListItemIconStyle>
+            <ListItemText disableTypography primary="Blog" />
+            <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
+          </ListItemStyle>
+        </a>
         <ListSubheaderStyle>Socials</ListSubheaderStyle>
         <a href="http://t.me/unix_token" style={{ textDecoration: 'none' }}>
           <ListItemStyle>

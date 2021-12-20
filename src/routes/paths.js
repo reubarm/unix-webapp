@@ -22,6 +22,7 @@ export const PATH_DASHBOARD = {
     pageFive: path(ROOTS_DASHBOARD, '/team'),
     Register: path(ROOTS_DASHBOARD, '/register'),
     LandingPage: path(ROOTS_DASHBOARD, '/landing'),
+    BlogPosts: path(ROOTS_DASHBOARD, '/blog'),
     BlogPost: path(ROOTS_DASHBOARD, '/unix-launch'),
     BlogPost1: path(ROOTS_DASHBOARD, '/top-5-games'),
     BlogPost2: path(ROOTS_DASHBOARD, '/metaverse-crypto'),
