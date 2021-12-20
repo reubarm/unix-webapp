@@ -19,7 +19,6 @@ import BlogPostHero from '../components/BlogPostHero';
 const POST_BODY = `
 
 <br/><h3>How crypto gaming works</h3>
-<p><strong>Meta description:</strong> Crypto gaming is taking the world by storm, but how does it actually work? Find out in this in-depth article.</p>
 <p>Imagine being able to sit down at one of your favorite games and use it to make a living. It sounds impossible, but thanks to crypto games 2021, it&rsquo;s already a reality. PC, IoS, and android crypto games 2022 promise to reward players for their in-game efforts and give them more control over future development directions of the titles they play.</p>
 <p>&ldquo;Play to earn&rdquo; is a concept right at the center of popular crypto games like Axie Infinity. It shifts the paradigm from the traditional model where players pay developers into one in which they earn money for themselves. Just a few months ago, using crypto games to earn money would have seemed like make-believe, but it is happening, and in a big way. Now the entire gaming industry is talking about it, and, from what we can tell, it appears to be the future.&nbsp;</p>
 <p>In this post, we take a look at how crypto games for PC, Android, iOS and other platforms work, and how you can get on the bandwagon.&nbsp;</p>

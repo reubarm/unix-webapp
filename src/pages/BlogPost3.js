@@ -19,7 +19,6 @@ import BlogPostHero from '../components/BlogPostHero';
 const POST_BODY = `
 
 <br/><h3>What are metaverse gaming projects?</h3>
-<p><strong>Meta description: </strong>Metaverse gaming projects could change the face of online gaming forever. Find out what they are and how they could make you money.&nbsp;</p>
 <p>Facebook recently changed the name of its parent company to Meta, signalling a paradigm shift away from old modes of interacting online to a brand new model. The company wants to make digital experiences more immersive, making the FB metaverse a core part of its vision.</p>
 <p>Part of that transition involves the development of virtual world metaverse gaming projects &ndash; types of highly immersive interactions that will ride a new wave of digital technologies, likely to hit in the 2020s.&nbsp;</p>
 <p>It&rsquo;s not a fringe development, either. The value of the metaverse ecosystem will expand from the estimated $46 billion today to more than $280 billion by 2025, <a href="https://medium.com/coinmonks/top-5-gaming-metaverse-projects-in-2021-e0460426c1d" target="_blank" rel="noopener">according to EarthWeb</a>. It will create more than 10,000 jobs over the coming five years and projects will blend AR, VR, blockchain and AI with existing social platforms. The potential evolution of gaming projects could be virtually unlimited.&nbsp;</p>

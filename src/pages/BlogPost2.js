@@ -19,7 +19,6 @@ import BlogPostHero from '../components/BlogPostHero';
 const POST_BODY = `
 
 <br/><h3>How Metaverse Will Affect Crypto</h3>
-<p><strong>Meta description:</strong> The metaverse is coming. Learn how it&rsquo;s going to affect cryptocurrencies, NFTs and certain types of games.&nbsp;</p>
 <p>The metaverse is the most exciting technological development of the next decade. It promises to give users experiences that are potentially as good as or better than any they could have in the real world. A combination of new technologies, including AR, blockchain, crypto and AI, is making it possible to create levels of immersion that are comparable to conventional reality.&nbsp;</p>
 <p>As you might expect, crypto will play a central role in the future metaverse ecosystem. Users will require it to secure and protect information relating to currency, gaming and NFTs.&nbsp;</p>
 <p>In this post, we discuss in detail how the metaverse will affect crypto and how people use it. We will also talk about the value of exchanges, such as ours, in creating an ecosystem that will support crypto games.</p>

@@ -52,6 +52,20 @@ export default function AddGame() {
   const [telegram, setTelegram] = useState('');
   const [discord, setDiscord] = useState('');
   const [facebook, setFacebook] = useState('');
+  const [success, setSuccess] = useState(false);
+  const [investorpeeps, setInvestorpeeps] = useState(false);
+  const [trailers, setTrailers] = useState(false);
+  const [launchpads, setLaunchpads] = useState(false);
+
+  const showInvestors = () => {
+    setInvestorpeeps(true);
+  };
+  const showTrailers = () => {
+    setTrailers(true);
+  };
+  const showLaunchpads = () => {
+    setLaunchpads(true);
+  };
 
   const [formats, setFormats] = React.useState(() => []);
 
@@ -64,8 +78,6 @@ export default function AddGame() {
   const handleModel = (event, newModels) => {
     setModels(newModels);
   };
-
-  const [success, setSuccess] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -230,6 +242,11 @@ export default function AddGame() {
                             <MenuItem value="Solana">Solana</MenuItem>
                             <MenuItem value="Polygon">Polygon</MenuItem>
                             <MenuItem value="Hive">Hive</MenuItem>
+                            <MenuItem value="Hive">WAX</MenuItem>
+                            <MenuItem value="Hive">Immutable X</MenuItem>
+                            <MenuItem value="Hive">Harmony</MenuItem>
+                            <MenuItem value="Hive">Vulcan Forge</MenuItem>
+                            <MenuItem value="Hive">Avalanche</MenuItem>
                           </Select>
                         </FormControl>{' '}
                       </Grid>
@@ -349,6 +366,46 @@ export default function AddGame() {
                           onChange={(e) => setInvestors(e.target.value)}
                           className="mobile"
                         />
+                        {!investorpeeps && <Button onClick={showInvestors}>Add more +</Button>}
+                        {investorpeeps && (
+                          <div>
+                            <br />
+                            <TextField
+                              fullWidth
+                              label="Team (#1)"
+                              id="outlined-size-normal"
+                              onChange={(e) => setInvestors(e.target.value)}
+                              className="mobile"
+                            />
+                            <br />
+                            <br />
+                            <TextField
+                              fullWidth
+                              label="Advisors (#2)"
+                              id="outlined-size-normal"
+                              onChange={(e) => setInvestors(e.target.value)}
+                              className="mobile"
+                            />
+                            <br />
+                            <br />
+                            <TextField
+                              fullWidth
+                              label="Backers (#3)"
+                              id="outlined-size-normal"
+                              onChange={(e) => setInvestors(e.target.value)}
+                              className="mobile"
+                            />
+                            <br />
+                            <br />
+                            <TextField
+                              fullWidth
+                              label="Investors (#4)"
+                              id="outlined-size-normal"
+                              onChange={(e) => setInvestors(e.target.value)}
+                              className="mobile"
+                            />
+                          </div>
+                        )}
                       </Grid>
                       <Grid item xs={6}>
                         <TextField
@@ -396,6 +453,38 @@ export default function AddGame() {
                           onChange={(e) => setFacebook(e.target.value)}
                           className="mobile"
                         />
+
+                        {!launchpads && <Button onClick={showLaunchpads}>Add more +</Button>}
+                        {launchpads && (
+                          <div>
+                            <br />
+                            <TextField
+                              fullWidth
+                              label="Launchpads #1"
+                              id="outlined-size-normal"
+                              onChange={(e) => setFacebook(e.target.value)}
+                              className="mobile"
+                            />
+                            <br />
+                            <br />
+                            <TextField
+                              fullWidth
+                              label="Launchpads #2"
+                              id="outlined-size-normal"
+                              onChange={(e) => setFacebook(e.target.value)}
+                              className="mobile"
+                            />
+                            <br />
+                            <br />
+                            <TextField
+                              fullWidth
+                              label="Launchpads #3"
+                              id="outlined-size-normal"
+                              onChange={(e) => setFacebook(e.target.value)}
+                              className="mobile"
+                            />
+                          </div>
+                        )}
                       </Grid>
                       <Grid item xs={6}>
                         <TextField
@@ -489,7 +578,7 @@ export default function AddGame() {
                       </Grid>
                       <Grid item xs={6}>
                         <FormLabel component="legend" sx={{ marginBottom: '10px' }}>
-                          Team and Advisors Photos
+                          Team, Advisors &amp; Investors Photos
                         </FormLabel>
                         <UploadMultiFile
                           showPreview
@@ -539,6 +628,33 @@ export default function AddGame() {
                       <Grid item xs={6}>
                         <TextField
                           fullWidth
+                          label="Circulation Supply"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Marketcap"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Fully Diluted Market Cap"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
                           label="NFTs to Purchase"
                           id="outlined-size-normal"
                           onChange={(e) => setFacebook(e.target.value)}
@@ -557,18 +673,52 @@ export default function AddGame() {
                       <Grid item xs={6}>
                         <TextField
                           fullWidth
-                          label="Special Features"
-                          id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
-                          className="mobile"
-                        />
-                      </Grid>
-                      <Grid item xs={6}>
-                        <TextField
-                          fullWidth
                           label="Trailers and In-Game Videos"
                           id="outlined-size-normal"
                           onChange={(e) => setYoutube(e.target.value)}
+                          className="mobile"
+                        />
+
+                        {!trailers && <Button onClick={showTrailers}>Add more +</Button>}
+                        {trailers && (
+                          <div>
+                            <br />
+                            <TextField
+                              fullWidth
+                              label="Trailers and In-Game Videos #1"
+                              id="outlined-size-normal"
+                              onChange={(e) => setYoutube(e.target.value)}
+                              className="mobile"
+                            />
+                            <br />
+                            <br />
+                            <TextField
+                              fullWidth
+                              label="Trailers and In-Game Videos #2"
+                              id="outlined-size-normal"
+                              onChange={(e) => setYoutube(e.target.value)}
+                              className="mobile"
+                            />
+                            <br />
+                            <br />
+                            <TextField
+                              fullWidth
+                              label="Trailers and In-Game Videos #3"
+                              id="outlined-size-normal"
+                              onChange={(e) => setYoutube(e.target.value)}
+                              className="mobile"
+                            />
+                          </div>
+                        )}
+                      </Grid>
+                      <Grid item xs={12}>
+                        <TextField
+                          fullWidth
+                          multiline
+                          rows={4}
+                          label="Whats Special About Your Game"
+                          id="outlined-size-normal"
+                          onChange={(e) => setFacebook(e.target.value)}
                           className="mobile"
                         />
                       </Grid>

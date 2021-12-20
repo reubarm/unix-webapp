@@ -19,7 +19,6 @@ import BlogPostHero from '../components/BlogPostHero';
 const POST_BODY = `
 
 <br/><h3>Top 5 play to earn crypto games 2021</h3>
-<p><strong>Meta description: </strong>Are you interested in play to earn crypto games? Check out our top five list of games you have to try.&nbsp;</p>
 <p>Play and earn crypto games are taking the world by storm. Gamers love the fact that titles are finally rewarding them for all their hard work, beyond mere in-game prizes. In some cases, gamification is becoming a career!&nbsp;</p>
 <p>In this post, we take a look at the top five play 2 earn currently on the market by <a href="https://coinmarketcap.com/view/play-to-earn/" target="_blank" rel="noopener">market cap</a>. (Please note that this list is subject to change, depending on user preferences and how each game&rsquo;s ecosystem develops in the future).</p>
 <br/><h3>#1: Axie Infinity &ndash; $6.2 billion</h3>
