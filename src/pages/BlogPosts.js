@@ -61,6 +61,13 @@ export default function BlogPosts() {
           <Grid container spacing={3}>
             <BlogPostCard
               key={1}
+              title="Is Crypto Gaming the Future?"
+              cover="https://www.pragmaticcoders.com/hubfs/nft-crypto-gaming-developers.jpg"
+              url="/is-crypto-gaming-the-future"
+              index={0}
+            />
+            <BlogPostCard
+              key={1}
               title="Top 5 play to earn crypto games 2021"
               cover="https://images.pexels.com/photos/159204/game-controller-joystick-joypad-gamepad-159204.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
               url="/top-5-games"
@@ -71,14 +78,14 @@ export default function BlogPosts() {
               title="What are metaverse gaming projects?"
               cover="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"
               url="/metaverse-gaming"
-              index={0}
+              index={1}
             />
             <BlogPostCard
               key={1}
               title="How crypto gaming works"
               cover="https://images.pexels.com/photos/1373100/pexels-photo-1373100.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
               url="/crypto-gaming"
-              index={0}
+              index={1}
             />
             <BlogPostCard
               key={1}

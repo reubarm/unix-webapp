@@ -28,6 +28,7 @@ export const PATH_DASHBOARD = {
     BlogPost2: path(ROOTS_DASHBOARD, '/metaverse-crypto'),
     BlogPost3: path(ROOTS_DASHBOARD, '/metaverse-gaming'),
     BlogPost4: path(ROOTS_DASHBOARD, '/crypto-gaming'),
+    BlogPost5: path(ROOTS_DASHBOARD, '/is-crypto-gaming-the-future'),
     AddGame: path(ROOTS_DASHBOARD, '/add-game')
   },
   app: {
