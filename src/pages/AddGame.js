@@ -52,10 +52,19 @@ export default function AddGame() {
   const [telegram, setTelegram] = useState('');
   const [discord, setDiscord] = useState('');
   const [facebook, setFacebook] = useState('');
+
+  const [team, setTeam] = useState('');
+  const [partners, setPartners] = useState('');
+  const [advisors, setAdvisors] = useState('');
+  const [launchpad, setLaunchpad] = useState('');
+  const [launchpads, setLaunchpads] = useState('');
+  const [network, setNetwork] = useState('');
+  const [tokens, setTokens] = useState('');
+  const [raise, setRaise] = useState('');
+
   const [success, setSuccess] = useState(false);
   const [investorpeeps, setInvestorpeeps] = useState(false);
   const [trailers, setTrailers] = useState(false);
-  const [launchpads, setLaunchpads] = useState(false);
 
   const showInvestors = () => {
     setInvestorpeeps(true);
@@ -101,7 +110,15 @@ export default function AddGame() {
       Twitter: twitter,
       Telegram: telegram,
       Discord: discord,
-      Facebook: facebook
+      Facebook: facebook,
+      Team: team,
+      Partners: partners,
+      Advisors: advisors,
+      Launchpad: launchpad,
+      Launchpads: launchpads,
+      Network: network,
+      Tokens: tokens,
+      Raise: raise
     };
 
     // Add one line to the sheet
@@ -180,14 +197,6 @@ export default function AddGame() {
               <CardContent>
                 <FormikProvider value={formik}>
                   <form className="form">
-                    {/* <Stack
-                      component={motion.div}
-                      variants={varFadeInRight}
-                      direction="column"
-                      spacing={3}
-                      sx={{ padding: '30px' }}
-                      justifyContent={{ xs: 'center', md: 'flex-start' }}
-                    > */}
                     <Grid container spacing={2}>
                       <Grid item xs={6}>
                         <TextField
@@ -422,7 +431,7 @@ export default function AddGame() {
                           fullWidth
                           label="Team"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setTeam(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -431,7 +440,7 @@ export default function AddGame() {
                           fullWidth
                           label="Advisors"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setAdvisors(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -440,7 +449,7 @@ export default function AddGame() {
                           fullWidth
                           label="Partners"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setPartners(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -450,7 +459,7 @@ export default function AddGame() {
                           fullWidth
                           label="Launchpads"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setLaunchpad(e.target.value)}
                           className="mobile"
                         />
 
@@ -462,7 +471,7 @@ export default function AddGame() {
                               fullWidth
                               label="Launchpads #1"
                               id="outlined-size-normal"
-                              onChange={(e) => setFacebook(e.target.value)}
+                              onChange={(e) => setLaunchpads(e.target.value)}
                               className="mobile"
                             />
                             <br />
@@ -471,7 +480,7 @@ export default function AddGame() {
                               fullWidth
                               label="Launchpads #2"
                               id="outlined-size-normal"
-                              onChange={(e) => setFacebook(e.target.value)}
+                              onChange={(e) => setLaunchpads(e.target.value)}
                               className="mobile"
                             />
                             <br />
@@ -480,7 +489,7 @@ export default function AddGame() {
                               fullWidth
                               label="Launchpads #3"
                               id="outlined-size-normal"
-                              onChange={(e) => setFacebook(e.target.value)}
+                              onChange={(e) => setLaunchpads(e.target.value)}
                               className="mobile"
                             />
                           </div>
@@ -491,7 +500,7 @@ export default function AddGame() {
                           fullWidth
                           label="Network"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setNetwork(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -500,7 +509,7 @@ export default function AddGame() {
                           fullWidth
                           label="Total Tokens"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setTokens(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -509,7 +518,7 @@ export default function AddGame() {
                           fullWidth
                           label="Total Raise"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setRaise(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -776,16 +785,6 @@ export default function AddGame() {
                           className="mobile"
                         />
                       </Grid>
-                      {/* <Grid item xs={6}>
-                        <TextField
-                          fullWidth
-                          label=""
-                          id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
-                          className="mobile"
-                        />
-                      </Grid> */}
-
                       <Grid item xs={12}>
                         <br />
                         <br />
@@ -811,7 +810,6 @@ export default function AddGame() {
                         </div>
                       </Grid>
                     </Grid>
-                    {/* </Stack> */}
                   </form>
                 </FormikProvider>
               </CardContent>

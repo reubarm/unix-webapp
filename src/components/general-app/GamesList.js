@@ -360,6 +360,17 @@ export default function GamesList() {
                 })}
               </> */}
               {/* <YoutubeEmbed embedId="-l9QzjghXi0" /> */}
+              {selectedGame[0].Trailer && (
+                <div style={{ display: 'flex' }}>
+                  <img src={selectedGame[0].Trailer} alt="game" height="150" />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <img src={selectedGame[0].Trailer1} alt="game" height="150" />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <img src={selectedGame[0].Trailer2} alt="game" height="150" />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <img src={selectedGame[0].Trailer3} alt="game" height="150" />
+                </div>
+              )}
             </div>
             <br />
             <hr style={{ borderColor: '#5a6b7a' }} />
@@ -381,7 +392,7 @@ export default function GamesList() {
           title="Partnerships and Games of Unix Gaming"
           sx={{ mb: 3, textAlign: 'center', margin: '0 auto 20px' }}
         /> */}
-        <TableContainer sx={{ minWidth: 720, height: '100%' }}>
+        <TableContainer sx={{ minWidth: 720, height: '100%', overflow: 'hidden' }}>
           <Table sx={{ minWidth: 720, height: '100%' }}>
             {/* <TableHead sx={{ background: '#10171f!important' }}>
               <TableRow sx={{ background: '#10171f!important' }}>
@@ -401,7 +412,8 @@ export default function GamesList() {
                   background: '#303d4a',
                   borderBottom: '10px solid #212B36',
                   borderTop: '10px solid #212B36',
-                  height: '100%'
+                  height: '100%',
+                  overflow: 'hidden'
                 }}
               >
                 {game.Order && (
@@ -419,7 +431,7 @@ export default function GamesList() {
                       </a>
                     </span>
                     <TableCell>{game.Label.replace(/[\[\]"]+/g, '')}</TableCell>
-                    <TableCell sx={{ textAlign: 'left' }}>
+                    <TableCell sx={{ textAlign: 'left', width: '200px' }}>
                       <img
                         src={game.Device.includes('Web') ? '/web.png' : '/none.png'}
                         className={game.Device.includes('Web') ? '' : 'hide'}
