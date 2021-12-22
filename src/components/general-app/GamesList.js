@@ -191,87 +191,87 @@ export default function GamesList() {
 
   // ----------------------------------------------------------------------
 
-  // const [moedas, setMoedas] = useState([]);
+  const [moedas, setMoedas] = useState([]);
 
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10000&page=1&sparkline=false'
-  //     )
-  //     .then((res) => {
-  //       setMoedas(res.data);
-  //       // console.log(res.data);
-  //     })
-  //     .catch((error) => console.log(error));
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(
+        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10000&page=1&sparkline=false'
+      )
+      .then((res) => {
+        setMoedas(res.data);
+        // console.log(res.data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
-  // const filteredMoedas = moedas.filter((moeda) => moeda.symbol.toLowerCase().includes('axs'.toLowerCase()));
+  const filteredMoedas = moedas.filter((moeda) => moeda.symbol.toLowerCase().includes('axs'.toLowerCase()));
 
-  // const Moeda = ({
-  //   name,
-  //   price,
-  //   symbol,
-  //   marketcap,
-  //   volume,
-  //   image,
-  //   priceChange,
-  //   /* eslint-disable */
-  //   price_change_percentage_24h,
-  //   /* eslint-disable */
-  //   market_cap_change_percentage_24h
-  // }) => {
-  //   return (
-  //     <div className="moeda-row">
-  //       <TableContainer sx={{ minWidth: 720 }}>
-  //         <Table>
-  //           <TableRow sx={{ color: 'white!important' }}>
-  //             <TableCell>
-  //               <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
-  //                 Symbol:{' '}
-  //               </span>
-  //               {symbol}
-  //             </TableCell>
-  //             <TableCell>
-  //               <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>Price: </span>
-  //               ${price}
-  //             </TableCell>
-  //             <TableCell>
-  //               <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
-  //                 24hr Price Change %:{' '}
-  //               </span>
-  //               ${price_change_percentage_24h}
-  //             </TableCell>
-  //             <TableCell>
-  //               <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
-  //                 Market Cap Change %:{' '}
-  //               </span>
-  //               ${market_cap_change_percentage_24h}
-  //             </TableCell>
-  //             <TableCell>
-  //               <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
-  //                 Volume:{' '}
-  //               </span>
-  //               ${volume.toLocaleString()}
-  //             </TableCell>
-  //             <TableCell>
-  //               <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
-  //                 Price Change:{' '}
-  //               </span>
-  //               {priceChange.toFixed(2)}%
-  //             </TableCell>
-  //             <TableCell>
-  //               {' '}
-  //               <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
-  //                 Market Cap:{' '}
-  //               </span>{' '}
-  //               ${marketcap.toLocaleString()}
-  //             </TableCell>
-  //           </TableRow>
-  //         </Table>
-  //       </TableContainer>
-  //     </div>
-  //   );
-  // };
+  const Moeda = ({
+    name,
+    price,
+    symbol,
+    marketcap,
+    volume,
+    image,
+    priceChange,
+    /* eslint-disable */
+    price_change_percentage_24h,
+    /* eslint-disable */
+    market_cap_change_percentage_24h
+  }) => {
+    return (
+      <div className="moeda-row">
+        <TableContainer sx={{ minWidth: 720 }}>
+          <Table>
+            <TableRow sx={{ color: 'white!important' }}>
+              <TableCell>
+                <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                  Symbol:{' '}
+                </span>
+                {symbol}
+              </TableCell>
+              <TableCell>
+                <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>Price: </span>
+                ${price}
+              </TableCell>
+              <TableCell>
+                <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                  24hr Price Change %:{' '}
+                </span>
+                ${price_change_percentage_24h}
+              </TableCell>
+              <TableCell>
+                <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                  Market Cap Change %:{' '}
+                </span>
+                ${market_cap_change_percentage_24h}
+              </TableCell>
+              <TableCell>
+                <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                  Volume:{' '}
+                </span>
+                ${volume.toLocaleString()}
+              </TableCell>
+              <TableCell>
+                <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                  Price Change:{' '}
+                </span>
+                {priceChange.toFixed(2)}%
+              </TableCell>
+              <TableCell>
+                {' '}
+                <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                  Market Cap:{' '}
+                </span>{' '}
+                ${marketcap.toLocaleString()}
+              </TableCell>
+            </TableRow>
+          </Table>
+        </TableContainer>
+      </div>
+    );
+  };
 
   // ----------------------------------------------------------------------
 
@@ -333,49 +333,158 @@ export default function GamesList() {
             <br />
             <h4 style={{ fontWeight: '400' }}>{selectedGame[0].Description}</h4>
             <br />
-            <h4>Contract Address: {selectedGame[0].Contract}</h4> <br />
+            <h4>Contract Address: <span style={{ fontWeight: '400!important', color: '#e481ff' }}> {selectedGame[0].Contract}</span></h4> <br />
             <h2>
               Social Score: <span style={{ color: '#e481ff' }}>{selectedGame[0].Score}</span>
             </h2>
             <br />
             <hr style={{ borderColor: '#5a6b7a' }} />
             <br />
-            <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
-              {/* <>
-                {filteredMoedas.map((moeda) => {
-                  return (
-                    <Moeda
-                      key={moeda.id}
-                      name={moeda.name}
-                      price={moeda.current_price}
-                      symbol={moeda.symbol}
-                      marketcap={moeda.market_cap}
-                      price_change_percentage_24h={moeda.price_change_percentage_24h}
-                      market_cap_change_percentage_24h={moeda.market_cap_change_percentage_24h}
-                      volume={moeda.total_volume}
-                      image={moeda.image}
-                      priceChange={moeda.price_change_percentage_24h}
-                    />
-                  );
-                })}
-              </> */}
-              {/* <YoutubeEmbed embedId="-l9QzjghXi0" /> */}
-              {selectedGame[0].Trailer && (
-                <div style={{ display: 'flex' }}>
-                  <img src={selectedGame[0].Trailer} alt="game" height="150" />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <img src={selectedGame[0].Trailer1} alt="game" height="150" />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <img src={selectedGame[0].Trailer2} alt="game" height="150" />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <img src={selectedGame[0].Trailer3} alt="game" height="150" />
+            {selectedGame[0].Name.includes('Axie') && (
+              <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
+                <>
+                  {filteredMoedas.map((moeda) => {
+                    return (
+                      <Moeda
+                        key={moeda.id}
+                        name={moeda.name}
+                        price={moeda.current_price}
+                        symbol={moeda.symbol}
+                        marketcap={moeda.market_cap}
+                        price_change_percentage_24h={moeda.price_change_percentage_24h}
+                        market_cap_change_percentage_24h={moeda.market_cap_change_percentage_24h}
+                        volume={moeda.total_volume}
+                        image={moeda.image}
+                        priceChange={moeda.price_change_percentage_24h}
+                      />
+                    );
+                  })}
+                </>
+              </div>
+            )}
+            {selectedGame[0].Name.includes('Axie') && (
+              <>
+                <br />
+                <hr style={{ borderColor: '#5a6b7a' }} />
+                <br />
+                <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <TableContainer sx={{ minWidth: 720 }}>
+                    <Table>
+                      <TableRow sx={{ color: 'white!important' }}>
+                        <TableCell>
+                          <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                            Total Tokens:{' '}
+                          </span>
+                          {selectedGame[0].Tokens}
+                        </TableCell>
+                        <TableCell>
+                          <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                            Total Raised:{' '}
+                          </span>
+                          {selectedGame[0].Raise}
+                        </TableCell>
+                        <TableCell>
+                          <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                            Seed Token %:{' '}
+                          </span>
+                          {selectedGame[0].Seed}
+                        </TableCell>
+                        <TableCell>
+                          <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                            Private Token %:{' '}
+                          </span>
+                          {selectedGame[0].Private}
+                        </TableCell>
+                        <TableCell>
+                          <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                            IDO Tokens %:{' '}
+                          </span>
+                          {selectedGame[0].Ido}
+                        </TableCell>
+                        <TableCell>
+                          {' '}
+                          <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                            Fully Diluted Market Cap:{' '}
+                          </span>{' '}
+                          {selectedGame[0].Diluted}
+                        </TableCell>
+                        <TableCell>
+                          {' '}
+                          <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                            Circulation:{' '}
+                          </span>{' '}
+                          {selectedGame[0].Circulation}
+                        </TableCell>
+                      </TableRow>
+                    </Table>
+                  </TableContainer>
+                  <br />
                 </div>
-              )}
-            </div>
-            <br />
-            <hr style={{ borderColor: '#5a6b7a' }} />
-            <br />
-            <br />
+              </>
+            )}
+            {selectedGame[0].Trailer && (
+              <>
+                <br />
+                <hr style={{ borderColor: '#5a6b7a' }} />
+                <br />
+                <div style={{ display: 'flex', width: '100%' }}>
+                  <>
+                    <img src={selectedGame[0].Trailer} alt="game" height="150" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src={selectedGame[0].Trailer1} alt="game" height="150" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src={selectedGame[0].Trailer2} alt="game" height="150" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src={selectedGame[0].Trailer3} alt="game" height="150" />
+                  </>
+                </div>
+              </>
+            )}
+            {selectedGame[0].Team && (
+              <>
+                <br />
+                <hr style={{ borderColor: '#5a6b7a' }} />
+                <br />
+                <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>Team: </span>
+                {selectedGame[0].Team}
+                <br />
+                <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                  Partners:{' '}
+                </span>
+                {selectedGame[0].Partners}
+                <br />
+                <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                  Launchpad:{' '}
+                </span>
+                {selectedGame[0].Launchpad}
+                <br />
+                <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                  Network:{' '}
+                </span>
+                {selectedGame[0].Network}
+                <br />
+                <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                  Available NFTs:{' '}
+                </span>
+                {selectedGame[0].NFTs}
+                <br />
+                <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                  Avalailable Land NFTs:{' '}
+                </span>
+                {selectedGame[0].Land}
+                <br />
+                <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                  What makes the game special:{' '}
+                </span>
+                {selectedGame[0].Speciality}
+                <br />
+                <br />
+                <br />
+                <hr style={{ borderColor: '#5a6b7a' }} />
+                <br />
+                <br />
+              </>
+            )}
             <Button color="info" variant="contained" href={selectedGame[0].Web} target="_blank">
               {selectedGame[0].Name} Website
             </Button>

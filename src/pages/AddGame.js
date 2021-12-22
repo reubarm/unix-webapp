@@ -362,7 +362,8 @@ export default function AddGame() {
                         <TextField
                           fullWidth
                           label="Litepaper"
-                          id="outlined-size-normal"
+                          id="outlined-size-
+                          normal"
                           onChange={(e) => setLitepaper(e.target.value)}
                           className="mobile"
                         />
