@@ -61,6 +61,21 @@ export default function AddGame() {
   const [network, setNetwork] = useState('');
   const [tokens, setTokens] = useState('');
   const [raise, setRaise] = useState('');
+  const [event, setEvent] = useState('');
+
+  const [seed, setSeed] = useState('');
+  const [privateseed, setPrivateseed] = useState('');
+  const [vestingseed, setVestingseed] = useState('');
+  const [vestingprivate, setVestingprivate] = useState('');
+  const [vestingido, setVestingido] = useState('');
+  const [ido, setIdo] = useState('');
+  const [diluted, setDiluted] = useState('');
+  const [marketcap, setMarketcap] = useState('');
+  const [listing, setListing] = useState('');
+  const [circulation, setCirculation] = useState('');
+  const [nfts, setNfts] = useState('');
+  const [land, setLand] = useState('');
+  const [speciality, setSpeciality] = useState('');
 
   const [success, setSuccess] = useState(false);
   const [investorpeeps, setInvestorpeeps] = useState(false);
@@ -118,7 +133,21 @@ export default function AddGame() {
       Launchpads: launchpads,
       Network: network,
       Tokens: tokens,
-      Raise: raise
+      Raise: raise,
+      Event: event,
+      Seed: seed,
+      PrivateSeed: privateseed,
+      VestingSeed: vestingseed,
+      VestingPrivate: vestingprivate,
+      VestingIDO: vestingido,
+      Ido: ido,
+      Diluted: diluted,
+      MarketCap: marketcap,
+      Listing: listing,
+      Circulation: circulation,
+      NFTs: nfts,
+      Land: land,
+      Speciality: speciality
     };
 
     // Add one line to the sheet
@@ -528,7 +557,7 @@ export default function AddGame() {
                           fullWidth
                           label="Token Generation Event"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setEvent(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -537,7 +566,7 @@ export default function AddGame() {
                           fullWidth
                           label="Seed Tokens"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setSeed(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -546,7 +575,7 @@ export default function AddGame() {
                           fullWidth
                           label="Private Tokens"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setPrivateseed(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -555,7 +584,7 @@ export default function AddGame() {
                           fullWidth
                           label="IDO"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setIdo(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -564,7 +593,7 @@ export default function AddGame() {
                           fullWidth
                           label="Vesting for Seed"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setVestingseed(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -573,7 +602,7 @@ export default function AddGame() {
                           fullWidth
                           label="Vesting for Private"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setVestingprivate(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -582,7 +611,7 @@ export default function AddGame() {
                           fullWidth
                           label="Vesting for IDO"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setVestingido(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -631,7 +660,7 @@ export default function AddGame() {
                           fullWidth
                           label="Listing Price"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setListing(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -640,7 +669,7 @@ export default function AddGame() {
                           fullWidth
                           label="Circulation Supply"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setCirculation(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -649,7 +678,7 @@ export default function AddGame() {
                           fullWidth
                           label="Marketcap"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setMarketcap(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -658,7 +687,7 @@ export default function AddGame() {
                           fullWidth
                           label="Fully Diluted Market Cap"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setDiluted(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -667,7 +696,7 @@ export default function AddGame() {
                           fullWidth
                           label="NFTs to Purchase"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setNfts(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -676,7 +705,7 @@ export default function AddGame() {
                           fullWidth
                           label="Land to Purchase"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setLand(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
@@ -728,7 +757,7 @@ export default function AddGame() {
                           rows={4}
                           label="Whats Special About Your Game"
                           id="outlined-size-normal"
-                          onChange={(e) => setFacebook(e.target.value)}
+                          onChange={(e) => setSpeciality(e.target.value)}
                           className="mobile"
                         />
                       </Grid>
