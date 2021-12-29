@@ -128,7 +128,7 @@ export default function BlogPostHero({ title, image, ...other }) {
           </Box>
         </Box>
 
-        <SpeedDial
+        {/* <SpeedDial
           direction={isMobile ? 'up' : 'left'}
           ariaLabel="Share post"
           icon={<Icon icon={shareFill} />}
@@ -143,7 +143,7 @@ export default function BlogPostHero({ title, image, ...other }) {
               FabProps={{ color: 'default' }}
             />
           ))}
-        </SpeedDial>
+        </SpeedDial> */}
       </FooterStyle>
     </RootStyle>
   );
