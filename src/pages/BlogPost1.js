@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 // material
+import { FacebookShareButton, TwitterShareButton, FacebookIcon, TwitterIcon } from 'react-share';
 import { Box, Card, Divider, Skeleton, Container, Typography, Pagination } from '@mui/material';
 // redux
 import { useDispatch, useSelector } from '../redux/store';
@@ -50,12 +51,10 @@ const POST_BODY = `
 export default function BlogPost1() {
   const { themeStretch } = useSettings();
   const dispatch = useDispatch();
-  const { title } = useParams();
   const { post, error, recentPosts } = useSelector((state) => state.blog);
 
-  useEffect(() => {
-    dispatch(getPost(title));
-  }, [dispatch, title]);
+  const pageurl = window.location.href;
+  const title = 'Top 5 play to earn crypto games 2021';
 
   return (
     <Page title="Top 5 play to earn crypto games 2021">
@@ -63,9 +62,29 @@ export default function BlogPost1() {
         <Card>
           <BlogPostHero
             title="Top 5 play to earn crypto games 2021"
+            sx={{ textAlign: 'center' }}
             image="https://images.pexels.com/photos/159204/game-controller-joystick-joypad-gamepad-159204.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
           />
-          <div style={{ padding: '27px' }}>
+
+          <div
+            style={{
+              width: '300px',
+              margin: '50px auto',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            <TwitterShareButton url={pageurl} title={title}>
+              <TwitterIcon size={32} round />
+            </TwitterShareButton>
+            &nbsp;&nbsp;&nbsp;
+            <FacebookShareButton url={pageurl} title={title}>
+              <FacebookIcon size={32} round />
+            </FacebookShareButton>
+          </div>
+
+          <div style={{ padding: '50px', maxWidth: '850px', margin: '0 auto' }}>
             <Markdown children={POST_BODY} />
           </div>
         </Card>

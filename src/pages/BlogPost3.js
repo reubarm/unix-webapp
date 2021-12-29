@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { FacebookShareButton, TwitterShareButton, FacebookIcon, TwitterIcon } from 'react-share';
 // material
 import { Box, Card, Divider, Skeleton, Container, Typography, Pagination } from '@mui/material';
 // redux
@@ -48,12 +49,10 @@ const POST_BODY = `
 export default function BlogPost3() {
   const { themeStretch } = useSettings();
   const dispatch = useDispatch();
-  const { title } = useParams();
   const { post, error, recentPosts } = useSelector((state) => state.blog);
 
-  useEffect(() => {
-    dispatch(getPost(title));
-  }, [dispatch, title]);
+  const pageurl = window.location.href;
+  const title = 'What are metaverse gaming projects?';
 
   return (
     <Page title="What are metaverse gaming projects?">
@@ -61,9 +60,29 @@ export default function BlogPost3() {
         <Card>
           <BlogPostHero
             title="What are metaverse gaming projects?"
+            sx={{ textAlign: 'center' }}
             image="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"
           />
-          <div style={{ padding: '27px' }}>
+
+          <div
+            style={{
+              width: '300px',
+              margin: '50px auto',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            <TwitterShareButton url={pageurl} title={title}>
+              <TwitterIcon size={32} round />
+            </TwitterShareButton>
+            &nbsp;&nbsp;&nbsp;
+            <FacebookShareButton url={pageurl} title={title}>
+              <FacebookIcon size={32} round />
+            </FacebookShareButton>
+          </div>
+
+          <div style={{ padding: '50px', maxWidth: '850px', margin: '0 auto' }}>
             <Markdown children={POST_BODY} />
           </div>
         </Card>

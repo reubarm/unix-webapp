@@ -44,6 +44,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   },
   '&:before': {
     top: 0,
+    left: 0,
     zIndex: 9,
     content: "''",
     width: '100%',

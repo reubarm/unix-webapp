@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { FacebookShareButton, TwitterShareButton, FacebookIcon, TwitterIcon } from 'react-share';
 // material
 import { Box, Card, Divider, Skeleton, Container, Typography, Pagination } from '@mui/material';
 // redux
@@ -56,12 +57,10 @@ const POST_BODY = `
 export default function BlogPost2() {
   const { themeStretch } = useSettings();
   const dispatch = useDispatch();
-  const { title } = useParams();
   const { post, error, recentPosts } = useSelector((state) => state.blog);
 
-  useEffect(() => {
-    dispatch(getPost(title));
-  }, [dispatch, title]);
+  const pageurl = window.location.href;
+  const title = 'How Metaverse Will Affect Crypto';
 
   return (
     <Page title="How Metaverse Will Affect Crypto">
@@ -69,9 +68,29 @@ export default function BlogPost2() {
         <Card>
           <BlogPostHero
             title="How Metaverse Will Affect Crypto"
+            sx={{ textAlign: 'center' }}
             image="https://images.pexels.com/photos/1447418/pexels-photo-1447418.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
           />
-          <div style={{ padding: '27px' }}>
+
+          <div
+            style={{
+              width: '300px',
+              margin: '50px auto',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            <TwitterShareButton url={pageurl} title={title}>
+              <TwitterIcon size={32} round />
+            </TwitterShareButton>
+            &nbsp;&nbsp;&nbsp;
+            <FacebookShareButton url={pageurl} title={title}>
+              <FacebookIcon size={32} round />
+            </FacebookShareButton>
+          </div>
+
+          <div style={{ padding: '50px', maxWidth: '850px', margin: '0 auto' }}>
             <Markdown children={POST_BODY} />
           </div>
         </Card>
