@@ -75,7 +75,7 @@ export default function BlogPost2() {
           <div
             style={{
               width: '300px',
-              margin: '50px auto',
+              margin: '50px auto 10px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center'
@@ -90,7 +90,7 @@ export default function BlogPost2() {
             </FacebookShareButton>
           </div>
 
-          <div style={{ padding: '50px', maxWidth: '850px', margin: '0 auto' }}>
+          <div style={{ padding: '0 50px', maxWidth: '850px', margin: '0 auto' }}>
             <Markdown children={POST_BODY} />
           </div>
         </Card>
