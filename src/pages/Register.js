@@ -136,12 +136,6 @@ const Form = () => {
           onChange={(e) => setTelegram(e.target.value)}
           className="mobile"
         />
-        {/* <TextField
-          label="ERC20 Wallet Address"
-          id="outlined-size-normal"
-          onChange={(e) => setWallet(e.target.value)}
-          className="mobile"
-        /> */}
       </Stack>
       <br />
 

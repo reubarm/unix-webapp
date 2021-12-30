@@ -12,7 +12,7 @@ const RootStyle = styled(Card)(({ theme }) => ({
   boxShadow: 'none',
   textAlign: 'center',
   backgroundColor: theme.palette.primary.lighter,
-  background: `url(/background.png) bottom no-repeat`,
+  background: `url(/bg.jpg) bottom no-repeat`,
   backgroundSize: 'cover',
   minHeight: '300px',
   color: 'white!important',

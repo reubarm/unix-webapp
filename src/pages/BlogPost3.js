@@ -107,7 +107,7 @@ export default function BlogPost3() {
             </LinkedinShareButton>
           </div>
 
-          <div style={{ padding: '0 50px', maxWidth: '850px', margin: '0 auto' }}>
+          <div style={{ padding: '0 50px 50px', maxWidth: '850px', margin: '0 auto' }}>
             <Markdown children={POST_BODY} />
           </div>
         </Card>
