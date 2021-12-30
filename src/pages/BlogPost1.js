@@ -1,7 +1,20 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 // material
-import { FacebookShareButton, TwitterShareButton, FacebookIcon, TwitterIcon } from 'react-share';
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  FacebookIcon,
+  TwitterIcon,
+  EmailShareButton,
+  LinkedinShareButton,
+  WhatsappShareButton,
+  TelegramShareButton,
+  EmailIcon,
+  LinkedinIcon,
+  WhatsappIcon,
+  TelegramIcon
+} from 'react-share';
 import { Box, Card, Divider, Skeleton, Container, Typography, Pagination } from '@mui/material';
 // redux
 import { useDispatch, useSelector } from '../redux/store';
@@ -82,6 +95,18 @@ export default function BlogPost1() {
             <FacebookShareButton url={pageurl} title={title}>
               <FacebookIcon size={32} round />
             </FacebookShareButton>
+            &nbsp;&nbsp;&nbsp;
+            <EmailShareButton url={pageurl} title={title}>
+              <EmailIcon size={32} round />
+            </EmailShareButton>
+            &nbsp;&nbsp;&nbsp;
+            <WhatsappShareButton url={pageurl} title={title}>
+              <WhatsappIcon size={32} round />
+            </WhatsappShareButton>
+            &nbsp;&nbsp;&nbsp;
+            <LinkedinShareButton url={pageurl} title={title}>
+              <LinkedinIcon size={32} round />
+            </LinkedinShareButton>
           </div>
 
           <div style={{ padding: '0 50px', maxWidth: '850px', margin: '0 auto' }}>
