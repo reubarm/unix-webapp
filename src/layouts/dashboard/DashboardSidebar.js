@@ -140,7 +140,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       >
         <Stack direction="row" alignItems="center" justifyContent="space-between">
           <Box component={RouterLink} to="/" sx={{ display: 'inline-flex' }}>
-            <img src="/logo.png" alt="logo" width="150" className="hide-mb" />
+            {!isCollapse && <img src="/logo.png" alt="logo" width="150" className="hide-mb" />}
           </Box>
 
           <MHidden width="lgDown">
@@ -172,7 +172,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
         )}
       </Stack>
 
-      <NavSection />
+      <NavSection isCollapse={isCollapse} />
     </Scrollbar>
   );
 

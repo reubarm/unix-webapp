@@ -158,7 +158,7 @@ NavSection.propTypes = {
   navConfig: PropTypes.array
 };
 
-export default function NavSection({ navConfig, isShow = true, ...other }) {
+export default function NavSection({ isCollapse, navConfig, isShow = true, ...other }) {
   return (
     // <Box {...other}>
     //   {navConfig.map((list) => {
@@ -176,13 +176,13 @@ export default function NavSection({ navConfig, isShow = true, ...other }) {
 
     <Box>
       <List disablePadding>
-        <ListSubheaderStyle>UniX Gaming</ListSubheaderStyle>
+        {!isCollapse && <ListSubheaderStyle>UniX Gaming</ListSubheaderStyle>}
         <a href="/" style={{ textDecoration: 'none' }}>
           <ListItemStyle>
             <ListItemIconStyle>
               <SvgIconStyle src="/static/icons/navbar/ic_dashboard.svg" sx={{ width: '100%', height: '100%' }} />
             </ListItemIconStyle>
-            <ListItemText disableTypography primary="Dashboard" />
+            {!isCollapse && <ListItemText disableTypography primary="Dashboard" />}
             <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
           </ListItemStyle>
         </a>
@@ -196,7 +196,7 @@ export default function NavSection({ navConfig, isShow = true, ...other }) {
             <ListItemIconStyle>
               <SvgIconStyle src="/static/icons/navbar/ic_ecommerce.svg" sx={{ width: '100%', height: '100%' }} />
             </ListItemIconStyle>
-            <ListItemText disableTypography primary="Staking" />
+            {!isCollapse && <ListItemText disableTypography primary="Staking" />}
             <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
           </ListItemStyle>
         </a>
@@ -205,7 +205,7 @@ export default function NavSection({ navConfig, isShow = true, ...other }) {
             <ListItemIconStyle>
               <SvgIconStyle src="/static/icons/navbar/ic_analytics.svg" sx={{ width: '100%', height: '100%' }} />
             </ListItemIconStyle>
-            <ListItemText disableTypography primary="Launchpad" />
+            {!isCollapse && <ListItemText disableTypography primary="Launchpad" />}
             <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
           </ListItemStyle>
         </a>
@@ -214,7 +214,7 @@ export default function NavSection({ navConfig, isShow = true, ...other }) {
             <ListItemIconStyle>
               <SvgIconStyle src="/static/icons/navbar/ic_blog.svg" sx={{ width: '100%', height: '100%' }} />
             </ListItemIconStyle>
-            <ListItemText disableTypography primary="DAO" />
+            {!isCollapse && <ListItemText disableTypography primary="DAO" />}
             <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
           </ListItemStyle>
         </a>
@@ -223,7 +223,7 @@ export default function NavSection({ navConfig, isShow = true, ...other }) {
             <ListItemIconStyle>
               <SvgIconStyle src="/static/icons/navbar/ic_calendar.svg" sx={{ width: '100%', height: '100%' }} />
             </ListItemIconStyle>
-            <ListItemText disableTypography primary="Roadmap" />
+            {!isCollapse && <ListItemText disableTypography primary="Roadmap" />}
             <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
           </ListItemStyle>
         </a>
@@ -232,17 +232,17 @@ export default function NavSection({ navConfig, isShow = true, ...other }) {
             <ListItemIconStyle>
               <SvgIconStyle src="/static/icons/navbar/ic_chat.svg" sx={{ width: '100%', height: '100%' }} />
             </ListItemIconStyle>
-            <ListItemText disableTypography primary="Blog" />
+            {!isCollapse && <ListItemText disableTypography primary="Blog" />}
             <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
           </ListItemStyle>
         </a>
-        <ListSubheaderStyle>Socials</ListSubheaderStyle>
+        {!isCollapse && <ListSubheaderStyle>Socials</ListSubheaderStyle>}
         <a href="http://t.me/unix_token" style={{ textDecoration: 'none' }}>
           <ListItemStyle>
             <ListItemIconStyle>
               <SvgIconStyle src="/static/icons/navbar/ic_user.svg" sx={{ width: '100%', height: '100%' }} />
             </ListItemIconStyle>
-            <ListItemText disableTypography primary="Telegram" />
+            {!isCollapse && <ListItemText disableTypography primary="Telegram" />}
             <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
           </ListItemStyle>
         </a>
@@ -251,7 +251,7 @@ export default function NavSection({ navConfig, isShow = true, ...other }) {
             <ListItemIconStyle>
               <SvgIconStyle src="/static/icons/navbar/ic_blog.svg" sx={{ width: '100%', height: '100%' }} />
             </ListItemIconStyle>
-            <ListItemText disableTypography primary="Discord" />
+            {!isCollapse && <ListItemText disableTypography primary="Discord" />}
             <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
           </ListItemStyle>
         </a>
@@ -260,7 +260,7 @@ export default function NavSection({ navConfig, isShow = true, ...other }) {
             <ListItemIconStyle>
               <SvgIconStyle src="/static/icons/navbar/ic_chat.svg" sx={{ width: '100%', height: '100%' }} />
             </ListItemIconStyle>
-            <ListItemText disableTypography primary="Twitter" />
+            {!isCollapse && <ListItemText disableTypography primary="Twitter" />}
             <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
           </ListItemStyle>
         </a>
@@ -269,7 +269,7 @@ export default function NavSection({ navConfig, isShow = true, ...other }) {
             <ListItemIconStyle>
               <SvgIconStyle src="/static/icons/navbar/ic_mail.svg" sx={{ width: '100%', height: '100%' }} />
             </ListItemIconStyle>
-            <ListItemText disableTypography primary="Medium" />
+            {!isCollapse && <ListItemText disableTypography primary="Medium" />}
             <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
           </ListItemStyle>
         </a>

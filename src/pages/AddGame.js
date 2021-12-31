@@ -355,10 +355,10 @@ export default function AddGame() {
                           Model
                         </FormLabel>
                         <ToggleButtonGroup value={models} onChange={handleModel} aria-label="text formatting">
-                          <ToggleButton value="Free To Play" aria-label="Free To Play">
+                          <ToggleButton value="FTP" aria-label="Free To Play">
                             Free To Play
                           </ToggleButton>
-                          <ToggleButton value="Play To Earn" aria-label="Play To Earn">
+                          <ToggleButton value="P2E" aria-label="Play To Earn">
                             Play To Earn
                           </ToggleButton>
                           <ToggleButton value="Crypto" aria-label="Crypto">
@@ -420,7 +420,7 @@ export default function AddGame() {
                             <br />
                             <TextField
                               fullWidth
-                              label="Advisors (#2)"
+                              label="Team (#2)"
                               id="outlined-size-normal"
                               onChange={(e) => setInvestors(e.target.value)}
                               className="mobile"
@@ -429,7 +429,7 @@ export default function AddGame() {
                             <br />
                             <TextField
                               fullWidth
-                              label="Backers (#3)"
+                              label="Team (#3)"
                               id="outlined-size-normal"
                               onChange={(e) => setInvestors(e.target.value)}
                               className="mobile"
@@ -438,7 +438,7 @@ export default function AddGame() {
                             <br />
                             <TextField
                               fullWidth
-                              label="Investors (#4)"
+                              label="Team (#4)"
                               id="outlined-size-normal"
                               onChange={(e) => setInvestors(e.target.value)}
                               className="mobile"

@@ -15,10 +15,16 @@ import { CarouselControlsPaging1, CarouselControlsArrowsBasic1 } from '../carous
 // ----------------------------------------------------------------------
 
 const TITLES = ['These exchanges coming soon', 'UniX Axie Infinity Cup', 'Over 4000 UniX Holders'];
+const URLS = [
+  'https://twitter.com/unixplaytoearn',
+  'https://twitter.com/unixplaytoearn/status/1468151371807408131',
+  'https://twitter.com/unixplaytoearn'
+];
 
 const MOCK_APPS = [...Array(3)].map((_, index) => ({
   id: mockData.id(index),
   title: TITLES[index],
+  url: URLS[index],
   description: mockData.text.title(index),
   image: mockData.image.feed(index)
 }));
@@ -40,18 +46,18 @@ CarouselItem.propTypes = {
 };
 
 function CarouselItem({ item, isActive }) {
-  const { image, title, description } = item;
+  const { image, title, url, description } = item;
 
   return (
-    <RouterLink to="#">
+    <a href={url} target="_blank" rel="noreferrer">
       <Box sx={{ position: 'relative' }}>
         <Box
           sx={{
             top: 0,
             width: 1,
             height: 1,
-            position: 'absolute',
-            bgcolor: (theme) => alpha(theme.palette.grey[900], 0.72)
+            position: 'absolute'
+            // bgcolor: (theme) => alpha(theme.palette.grey[900], 0.72)
           }}
         />
         <CarouselImgStyle alt="asdf" src={image} />
@@ -61,7 +67,8 @@ function CarouselItem({ item, isActive }) {
             width: 1,
             textAlign: 'left',
             position: 'absolute',
-            color: 'common.white'
+            color: 'common.white',
+            background: '#212B36'
           }}
         >
           <MotionContainer open={isActive}>
@@ -90,7 +97,7 @@ function CarouselItem({ item, isActive }) {
           </MotionContainer>
         </CardContent>
       </Box>
-    </RouterLink>
+    </a>
   );
 }
 

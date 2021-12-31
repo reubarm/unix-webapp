@@ -29,8 +29,8 @@ export default function GeneralApp() {
               </Grid>
 
               <Grid item xs={12} style={{ paddingTop: '0' }}>
-                <img src="/launchpad.jpeg" alt="launchpad" style={{ width: '100%', margin: '20px auto' }} />
-                <br />
+                <img src="/launchpad.png" alt="launchpad" style={{ width: '100%', margin: '20px auto' }} />
+                {/* <br />
                 <br />
                 <Typography
                   gutterBottom
@@ -39,7 +39,7 @@ export default function GeneralApp() {
                 >
                   Unix Gaming Launchpad
                 </Typography>
-                <img src="/launchpad.png" alt="launchpad" style={{ width: '100%', margin: '0 auto' }} />
+                <img src="/launchpad.png" alt="launchpad" style={{ width: '100%', margin: '0 auto' }} /> */}
               </Grid>
             </Grid>
           </Grid>

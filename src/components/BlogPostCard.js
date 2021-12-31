@@ -84,15 +84,7 @@ export default function BlogPostCard({ cover, title, url, post, index }) {
         <CardMediaStyle
           sx={{
             ...((latestPostLarge || latestPost) && {
-              pt: 'calc(100% * 4 / 3)',
-              '&:after': {
-                top: 0,
-                content: "''",
-                width: '100%',
-                height: '100%',
-                position: 'absolute',
-                bgcolor: (theme) => alpha(theme.palette.grey[900], 0.72)
-              }
+              pt: 'calc(100% * 4 / 3)'
             }),
             ...(latestPostLarge && {
               pt: {
@@ -114,19 +106,6 @@ export default function BlogPostCard({ cover, title, url, post, index }) {
               ...((latestPostLarge || latestPost) && { display: 'none' })
             }}
           />
-          {/* <AvatarStyle
-            alt={author.name}
-            src={author.avatarUrl}
-            sx={{
-              ...((latestPostLarge || latestPost) && {
-                zIndex: 9,
-                top: 24,
-                left: 24,
-                width: 40,
-                height: 40
-              })
-            }}
-          /> */}
 
           <CoverImgStyle alt={title} src={cover} />
         </CardMediaStyle>
@@ -138,7 +117,9 @@ export default function BlogPostCard({ cover, title, url, post, index }) {
               bottom: 0,
               width: '100%',
               position: 'absolute'
-            })
+            }),
+            background: '#212B36',
+            width: '100%'
           }}
         >
           <Typography gutterBottom variant="caption" sx={{ color: 'text.disabled', display: 'block' }}>

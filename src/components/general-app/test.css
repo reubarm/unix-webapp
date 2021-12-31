@@ -1,15 +1,22 @@
+.show-mb {
+  display: none!important;
+}
+
 @media only screen and (max-width: 1460px) {
   .test {
     width: 200px!important;
   }
 }
 
-@media only screen and (max-width: 1330px) {
+@media only screen and (max-width: 1200px) {
   .test {
     display: none !important;
   }
   .hide-mb {
     display: none!important;
+  }
+  .show-mb {
+    display: inline!important;
   }
   .mobile {
     width: 100%!important;

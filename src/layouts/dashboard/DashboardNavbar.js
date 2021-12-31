@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import menu2Fill from '@iconify/icons-eva/menu-2-fill';
 // material
@@ -8,10 +9,7 @@ import { Box, Stack, AppBar, Toolbar, IconButton, Button } from '@mui/material';
 import useCollapseDrawer from '../../hooks/useCollapseDrawer';
 // components
 import { MHidden } from '../../components/@material-extend';
-import Searchbar from './Searchbar';
-import AccountPopover from './AccountPopover';
-import LanguagePopover from './LanguagePopover';
-import NotificationsPopover from './NotificationsPopover';
+import '../../components/general-app/test.css';
 
 // ----------------------------------------------------------------------
 
@@ -63,10 +61,11 @@ export default function DashboardNavbar({ onOpenSidebar }) {
           </IconButton>
         </MHidden>
 
-        <Searchbar />
-        <Box sx={{ flexGrow: 1 }} />
+        <Box component={RouterLink} to="/" sx={{ margin: '0 auto' }}>
+          {!isCollapse && <img src="/logo.png" alt="logo" width="150" className="show-mb" />}
+        </Box>
 
-        <Stack direction="row" alignItems="center" spacing={{ xs: 0.5, sm: 1.5 }}>
+        <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={{ xs: 0.5, sm: 1.5 }}>
           <a
             href="http://t.me/unix_token"
             style={{ color: 'white', textTransform: 'none', textDecoration: 'none' }}
