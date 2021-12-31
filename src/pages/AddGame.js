@@ -631,7 +631,7 @@ export default function AddGame() {
                           className="mobile"
                         />
                       </Grid>
-                      <Grid item xs={6}>
+                      {/* <Grid item xs={6}>
                         <FormLabel component="legend" sx={{ marginBottom: '10px' }}>
                           Team, Advisors &amp; Investors Photos
                         </FormLabel>
@@ -660,7 +660,7 @@ export default function AddGame() {
                           onRemoveAll={handleRemoveAll}
                           error={Boolean(touched.images && errors.images)}
                         />
-                      </Grid>
+                      </Grid> */}
 
                       <Grid item xs={6}>
                         <TextField
