@@ -54,6 +54,10 @@ export default function AddGame() {
   const [facebook, setFacebook] = useState('');
 
   const [team, setTeam] = useState('');
+  const [team1, setTeam1] = useState('');
+  const [team2, setTeam2] = useState('');
+  const [team3, setTeam3] = useState('');
+  const [team4, setTeam4] = useState('');
   const [partners, setPartners] = useState('');
   const [advisors, setAdvisors] = useState('');
   const [launchpad, setLaunchpad] = useState('');
@@ -76,6 +80,10 @@ export default function AddGame() {
   const [nfts, setNfts] = useState('');
   const [land, setLand] = useState('');
   const [speciality, setSpeciality] = useState('');
+  const [trailer, setTrailer] = useState(false);
+  const [trailer1, setTrailer1] = useState(false);
+  const [trailer2, setTrailer2] = useState(false);
+  const [trailer3, setTrailer3] = useState(false);
 
   const [success, setSuccess] = useState(false);
   const [investorpeeps, setInvestorpeeps] = useState(false);
@@ -127,6 +135,10 @@ export default function AddGame() {
       Discord: discord,
       Facebook: facebook,
       Team: team,
+      TeamLinkedIn1: team1,
+      TeamLinkedIn2: team2,
+      TeamLinkedIn3: team3,
+      TeamLinkedIn4: team4,
       Partners: partners,
       Advisors: advisors,
       Launchpad: launchpad,
@@ -147,7 +159,11 @@ export default function AddGame() {
       Circulation: circulation,
       NFTs: nfts,
       Land: land,
-      Speciality: speciality
+      Speciality: speciality,
+      Trailer: trailer,
+      Trailer1: trailer1,
+      Trailer2: trailer2,
+      Trailer3: trailer3
     };
 
     // Add one line to the sheet
@@ -400,9 +416,9 @@ export default function AddGame() {
                       <Grid item xs={6}>
                         <TextField
                           fullWidth
-                          label="Backers/Investors"
+                          label="Team"
                           id="outlined-size-normal"
-                          onChange={(e) => setInvestors(e.target.value)}
+                          onChange={(e) => setTeam(e.target.value)}
                           className="mobile"
                         />
                         {!investorpeeps && <Button onClick={showInvestors}>Add more +</Button>}
@@ -411,79 +427,41 @@ export default function AddGame() {
                             <br />
                             <TextField
                               fullWidth
-                              label="Team (#1)"
+                              label="Team (LinkedIn #1)"
                               id="outlined-size-normal"
-                              onChange={(e) => setInvestors(e.target.value)}
+                              onChange={(e) => setTeam1(e.target.value)}
                               className="mobile"
                             />
                             <br />
                             <br />
                             <TextField
                               fullWidth
-                              label="Team (#2)"
+                              label="Team (LinkedIn #2)"
                               id="outlined-size-normal"
-                              onChange={(e) => setInvestors(e.target.value)}
+                              onChange={(e) => setTeam2(e.target.value)}
                               className="mobile"
                             />
                             <br />
                             <br />
                             <TextField
                               fullWidth
-                              label="Team (#3)"
+                              label="Team (LinkedIn #3)"
                               id="outlined-size-normal"
-                              onChange={(e) => setInvestors(e.target.value)}
+                              onChange={(e) => setTeam3(e.target.value)}
                               className="mobile"
                             />
                             <br />
                             <br />
                             <TextField
                               fullWidth
-                              label="Team (#4)"
+                              label="Team (LinkedIn #4)"
                               id="outlined-size-normal"
-                              onChange={(e) => setInvestors(e.target.value)}
+                              onChange={(e) => setTeam4(e.target.value)}
                               className="mobile"
                             />
                           </div>
                         )}
                       </Grid>
-                      <Grid item xs={6}>
-                        <TextField
-                          fullWidth
-                          label="Contract Address"
-                          id="outlined-size-normal"
-                          onChange={(e) => setContract(e.target.value)}
-                          className="mobile"
-                        />
-                      </Grid>
-
-                      <Grid item xs={6}>
-                        <TextField
-                          fullWidth
-                          label="Team"
-                          id="outlined-size-normal"
-                          onChange={(e) => setTeam(e.target.value)}
-                          className="mobile"
-                        />
-                      </Grid>
-                      <Grid item xs={6}>
-                        <TextField
-                          fullWidth
-                          label="Advisors"
-                          id="outlined-size-normal"
-                          onChange={(e) => setAdvisors(e.target.value)}
-                          className="mobile"
-                        />
-                      </Grid>
-                      <Grid item xs={6}>
-                        <TextField
-                          fullWidth
-                          label="Partners"
-                          id="outlined-size-normal"
-                          onChange={(e) => setPartners(e.target.value)}
-                          className="mobile"
-                        />
-                      </Grid>
-
                       <Grid item xs={6}>
                         <TextField
                           fullWidth
@@ -525,6 +503,44 @@ export default function AddGame() {
                           </div>
                         )}
                       </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Backers/Investors"
+                          id="outlined-size-normal"
+                          onChange={(e) => setInvestors(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Partners"
+                          id="outlined-size-normal"
+                          onChange={(e) => setPartners(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Advisors"
+                          id="outlined-size-normal"
+                          onChange={(e) => setAdvisors(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+
+                      <Grid item xs={6}>
+                        <TextField
+                          fullWidth
+                          label="Contract Address"
+                          id="outlined-size-normal"
+                          onChange={(e) => setContract(e.target.value)}
+                          className="mobile"
+                        />
+                      </Grid>
+
                       <Grid item xs={6}>
                         <TextField
                           fullWidth
@@ -714,7 +730,7 @@ export default function AddGame() {
                           fullWidth
                           label="Trailers and In-Game Videos"
                           id="outlined-size-normal"
-                          onChange={(e) => setYoutube(e.target.value)}
+                          onChange={(e) => setTrailer(e.target.value)}
                           className="mobile"
                         />
 
@@ -726,7 +742,7 @@ export default function AddGame() {
                               fullWidth
                               label="Trailers and In-Game Videos #1"
                               id="outlined-size-normal"
-                              onChange={(e) => setYoutube(e.target.value)}
+                              onChange={(e) => setTrailer1(e.target.value)}
                               className="mobile"
                             />
                             <br />
@@ -735,7 +751,7 @@ export default function AddGame() {
                               fullWidth
                               label="Trailers and In-Game Videos #2"
                               id="outlined-size-normal"
-                              onChange={(e) => setYoutube(e.target.value)}
+                              onChange={(e) => setTrailer2(e.target.value)}
                               className="mobile"
                             />
                             <br />
@@ -744,7 +760,7 @@ export default function AddGame() {
                               fullWidth
                               label="Trailers and In-Game Videos #3"
                               id="outlined-size-normal"
-                              onChange={(e) => setYoutube(e.target.value)}
+                              onChange={(e) => setTrailer3(e.target.value)}
                               className="mobile"
                             />
                           </div>

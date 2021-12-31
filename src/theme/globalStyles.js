@@ -23,6 +23,22 @@ export default function GlobalStyles() {
         body: {
           width: '100%',
           height: '100%'
+          // backgroundImage: 'url(/background2.jpg)',
+          // backgroundSize: 'cover',
+          // backgroundAttachment: 'fixed'
+          // '&:after': {
+          //   content: '""',
+          //   backgroundImage: 'url(/background2.jpg)',
+          //   backgroundSize: 'cover',
+          //   backgroundAttachment: 'fixed',
+          //   opacity: '0.5',
+          //   top: '0',
+          //   left: '0',
+          //   bottom: '0',
+          //   right: '0',
+          //   position: 'absolute',
+          //   zIndex: '-1'
+          // }
         },
         '#root': {
           width: '100%',

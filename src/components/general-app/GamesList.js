@@ -40,18 +40,6 @@ const MOCK_INVOICES = [...Array(5)].map((_, index) => ({
 
 // ----------------------------------------------------------------------
 
-// const YoutubeEmbed = ({ embedId }) => (
-//   <div className="video-responsive">
-//     <iframe
-//       src={`https://www.youtube.com/embed/${embedId}`}
-//       frameBorder="0"
-//       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-//       allowFullScreen
-//       title="YouTube Video"
-//     />
-//   </div>
-// );
-
 const modalPopup = {
   content: {
     top: '10%',
@@ -333,16 +321,27 @@ export default function GamesList() {
             <br />
             <h4 style={{ fontWeight: '400' }}>{selectedGame[0].Description}</h4>
             <br />
-            <h4>Contract Address: <span style={{ fontWeight: '400!important', color: '#e481ff' }}> {selectedGame[0].Contract}</span></h4> <br />
-            <h2>
-              Social Score: <span style={{ color: '#e481ff' }}>{selectedGame[0].Score}</span>
-            </h2>
-            <br />
-            <hr style={{ borderColor: '#5a6b7a' }} />
-            <br />
+            {selectedGame[0].Contract && (
+              <h4>
+                Contract Address:{' '}
+                <span style={{ fontWeight: '400!important', color: '#e481ff' }}> {selectedGame[0].Contract}</span>
+              </h4>
+            )}{' '}
+            {selectedGame[0].Score && (
+              <>
+                <br />
+                <h2>
+                  Social Score: <span style={{ color: '#e481ff' }}>{selectedGame[0].Score}</span>
+                </h2>
+              </>
+            )}
             {selectedGame[0].Name.includes('Axie') && (
-              <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
-                <>
+              <>
+                <br />
+                <hr style={{ borderColor: '#5a6b7a' }} />
+                <br />
+
+                <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
                   {filteredMoedas.map((moeda) => {
                     return (
                       <Moeda
@@ -359,8 +358,8 @@ export default function GamesList() {
                       />
                     );
                   })}
-                </>
-              </div>
+                </div>
+              </>
             )}
             {selectedGame[0].Name.includes('Axie') && (
               <>
@@ -478,13 +477,11 @@ export default function GamesList() {
                 </span>
                 {selectedGame[0].Speciality}
                 <br />
-                <br />
-                <br />
-                <hr style={{ borderColor: '#5a6b7a' }} />
-                <br />
-                <br />
               </>
             )}
+            <br />
+            <hr style={{ borderColor: '#5a6b7a' }} />
+            <br />
             <Button color="info" variant="contained" href={selectedGame[0].Web} target="_blank">
               {selectedGame[0].Name} Website
             </Button>
@@ -611,7 +608,6 @@ export default function GamesList() {
                         <b>${game.Ticker.includes('heroes-empires') ? heroes : 'NA'}</b>
                       </div>
                     </TableCell>
-                    {/* <TableCell>${axie}</TableCell> */}
                     {/* <TableCell align="right">
                       <MoreMenuButton />
                     </TableCell> */}
