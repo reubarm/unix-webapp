@@ -81,14 +81,14 @@ export default function BlogPost5() {
   const { post, error, recentPosts } = useSelector((state) => state.blog);
 
   const pageurl = window.location.href;
-  const title = 'How crypto gaming works';
+  const title = 'Is Crypto Gaming the Future?';
 
   return (
-    <Page title="How crypto gaming works">
+    <Page title="Is Crypto Gaming the Future?">
       <Container maxWidth="lg">
         <Card>
           <BlogPostHero
-            title="How crypto gaming works"
+            title="Is Crypto Gaming the Future?"
             sx={{ textAlign: 'center' }}
             image="https://www.pragmaticcoders.com/hubfs/nft-crypto-gaming-developers.jpg"
           />

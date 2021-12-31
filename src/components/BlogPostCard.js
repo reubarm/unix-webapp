@@ -80,65 +80,67 @@ export default function BlogPostCard({ cover, title, url, post, index }) {
 
   return (
     <Grid item xs={12} sm={latestPostLarge ? 12 : 6} md={latestPostLarge ? 6 : 3}>
-      <Card sx={{ position: 'relative' }}>
-        <CardMediaStyle
-          sx={{
-            ...((latestPostLarge || latestPost) && {
-              pt: 'calc(100% * 4 / 3)'
-            }),
-            ...(latestPostLarge && {
-              pt: {
-                xs: 'calc(100% * 4 / 3)',
-                sm: 'calc(100% * 3 / 4.66)'
-              }
-            })
-          }}
-        >
-          <SvgIconStyle
-            color="paper"
-            src="/static/icons/shape-avatar.svg"
+      <RouterLink to={url}>
+        <Card sx={{ position: 'relative' }}>
+          <CardMediaStyle
             sx={{
-              width: 80,
-              height: 36,
-              zIndex: 9,
-              bottom: -15,
-              position: 'absolute',
-              ...((latestPostLarge || latestPost) && { display: 'none' })
-            }}
-          />
-
-          <CoverImgStyle alt={title} src={cover} />
-        </CardMediaStyle>
-
-        <CardContent
-          sx={{
-            pt: 4,
-            ...((latestPostLarge || latestPost) && {
-              bottom: 0,
-              width: '100%',
-              position: 'absolute'
-            }),
-            background: '#212B36',
-            width: '100%'
-          }}
-        >
-          <Typography gutterBottom variant="caption" sx={{ color: 'text.disabled', display: 'block' }}>
-            20th December
-          </Typography>
-
-          <TitleStyle
-            to={url}
-            sx={{
-              ...(latestPostLarge && { typography: 'h5', height: 60 }),
               ...((latestPostLarge || latestPost) && {
-                color: 'common.white'
+                pt: 'calc(100% * 4 / 3)'
+              }),
+              ...(latestPostLarge && {
+                pt: {
+                  xs: 'calc(100% * 4 / 3)',
+                  sm: 'calc(100% * 3 / 4.66)'
+                }
               })
             }}
           >
-            {title}
-          </TitleStyle>
-        </CardContent>
-      </Card>
+            <SvgIconStyle
+              color="paper"
+              src="/static/icons/shape-avatar.svg"
+              sx={{
+                width: 80,
+                height: 36,
+                zIndex: 9,
+                bottom: -15,
+                position: 'absolute',
+                ...((latestPostLarge || latestPost) && { display: 'none' })
+              }}
+            />
+
+            <CoverImgStyle alt={title} src={cover} />
+          </CardMediaStyle>
+
+          <CardContent
+            sx={{
+              pt: 4,
+              ...((latestPostLarge || latestPost) && {
+                bottom: 0,
+                width: '100%',
+                position: 'absolute'
+              }),
+              background: '#212B36',
+              width: '100%'
+            }}
+          >
+            <Typography gutterBottom variant="caption" sx={{ color: 'text.disabled', display: 'block' }}>
+              20th December
+            </Typography>
+
+            <TitleStyle
+              to={url}
+              sx={{
+                ...(latestPostLarge && { typography: 'h5', height: 60 }),
+                ...((latestPostLarge || latestPost) && {
+                  color: 'common.white'
+                })
+              }}
+            >
+              {title}
+            </TitleStyle>
+          </CardContent>
+        </Card>
+      </RouterLink>
     </Grid>
   );
 }
