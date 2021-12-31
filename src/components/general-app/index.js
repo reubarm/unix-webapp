@@ -1,4 +1,5 @@
 export { default as AppFeatured } from './AppFeatured';
+export { default as AppSlider } from './AppSlider';
 export { default as GamesList } from './GamesList';
 export { default as Twitter } from './Twitter';
 export { default as AppTotalActiveUsers } from './AppTotalActiveUsers';
