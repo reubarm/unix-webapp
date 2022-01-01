@@ -319,14 +319,18 @@ export default function GamesList() {
             <br />
             <hr style={{ borderColor: '#5a6b7a' }} />
             <br />
-            <h4 style={{ fontWeight: '400' }}>{selectedGame[0].Description}</h4>
-            <br />
+            {selectedGame[0].Description && (
+              <>
+                <h4 style={{ fontWeight: '400' }}>{selectedGame[0].Description}</h4>
+                <br />
+              </>
+            )}
             {selectedGame[0].Contract && (
               <h4>
                 Contract Address:{' '}
                 <span style={{ fontWeight: '400!important', color: '#e481ff' }}> {selectedGame[0].Contract}</span>
               </h4>
-            )}{' '}
+            )}
             {selectedGame[0].Score && (
               <>
                 <br />
@@ -361,7 +365,7 @@ export default function GamesList() {
                 </div>
               </>
             )}
-            {selectedGame[0].Name.includes('Axie') && (
+            {selectedGame[0].Tokens && (
               <>
                 <br />
                 <hr style={{ borderColor: '#5a6b7a' }} />
@@ -439,48 +443,71 @@ export default function GamesList() {
                 </div>
               </>
             )}
+            <br />
+            <hr style={{ borderColor: '#5a6b7a' }} />
             {selectedGame[0].Team && (
               <>
                 <br />
-                <hr style={{ borderColor: '#5a6b7a' }} />
-                <br />
                 <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>Team: </span>
                 {selectedGame[0].Team}
+              </>
+            )}
+            {selectedGame[0].Partners && (
+              <>
                 <br />
                 <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
                   Partners:{' '}
                 </span>
                 {selectedGame[0].Partners}
+              </>
+            )}
+            {selectedGame[0].Launchpad && (
+              <>
                 <br />
                 <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
                   Launchpad:{' '}
                 </span>
                 {selectedGame[0].Launchpad}
+              </>
+            )}
+            {selectedGame[0].Network && (
+              <>
                 <br />
                 <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
                   Network:{' '}
                 </span>
                 {selectedGame[0].Network}
+              </>
+            )}
+            {selectedGame[0].NFTs && (
+              <>
                 <br />
                 <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
                   Available NFTs:{' '}
                 </span>
                 {selectedGame[0].NFTs}
+              </>
+            )}
+            {selectedGame[0].Land && (
+              <>
                 <br />
                 <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
                   Avalailable Land NFTs:{' '}
                 </span>
                 {selectedGame[0].Land}
+              </>
+            )}
+            {selectedGame[0].Speciality && (
+              <>
                 <br />
                 <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
                   What makes the game special:{' '}
                 </span>
                 {selectedGame[0].Speciality}
-                <br />
               </>
             )}
             <br />
-            <hr style={{ borderColor: '#5a6b7a' }} />
+            <br />
             <br />
             <Button color="info" variant="contained" href={selectedGame[0].Web} target="_blank">
               {selectedGame[0].Name} Website
