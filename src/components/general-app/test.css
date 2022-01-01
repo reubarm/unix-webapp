@@ -1,3 +1,27 @@
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Upload Images';
+  display: inline-block;
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  padding: 20px 30px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+.custom-file-input:hover::before {
+  background: rgba(145, 158, 171, 0.32);
+}
+.custom-file-input:active::before {
+  background: rgba(145, 158, 171, 0.32);
+}
+
 .show-mb {
   display: none !important;
 }
