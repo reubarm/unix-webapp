@@ -374,50 +374,78 @@ export default function GamesList() {
                   <TableContainer sx={{ minWidth: 720 }}>
                     <Table>
                       <TableRow sx={{ color: 'white!important' }}>
-                        <TableCell>
-                          <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
-                            Total Tokens:{' '}
-                          </span>
-                          {selectedGame[0].Tokens}
-                        </TableCell>
-                        <TableCell>
-                          <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
-                            Total Raised:{' '}
-                          </span>
-                          {selectedGame[0].Raise}
-                        </TableCell>
-                        <TableCell>
-                          <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
-                            Seed Token %:{' '}
-                          </span>
-                          {selectedGame[0].Seed}
-                        </TableCell>
-                        <TableCell>
-                          <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
-                            Private Token %:{' '}
-                          </span>
-                          {selectedGame[0].Private}
-                        </TableCell>
-                        <TableCell>
-                          <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
-                            IDO Tokens %:{' '}
-                          </span>
-                          {selectedGame[0].Ido}
-                        </TableCell>
-                        <TableCell>
-                          {' '}
-                          <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
-                            Fully Diluted Market Cap:{' '}
-                          </span>{' '}
-                          {selectedGame[0].Diluted}
-                        </TableCell>
-                        <TableCell>
-                          {' '}
-                          <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
-                            Circulation:{' '}
-                          </span>{' '}
-                          {selectedGame[0].Circulation}
-                        </TableCell>
+                        {selectedGame[0].Tokens && (
+                          <>
+                            <TableCell>
+                              <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                                Total Tokens:{' '}
+                              </span>
+                              {selectedGame[0].Tokens}
+                            </TableCell>
+                          </>
+                        )}
+                        {selectedGame[0].Raise && (
+                          <>
+                            <TableCell>
+                              <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                                Total Raised:{' '}
+                              </span>
+                              {selectedGame[0].Raise}
+                            </TableCell>
+                          </>
+                        )}
+                        {selectedGame[0].Seed && (
+                          <>
+                            <TableCell>
+                              <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                                Seed Token %:{' '}
+                              </span>
+                              {selectedGame[0].Seed}
+                            </TableCell>
+                          </>
+                        )}
+                        {selectedGame[0].Private && (
+                          <>
+                            <TableCell>
+                              <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                                Private Token %:{' '}
+                              </span>
+                              {selectedGame[0].Private}
+                            </TableCell>
+                          </>
+                        )}
+                        {selectedGame[0].Ido && (
+                          <>
+                            <TableCell>
+                              <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                                IDO Tokens %:{' '}
+                              </span>
+                              {selectedGame[0].Ido}
+                            </TableCell>
+                          </>
+                        )}
+                        {selectedGame[0].Diluted && (
+                          <>
+                            <TableCell>
+                              {' '}
+                              <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                                Fully Diluted Market Cap:{' '}
+                              </span>{' '}
+                              {selectedGame[0].Diluted}
+                            </TableCell>
+                          </>
+                        )}
+                        {selectedGame[0].Circulation && (
+                          <>
+                            <TableCell>
+                              {' '}
+                              <span style={{ fontWeight: '900', color: '#e481ff', display: 'block', margin: '10px 0' }}>
+                                Circulation:{' '}
+                              </span>{' '}
+                              {selectedGame[0].Circulation}
+                            </TableCell>
+                          </>
+                        )}
                       </TableRow>
                     </Table>
                   </TableContainer>
