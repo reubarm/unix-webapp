@@ -106,9 +106,9 @@ const Form = () => {
       <Stack
         component={motion.div}
         variants={varFadeInRight}
-        direction="row"
         spacing={1}
         justifyContent={{ xs: 'center', md: 'flex-start' }}
+        className="heroButton"
       >
         {!success && (
           <>

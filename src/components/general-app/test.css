@@ -26,6 +26,10 @@
   display: none !important;
 }
 
+.heroButton {
+  flex-direction: row!important;
+}
+
 @media only screen and (max-width: 1460px) {
   .test {
     width: 200px !important;
@@ -44,6 +48,9 @@
   }
   .mobile {
     width: 100% !important;
+  }
+  .heroButton {
+    flex-direction: column!important;
   }
 }
 
