@@ -29,7 +29,7 @@ export default function GeneralApp() {
               </Grid>
 
               <Grid item xs={12} style={{ paddingTop: '0' }}>
-                <img src="/launchpad.png" alt="launchpad" style={{ width: '100%', margin: '20px auto' }} />
+                <img src="/launchpad.jpg" alt="launchpad" style={{ width: '100%', margin: '20px auto' }} />
                 {/* <br />
                 <br />
                 <Typography
