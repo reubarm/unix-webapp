@@ -62,7 +62,7 @@ export default function AppTotalActiveUsers() {
   };
 
   return (
-    <Card sx={{ display: 'flex', alignItems: 'center', p: 3 }}>
+    <Card sx={{ display: 'flex', alignItems: 'center', p: 3, background: 'rgba(33, 43, 54, 0.7)' }}>
       <Box sx={{ flexGrow: 1 }}>
         <Typography variant="subtitle2">Community Members</Typography>
         <Stack direction="row" alignItems="center" spacing={1} sx={{ mt: 2, mb: 1 }}>

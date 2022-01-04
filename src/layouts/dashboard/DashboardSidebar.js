@@ -208,7 +208,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
           PaperProps={{
             sx: {
               width: DRAWER_WIDTH,
-              bgcolor: 'background.default',
+              bgcolor: 'rgba(33, 43, 54, 0.5)',
               ...(isCollapse && {
                 width: COLLAPSE_WIDTH
               }),

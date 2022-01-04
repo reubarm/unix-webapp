@@ -21,13 +21,23 @@
 .custom-file-input:active::before {
   background: rgba(145, 158, 171, 0.32);
 }
-
 .show-mb {
   display: none !important;
 }
-
 .heroButton {
   flex-direction: row!important;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #161C24; 
+}
+::-webkit-scrollbar-thumb {
+  background: #333; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444; 
 }
 
 @media only screen and (max-width: 1460px) {
