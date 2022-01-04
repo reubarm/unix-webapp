@@ -21,9 +21,9 @@ const APPBAR_DESKTOP = 92;
 
 const RootStyle = styled(AppBar)(({ theme }) => ({
   boxShadow: 'none',
-  backdropFilter: 'blur(6px)',
-  WebkitBackdropFilter: 'blur(6px)', // Fix on Mobile
-  backgroundColor: alpha(theme.palette.background.default, 0.72),
+  backdropFilter: 'blur(5px)',
+  WebkitBackdropFilter: 'blur(5px)', // Fix on Mobile
+  backgroundColor: 'rgba(33, 43, 54, 0.3)',
   [theme.breakpoints.up('lg')]: {
     width: `calc(100% - ${DRAWER_WIDTH + 1}px)`
   }
