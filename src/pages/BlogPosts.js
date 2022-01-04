@@ -19,19 +19,19 @@ import BlogPostCard from '../components/BlogPostCard';
 
 // ----------------------------------------------------------------------
 
-const SkeletonLoad = (
-  <Grid container spacing={3} sx={{ mt: 2 }}>
-    {[...Array(4)].map((_, index) => (
-      <Grid item xs={12} md={3} key={index}>
-        <Skeleton variant="rectangular" width="100%" sx={{ height: 200, borderRadius: 2 }} />
-        <Box sx={{ display: 'flex', mt: 1.5 }}>
-          <Skeleton variant="circular" sx={{ width: 40, height: 40 }} />
-          <Skeleton variant="text" sx={{ mx: 1, flexGrow: 1 }} />
-        </Box>
-      </Grid>
-    ))}
-  </Grid>
-);
+// const SkeletonLoad = (
+//   <Grid container spacing={3} sx={{ mt: 2 }}>
+//     {[...Array(4)].map((_, index) => (
+//       <Grid item xs={12} md={3} key={index}>
+//         <Skeleton variant="rectangular" width="100%" sx={{ height: 200, borderRadius: 2 }} />
+//         <Box sx={{ display: 'flex', mt: 1.5 }}>
+//           <Skeleton variant="circular" sx={{ width: 40, height: 40 }} />
+//           <Skeleton variant="text" sx={{ mx: 1, flexGrow: 1 }} />
+//         </Box>
+//       </Grid>
+//     ))}
+//   </Grid>
+// );
 
 export default function BlogPosts() {
   const { themeStretch } = useSettings();

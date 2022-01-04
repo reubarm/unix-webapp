@@ -68,7 +68,7 @@ function CarouselItem({ item, isActive }) {
             textAlign: 'left',
             position: 'absolute',
             color: 'common.white',
-            background: '#212B36'
+            background: 'rgba(33, 43, 54, 0.7)'
           }}
         >
           <MotionContainer open={isActive}>
