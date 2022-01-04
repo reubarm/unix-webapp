@@ -5,6 +5,9 @@ import { Icon } from '@iconify/react';
 // material
 import { useTheme } from '@mui/material/styles';
 import arrowIosForwardFill from '@iconify/icons-eva/arrow-ios-forward-fill';
+
+import shareFill from '@iconify/icons-eva/share-fill';
+import moreVerticalFill from '@iconify/icons-eva/more-vertical-fill';
 import {
   Box,
   Menu,
@@ -22,6 +25,21 @@ import {
   CardHeader,
   TableContainer
 } from '@mui/material';
+
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  FacebookIcon,
+  TwitterIcon,
+  EmailShareButton,
+  LinkedinShareButton,
+  WhatsappShareButton,
+  TelegramShareButton,
+  EmailIcon,
+  LinkedinIcon,
+  WhatsappIcon,
+  TelegramIcon
+} from 'react-share';
 // utils
 import { fCurrency } from '../../utils/formatNumber';
 import mockData from '../../utils/mock-data';
@@ -57,6 +75,58 @@ const modalPopup = {
     zIndex: '9999'
   }
 };
+
+function MoreMenuButton() {
+  const menuRef = useRef(null);
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <>
+      <>
+        <MIconButton ref={menuRef} size="large" onClick={handleOpen}>
+          <Icon icon={moreVerticalFill} width={20} height={20} />
+        </MIconButton>
+      </>
+
+      <Menu
+        open={open}
+        anchorEl={menuRef.current}
+        onClose={handleClose}
+        PaperProps={{
+          sx: { width: 200, maxWidth: '100%' }
+        }}
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      >
+        <MenuItem>
+          <TwitterShareButton url="https://unixgaming.org" title="Unix Gaming | Play to Earn Revolution">
+            <TwitterIcon size={32} round />
+          </TwitterShareButton>
+          &nbsp;&nbsp;&nbsp;
+          <FacebookShareButton url="https://unixgaming.org" title="Unix Gaming | Play to Earn Revolution">
+            <FacebookIcon size={32} round />
+          </FacebookShareButton>
+          &nbsp;&nbsp;&nbsp;
+          <WhatsappShareButton url="https://unixgaming.org" title="Unix Gaming | Play to Earn Revolution">
+            <WhatsappIcon size={32} round />
+          </WhatsappShareButton>
+          &nbsp;&nbsp;&nbsp;
+          <LinkedinShareButton url="https://unixgaming.org" title="Unix Gaming | Play to Earn Revolution">
+            <LinkedinIcon size={32} round />
+          </LinkedinShareButton>
+        </MenuItem>
+      </Menu>
+    </>
+  );
+}
 
 export default function GamesList() {
   const theme = useTheme();
@@ -95,6 +165,8 @@ export default function GamesList() {
   const [plant, setPlant] = useState([]);
   const [binemon, setBinemon] = useState([]);
   const [heroes, setHeroes] = useState([]);
+  const [guild, setGuild] = useState([]);
+  const [bfk, setBfk] = useState([]);
 
   useEffect(() => {
     axios
@@ -173,6 +245,24 @@ export default function GamesList() {
       .get('https://api.coingecko.com/api/v3/simple/price?ids=heroes-empires&vs_currencies=usd')
       .then((res) => {
         setHeroes(res.data['heroes-empires'].usd);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get('https://api.coingecko.com/api/v3/simple/price?ids=guild-of-guardians&vs_currencies=usd')
+      .then((res) => {
+        setGuild(res.data['guild-of-guardians'].usd);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get('https://api.coingecko.com/api/v3/simple/price?ids=bfk-warzone&vs_currencies=usd')
+      .then((res) => {
+        setBfk(res.data['bfk-warzone'].usd);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -662,10 +752,16 @@ export default function GamesList() {
                       <div className={game.Ticker.includes('heroes-empires') ? '' : 'hide'}>
                         <b>${game.Ticker.includes('heroes-empires') ? heroes : 'NA'}</b>
                       </div>
+                      <div className={game.Ticker.includes('guild-of-guardians') ? '' : 'hide'}>
+                        <b>${game.Ticker.includes('guild-of-guardians') ? guild : 'NA'}</b>
+                      </div>
+                      <div className={game.Ticker.includes('bfk-warzone') ? '' : 'hide'}>
+                        <b>${game.Ticker.includes('bfk-warzone') ? bfk : 'NA'}</b>
+                      </div>
                     </TableCell>
-                    {/* <TableCell align="right">
+                    <TableCell align="right">
                       <MoreMenuButton />
-                    </TableCell> */}
+                    </TableCell>
                   </TableRow>
                 )}
               </TableBody>
