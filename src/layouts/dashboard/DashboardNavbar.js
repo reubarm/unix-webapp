@@ -23,7 +23,7 @@ const RootStyle = styled(AppBar)(({ theme }) => ({
   boxShadow: 'none',
   backdropFilter: 'blur(5px)',
   WebkitBackdropFilter: 'blur(5px)', // Fix on Mobile
-  backgroundColor: 'rgba(33, 43, 54, 0.3)',
+  backgroundColor: 'rgba(27, 17, 38, 0.3)',
   [theme.breakpoints.up('lg')]: {
     width: `calc(100% - ${DRAWER_WIDTH + 1}px)`
   }

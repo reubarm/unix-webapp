@@ -20,7 +20,7 @@ import './test.css';
 
 export default function Twitter() {
   return (
-    <Card sx={{ background: 'rgba(33, 43, 54, 0.7)' }}>
+    <Card sx={{ background: 'rgba(27, 17, 38, 0.7)' }}>
       <CardHeader title="Our Latest Tweets" />
       <Scrollbar>
         <Stack spacing={3} sx={{ p: 3 }}>

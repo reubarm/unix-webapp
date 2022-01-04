@@ -62,7 +62,7 @@ export default function AppTotalInstalled() {
   };
 
   return (
-    <Card sx={{ display: 'flex', alignItems: 'center', p: 3, background: 'rgba(33, 43, 54, 0.7)' }}>
+    <Card sx={{ display: 'flex', alignItems: 'center', p: 3, background: 'rgba(27, 17, 38, 0.7)' }}>
       <Box sx={{ flexGrow: 1 }}>
         <Typography variant="subtitle2">Scholarships</Typography>
 

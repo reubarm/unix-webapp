@@ -119,7 +119,7 @@ export default function BlogPostCard({ cover, title, url, post, index }) {
                 width: '100%',
                 position: 'absolute'
               }),
-              background: 'rgba(33, 43, 54, 0.7)',
+              background: 'rgba(27, 17, 38, 0.7)',
               width: '100%'
             }}
           >
