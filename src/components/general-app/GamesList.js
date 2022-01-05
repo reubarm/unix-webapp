@@ -92,7 +92,7 @@ function MoreMenuButton() {
     <>
       <>
         <MIconButton ref={menuRef} size="large" onClick={handleOpen}>
-          <Icon icon={moreVerticalFill} width={20} height={20} />
+          <Icon icon={shareFill} width={20} height={20} />
         </MIconButton>
       </>
 
@@ -638,13 +638,13 @@ export default function GamesList() {
         )}
       </Modal>
 
-      <Card>
+      <Card sx={{ background: 'rgba(27, 17, 38, 0.7)' }}>
         {/* <CardHeader
           title="Partnerships and Games of Unix Gaming"
           sx={{ mb: 3, textAlign: 'center', margin: '0 auto 20px' }}
         /> */}
-        <TableContainer sx={{ minWidth: 720, height: '100%', overflow: 'hidden' }}>
-          <Table sx={{ minWidth: 720, height: '100%' }}>
+        <TableContainer sx={{ minWidth: 720, height: '100%', overflow: 'hidden', background: 'rgba(27, 17, 38, 0.7)' }}>
+          <Table sx={{ minWidth: 720, height: '100%', background: 'rgba(27, 17, 38, 0.7)' }}>
             {/* <TableHead sx={{ background: '#10171f!important' }}>
               <TableRow sx={{ background: '#10171f!important' }}>
                 <TableCell>Name</TableCell>
@@ -660,9 +660,9 @@ export default function GamesList() {
             {filteredGames.map((game, keys) => (
               <TableBody
                 sx={{
-                  background: '#303d4a',
-                  borderBottom: '10px solid #212B36',
-                  borderTop: '10px solid #212B36',
+                  background: 'rgba(27, 17, 38, 0.7)',
+                  borderBottom: '10px solid #302439',
+                  borderTop: '10px solid #302439',
                   height: '100%',
                   overflow: 'hidden'
                 }}
