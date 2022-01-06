@@ -387,9 +387,6 @@ export default function AddGame() {
                         <ToggleButton value="P2E" aria-label="Play To Earn">
                           Play To Earn
                         </ToggleButton>
-                        <ToggleButton value="Crypto" aria-label="Crypto">
-                          Crypto Support
-                        </ToggleButton>
                         <ToggleButton value="NFT" aria-label="NFT">
                           NFT Support
                         </ToggleButton>

@@ -661,8 +661,8 @@ export default function GamesList() {
               <TableBody
                 sx={{
                   background: 'rgba(27, 17, 38, 0.7)',
-                  borderBottom: '10px solid #302439',
-                  borderTop: '10px solid #302439',
+                  borderBottom: '10px solid rgba(27, 17, 38, 0.7)',
+                  borderTop: '10px solid rgba(27, 17, 38, 0.7)',
                   height: '100%',
                   overflow: 'hidden'
                 }}
