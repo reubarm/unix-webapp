@@ -122,9 +122,6 @@ export default function BlogPostHero({ title, image, ...other }) {
             <Typography variant="subtitle1" sx={{ color: 'common.white' }}>
               Reuben Armstrong
             </Typography>
-            <Typography variant="body2" sx={{ color: 'grey.500' }}>
-              December 20th
-            </Typography>
           </Box>
         </Box>
 
