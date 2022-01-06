@@ -75,6 +75,20 @@ export default function BlogPosts() {
           />
           <BlogPostCard
             key={1}
+            title="UniX Gaming x Thetan Arena — A Partnership For The Future"
+            cover="https://miro.medium.com/max/1400/1*FN8sts3240gCTw8eU62cIQ.jpeg"
+            url="/unix/thetan-arena"
+            index={1}
+          />
+          <BlogPostCard
+            key={1}
+            title="UniX Gaming and Blockchain Alliance Coalition"
+            cover="https://miro.medium.com/max/1400/0*szXuwcZe4opQwlgf"
+            url="/unix/alliance-coalition"
+            index={1}
+          />
+          <BlogPostCard
+            key={1}
             title="Is Crypto Gaming the Future?"
             cover="https://www.pragmaticcoders.com/hubfs/nft-crypto-gaming-developers.jpg"
             url="/unix/is-crypto-gaming-the-future"
