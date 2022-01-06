@@ -68,16 +68,16 @@ export default function BlogPosts() {
           />
           <BlogPostCard
             key={1}
-            title="UniX donates 100% of SLP profits to its members throughout December"
-            cover="https://miro.medium.com/max/1400/1*GDvXy5LZHW6u-cIOhXsipQ.jpeg"
-            url="/unix/slp-donation"
+            title="UniX Gaming x Thetan Arena — A Partnership For The Future"
+            cover="https://miro.medium.com/max/1400/1*FN8sts3240gCTw8eU62cIQ.jpeg"
+            url="/unix/thetan-arena"
             index={0}
           />
           <BlogPostCard
             key={1}
-            title="UniX Gaming x Thetan Arena — A Partnership For The Future"
-            cover="https://miro.medium.com/max/1400/1*FN8sts3240gCTw8eU62cIQ.jpeg"
-            url="/unix/thetan-arena"
+            title="UniX donates 100% of SLP profits to its members throughout December"
+            cover="https://miro.medium.com/max/1400/1*GDvXy5LZHW6u-cIOhXsipQ.jpeg"
+            url="/unix/slp-donation"
             index={1}
           />
           <BlogPostCard
