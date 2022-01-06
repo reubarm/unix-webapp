@@ -68,6 +68,13 @@ export default function BlogPosts() {
           />
           <BlogPostCard
             key={1}
+            title="UniX donates 100% of SLP profits to its members throughout December"
+            cover="https://miro.medium.com/max/1400/1*GDvXy5LZHW6u-cIOhXsipQ.jpeg"
+            url="/unix/slp-donation"
+            index={0}
+          />
+          <BlogPostCard
+            key={1}
             title="Is Crypto Gaming the Future?"
             cover="https://www.pragmaticcoders.com/hubfs/nft-crypto-gaming-developers.jpg"
             url="/unix/is-crypto-gaming-the-future"

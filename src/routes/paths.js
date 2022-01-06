@@ -29,6 +29,7 @@ export const PATH_DASHBOARD = {
     BlogPost4: path(ROOTS_DASHBOARD, '/crypto-gaming'),
     BlogPost5: path(ROOTS_DASHBOARD, '/is-crypto-gaming-the-future'),
     BlogPost6: path(ROOTS_DASHBOARD, '/dehorizon-partnership'),
+    BlogPost7: path(ROOTS_DASHBOARD, '/slp-donation'),
     AddGame: path(ROOTS_DASHBOARD, '/add-game')
   },
   app: {
