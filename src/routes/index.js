@@ -57,7 +57,7 @@ export default function Router() {
         { path: 'crypto-gaming', element: <BlogPost4 /> },
         { path: 'is-crypto-gaming-the-future', element: <BlogPost5 /> },
         { path: 'dehorizon-partnership', element: <BlogPost6 /> },
-        { path: 'add-game', element: <AddGame /> },
+        { path: 'add-game', element: <AddGame /> }
       ]
     },
 
