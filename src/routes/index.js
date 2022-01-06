@@ -38,11 +38,11 @@ export default function Router() {
   return useRoutes([
     // Dashboard Routes
     {
-      path: '',
+      path: 'unix',
       element: <DashboardLayout />,
       children: [
-        { element: <Navigate to="/unix" replace /> },
-        { path: 'unix', element: <PageOne /> },
+        { element: <Navigate to="/" replace /> },
+        // { path: '/unix', element: <PageOne /> },
         { path: 'launchpad', element: <PageTwo /> },
         { path: 'dao', element: <PageThree /> },
         { path: 'roadmap', element: <PageFour /> },
@@ -81,8 +81,8 @@ export default function Router() {
     },
     {
       path: '/',
-      element: <MainLayout />,
-      children: [{ element: <LandingPage /> }]
+      element: <DashboardLayout />,
+      children: [{ element: <PageOne /> }]
     },
     { path: '*', element: <Navigate to="/404" replace /> }
   ]);

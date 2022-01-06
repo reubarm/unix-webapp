@@ -200,7 +200,7 @@ export default function NavSection({ isCollapse, navConfig, isShow = true, ...ot
             <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
           </ListItemStyle>
         </a>
-        <a href="/launchpad" style={{ textDecoration: 'none' }}>
+        <a href="/unix/launchpad" style={{ textDecoration: 'none' }}>
           <ListItemStyle>
             <ListItemIconStyle>
               <SvgIconStyle src="/static/icons/navbar/ic_analytics.svg" sx={{ width: '100%', height: '100%' }} />
@@ -209,7 +209,7 @@ export default function NavSection({ isCollapse, navConfig, isShow = true, ...ot
             <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
           </ListItemStyle>
         </a>
-        <a href="/dao" style={{ textDecoration: 'none' }}>
+        <a href="/unix/dao" style={{ textDecoration: 'none' }}>
           <ListItemStyle>
             <ListItemIconStyle>
               <SvgIconStyle src="/static/icons/navbar/ic_blog.svg" sx={{ width: '100%', height: '100%' }} />
@@ -218,7 +218,7 @@ export default function NavSection({ isCollapse, navConfig, isShow = true, ...ot
             <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
           </ListItemStyle>
         </a>
-        <a href="/roadmap" style={{ textDecoration: 'none' }}>
+        <a href="/unix/roadmap" style={{ textDecoration: 'none' }}>
           <ListItemStyle>
             <ListItemIconStyle>
               <SvgIconStyle src="/static/icons/navbar/ic_calendar.svg" sx={{ width: '100%', height: '100%' }} />
@@ -227,7 +227,7 @@ export default function NavSection({ isCollapse, navConfig, isShow = true, ...ot
             <Box component={Icon} sx={{ width: 16, height: 16, ml: 1 }} />
           </ListItemStyle>
         </a>
-        <a href="/blog" style={{ textDecoration: 'none' }}>
+        <a href="/unix/blog" style={{ textDecoration: 'none' }}>
           <ListItemStyle>
             <ListItemIconStyle>
               <SvgIconStyle src="/static/icons/navbar/ic_chat.svg" sx={{ width: '100%', height: '100%' }} />
