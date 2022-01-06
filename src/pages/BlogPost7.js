@@ -36,7 +36,7 @@ const POST_BODY = `
 <p data-selectable-paragraph="">Knowing how the Play-To-Earn revolution began in the Philippines evoked within us a true sense of respect and responsibility for our scholars. Our community&rsquo;s tenacious desire to succeed, work hard and earn, for themselves and their families is something we sincerely admire. Family values run deep within the veins of our guild, and we look at our community as an extension of us. We promise to continually recalibrate our compass to ensure we are aligning with our Northstar: the needs of our community, first and foremost.</p>
 <br/><h3 data-selectable-paragraph="">The gift of giving</h3>
 <p data-selectable-paragraph="">On top of the COVID crisis, we know UniX members have been through particular hardships this year due to recent typhoons. For this reason, we would like to offer a token of appreciation by donating 100% of all UniX SLP profits to our members throughout December.</p>
-<h1 data-selectable-paragraph="">A special thank you to our scholars</h1>
+<br/><h3 data-selectable-paragraph="">A special thank you to our scholars</h3>
 <p data-selectable-paragraph="">We want to thank each of our scholars for all of the hard work throughout this challenging time, and we hope that in the spirit of Christmas, this gift from us to you will help provide a little extra joy this year. We are so happy to have you onboard, and we look forward to supporting you for many more years to come.</p>
 `;
 
