@@ -57,16 +57,6 @@ export default function Router() {
         { path: 'crypto-gaming', element: <BlogPost4 /> },
         { path: 'is-crypto-gaming-the-future', element: <BlogPost5 /> },
         { path: 'add-game', element: <AddGame /> },
-
-        {
-          path: 'app',
-          children: [
-            { element: <Navigate to="https://google.com" /> },
-            { path: 'https://google.com' },
-            { path: 'https://google.com' },
-            { path: 'https://google.com' }
-          ]
-        }
       ]
     },
 

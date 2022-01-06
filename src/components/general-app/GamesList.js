@@ -772,7 +772,7 @@ export default function GamesList() {
         <Divider />
 
         <Box sx={{ p: 2, textAlign: 'right' }}>
-          <Button href="/add-game" size="small" color="inherit" endIcon={<Icon icon={arrowIosForwardFill} />}>
+          <Button href="/unix/add-game" size="small" color="inherit" endIcon={<Icon icon={arrowIosForwardFill} />}>
             Add New Games
           </Button>
         </Box>

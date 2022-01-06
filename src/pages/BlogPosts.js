@@ -63,42 +63,42 @@ export default function BlogPosts() {
             key={1}
             title="Is Crypto Gaming the Future?"
             cover="https://www.pragmaticcoders.com/hubfs/nft-crypto-gaming-developers.jpg"
-            url="/is-crypto-gaming-the-future"
+            url="/unix/is-crypto-gaming-the-future"
             index={0}
           />
           <BlogPostCard
             key={1}
             title="Top 5 play to earn crypto games 2021"
             cover="https://images.pexels.com/photos/159204/game-controller-joystick-joypad-gamepad-159204.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-            url="/top-5-games"
+            url="/unix/top-5-games"
             index={0}
           />
           <BlogPostCard
             key={1}
             title="What are metaverse gaming projects?"
             cover="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"
-            url="/metaverse-gaming"
+            url="/unix/metaverse-gaming"
             index={1}
           />
           <BlogPostCard
             key={1}
             title="How crypto gaming works"
             cover="https://images.pexels.com/photos/1373100/pexels-photo-1373100.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-            url="/crypto-gaming"
+            url="/unix/crypto-gaming"
             index={1}
           />
           <BlogPostCard
             key={1}
             title="How Metaverse Will Affect Crypto"
             cover="https://images.pexels.com/photos/1447418/pexels-photo-1447418.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-            url="/metaverse-crypto"
+            url="/unix/metaverse-crypto"
             index={1}
           />
           <BlogPostCard
             key={1}
             title="UniX Gaming Fundraise Has Officially Reached $28 Million"
             cover="https://miro.medium.com/max/1400/0*lhPQdN-n57iKiSGc"
-            url="/unix-launch"
+            url="/unix/unix-launch"
             index={1}
           />
         </Grid>
