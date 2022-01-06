@@ -63,7 +63,7 @@ export default function BlogPosts() {
             key={1}
             title="UniX Gaming partners with DeHorizon, engaging in a competitive GvG universe"
             cover="https://miro.medium.com/max/1400/1*LzZvI8Czyyp7pQ87U5cImA.jpeg"
-            url="/unix/is-crypto-gaming-the-future"
+            url="/unix/dehorizon-partnership"
             index={0}
           />
           <BlogPostCard
