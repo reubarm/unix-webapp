@@ -56,6 +56,7 @@ export default function Router() {
         { path: 'metaverse-gaming', element: <BlogPost3 /> },
         { path: 'crypto-gaming', element: <BlogPost4 /> },
         { path: 'is-crypto-gaming-the-future', element: <BlogPost5 /> },
+        { path: 'dehorizon-partnership', element: <BlogPost6 /> },
         { path: 'add-game', element: <AddGame /> },
       ]
     },
@@ -95,6 +96,7 @@ const BlogPost2 = Loadable(lazy(() => import('../pages/BlogPost2')));
 const BlogPost3 = Loadable(lazy(() => import('../pages/BlogPost3')));
 const BlogPost4 = Loadable(lazy(() => import('../pages/BlogPost4')));
 const BlogPost5 = Loadable(lazy(() => import('../pages/BlogPost5')));
+const BlogPost6 = Loadable(lazy(() => import('../pages/BlogPost6')));
 const AddGame = Loadable(lazy(() => import('../pages/AddGame')));
 // Main
 const LandingPage = Loadable(lazy(() => import('../pages/LandingPage')));

@@ -61,17 +61,24 @@ export default function BlogPosts() {
         <Grid container spacing={3}>
           <BlogPostCard
             key={1}
+            title="UniX Gaming partners with DeHorizon, engaging in a competitive GvG universe"
+            cover="https://miro.medium.com/max/1400/1*LzZvI8Czyyp7pQ87U5cImA.jpeg"
+            url="/unix/is-crypto-gaming-the-future"
+            index={0}
+          />
+          <BlogPostCard
+            key={1}
             title="Is Crypto Gaming the Future?"
             cover="https://www.pragmaticcoders.com/hubfs/nft-crypto-gaming-developers.jpg"
             url="/unix/is-crypto-gaming-the-future"
-            index={0}
+            index={1}
           />
           <BlogPostCard
             key={1}
             title="Top 5 play to earn crypto games 2021"
             cover="https://images.pexels.com/photos/159204/game-controller-joystick-joypad-gamepad-159204.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
             url="/unix/top-5-games"
-            index={0}
+            index={1}
           />
           <BlogPostCard
             key={1}
