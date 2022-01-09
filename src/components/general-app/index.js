@@ -7,3 +7,4 @@ export { default as AppTotalViews } from './AppTotalViews';
 export { default as AppTotalInstalled } from './AppTotalInstalled';
 export { default as AppWelcome } from './AppWelcome';
 export { default as Partners } from './Partners';
+export { default as Advert } from './Advert';

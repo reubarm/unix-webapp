@@ -355,7 +355,6 @@ export default function GamesList() {
 
   return (
     <>
-      {/* eslint-disable */}
       <Modal isOpen={extra} onRequestClose={ShowTokenDetail} style={modalPopup}>
         {/* <CloseModal onClick={showTokenDetail} className="close-modal">✖</CloseModal> */}
 
@@ -384,6 +383,7 @@ export default function GamesList() {
                   <span style={{ color: '#e481ff' }}>{selectedGame[0].Status}</span>
                 </p>
               </div>
+
               <div style={{ float: 'right' }}>
                 <a href={selectedGame[0].Youtube} target="_blank">
                   <Icon icon="akar-icons:youtube-fill" width="30" />
@@ -643,6 +643,7 @@ export default function GamesList() {
           title="Partnerships and Games of Unix Gaming"
           sx={{ mb: 3, textAlign: 'center', margin: '0 auto 20px' }}
         /> */}
+
         <TableContainer sx={{ minWidth: 720, height: '100%', overflow: 'hidden', background: 'rgba(27, 17, 38, 0.7)' }}>
           <Table sx={{ minWidth: 720, height: '100%', background: 'rgba(27, 17, 38, 0.7)' }}>
             {/* <TableHead sx={{ background: '#10171f!important' }}>

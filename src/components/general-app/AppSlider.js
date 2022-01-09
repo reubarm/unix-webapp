@@ -11,6 +11,8 @@ import mockData from '../../utils/mock-data';
 //
 import { varFadeInRight, MotionContainer } from '../animate';
 import { CarouselControlsPaging1, CarouselControlsArrowsBasic1 } from '../carousel';
+import Advert from './Advert';
+import './test.css';
 
 // ----------------------------------------------------------------------
 
@@ -45,6 +47,22 @@ const RootStyle2 = styled(Card)(({ theme }) => ({
   textAlign: 'center',
   backgroundColor: theme.palette.primary.lighter,
   background: `url(/background2.jpg) bottom no-repeat`,
+  backgroundSize: 'cover',
+  minHeight: '300px',
+  color: 'white!important',
+  [theme.breakpoints.up('md')]: {
+    height: '100%',
+    display: 'flex',
+    textAlign: 'left',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  }
+}));
+
+const RootStyle3 = styled(Card)(({ theme }) => ({
+  boxShadow: 'none',
+  textAlign: 'center',
+  backgroundColor: 'white',
   backgroundSize: 'cover',
   minHeight: '300px',
   color: 'white!important',
@@ -115,7 +133,7 @@ const Form = () => {
             <TextField
               label="Email"
               id="outlined-size-normal"
-              sx={{ background: '#212B36', minWidth: '300px' }}
+              sx={{ background: '#212B36', minWidth: '300px', height: '100%' }}
               onChange={(e) => setEmail(e.target.value)}
               className="mobile"
             />
@@ -306,6 +324,13 @@ export default function AppSlider() {
           style={{ margin: '30px', width: '100%', maxWidth: '300px' }}
         /> */}
       </RootStyle2>
+      <RootStyle3>
+        {/* eslint-disable */}
+        <center>
+          <div class="nomics-ticker-widget" data-name="UniX" data-base="UNIX2" data-quote="USD"></div>
+        </center>
+        <Advert />
+      </RootStyle3>
     </Slider>
   );
 }
