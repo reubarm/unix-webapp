@@ -317,7 +317,7 @@ export default function AppSlider() {
           {/* eslint-disable */}
           <div style={{}}>
             <div
-              class="livecoinwatch-widget-1"
+              className="livecoinwatch-widget-1"
               lcw-coin="_UNIX"
               lcw-base="USD"
               lcw-secondary="BTC"
@@ -329,9 +329,9 @@ export default function AppSlider() {
             ></div>
             <Chart />
           </div>
-          {/* <div style={{}}>
+          <div style={{}}>
             <div
-              class="coinmarketcap-currency-widget"
+              className="coinmarketcap-currency-widget"
               data-currencyid="14915"
               data-base="USD"
               data-secondary=""
@@ -343,7 +343,7 @@ export default function AppSlider() {
               data-stats="USD"
             ></div>
             <Ticker />
-          </div> */}
+          </div>
         </CardContent>
       </RootStyle3>
     </Slider>

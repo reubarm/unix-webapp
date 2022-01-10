@@ -1,6 +1,7 @@
 // material
 import { Container, Grid, Box, Card, CardHeader, Typography, Stack } from '@mui/material';
 import { Icon } from '@iconify/react';
+import { Timeline } from 'react-twitter-widgets';
 import Scrollbar from '../components/Scrollbar';
 // components
 import Page from '../components/Page';
@@ -97,7 +98,7 @@ export default function GeneralApp() {
                   {/* eslint-disable */}
                   <div style={{}}>
                     <div
-                      class="coinmarketcap-currency-widget"
+                      className="coinmarketcap-currency-widget"
                       data-currencyid="6783"
                       data-base="USD"
                       data-secondary=""
