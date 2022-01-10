@@ -87,7 +87,7 @@ export default function GeneralApp() {
                 >
                   <h2>Social Score</h2>
                   <h1 style={{ color: '#e481ff', fontSize: '3em', margin: '10px 0' }}>2389</h1>
-                  <h2>Contract Address:</h2>
+                  <h2>Contract Address</h2>
                   <p style={{ color: '#e481ff', fontSize: '1em', marginTop: '10px', wordWrap: 'break-word' }}>
                     0xbb0e17ef65f82ab018d8edd776e8dd940327b28b
                   </p>
