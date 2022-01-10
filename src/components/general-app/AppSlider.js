@@ -11,7 +11,8 @@ import mockData from '../../utils/mock-data';
 //
 import { varFadeInRight, MotionContainer } from '../animate';
 import { CarouselControlsPaging1, CarouselControlsArrowsBasic1 } from '../carousel';
-import Advert from './Advert';
+import Ticker from './Ticker';
+import Chart from './Chart';
 import './test.css';
 
 // ----------------------------------------------------------------------
@@ -62,7 +63,8 @@ const RootStyle2 = styled(Card)(({ theme }) => ({
 const RootStyle3 = styled(Card)(({ theme }) => ({
   boxShadow: 'none',
   textAlign: 'center',
-  backgroundColor: 'white',
+  backgroundColor: theme.palette.primary,
+  background: `url(/bg.jpg) bottom no-repeat`,
   backgroundSize: 'cover',
   minHeight: '300px',
   color: 'white!important',
@@ -285,13 +287,6 @@ export default function AppSlider() {
             Staking Platform
           </Button>
         </CardContent>
-
-        {/* <img
-          className="test"
-          src="/logo.png"
-          alt="unixgaming"
-          style={{ margin: '0 30px', width: '100%', maxWidth: '150px' }}
-        /> */}
       </RootStyle>
       <RootStyle2>
         <CardContent
@@ -316,20 +311,40 @@ export default function AppSlider() {
           <br />
           <Form />
         </CardContent>
-
-        {/* <img
-          className="test"
-          src="/logo.png"
-          alt="unixgaming"
-          style={{ margin: '30px', width: '100%', maxWidth: '300px' }}
-        /> */}
       </RootStyle2>
       <RootStyle3>
-        {/* eslint-disable */}
-        <center>
-          <div class="nomics-ticker-widget" data-name="UniX" data-base="UNIX2" data-quote="USD"></div>
-        </center>
-        <Advert />
+        <CardContent>
+          {/* eslint-disable */}
+          <div style={{}}>
+            <div
+              class="livecoinwatch-widget-1"
+              lcw-coin="_UNIX"
+              lcw-base="USD"
+              lcw-secondary="BTC"
+              lcw-period="d"
+              lcw-color-tx="#ffffff"
+              lcw-color-pr="#58c7c5"
+              lcw-color-bg="#1f2434"
+              lcw-border-w="1"
+            ></div>
+            <Chart />
+          </div>
+          {/* <div style={{}}>
+            <div
+              class="coinmarketcap-currency-widget"
+              data-currencyid="14915"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="true"
+              data-rank="true"
+              data-marketcap="true"
+              data-volume="true"
+              data-statsticker="true"
+              data-stats="USD"
+            ></div>
+            <Ticker />
+          </div> */}
+        </CardContent>
       </RootStyle3>
     </Slider>
   );

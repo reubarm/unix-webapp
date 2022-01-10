@@ -25,24 +25,34 @@
   display: none !important;
 }
 .heroButton {
-  flex-direction: row!important;
+  flex-direction: row !important;
 }
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #161C24; 
+  background: #161c24;
 }
 ::-webkit-scrollbar-thumb {
-  background: #333; 
+  background: #333;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #444; 
+  background: #444;
 }
 .nomics-ticker-widget-footer {
-  display: none!important;
+  display: none !important;
 }
-
+.coinmarketcap-currency-widget {
+  width: 40% !important;
+  margin-top: 40px !important;
+  flex: 30%;
+  float: right;
+}
+.livecoinwatch-widget-1 {
+  width: 40% !important;
+  flex: 30%;
+  margin: 40px auto 0!important;
+}
 @media only screen and (max-width: 1460px) {
   .test {
     width: 200px !important;
@@ -63,7 +73,7 @@
     width: 100% !important;
   }
   .heroButton {
-    flex-direction: column!important;
+    flex-direction: column !important;
   }
 }
 
