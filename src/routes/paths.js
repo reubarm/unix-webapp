@@ -32,7 +32,8 @@ export const PATH_DASHBOARD = {
     BlogPost7: path(ROOTS_DASHBOARD, '/slp-donation'),
     BlogPost8: path(ROOTS_DASHBOARD, '/thetan-arena'),
     BlogPost9: path(ROOTS_DASHBOARD, '/alliance-coalition'),
-    AddGame: path(ROOTS_DASHBOARD, '/add-game')
+    AddGame: path(ROOTS_DASHBOARD, '/add-game'),
+    Slug: path(ROOTS_DASHBOARD, '/axie-infinity')
   },
   app: {
     pageFour: social('http://t.me/unix_token'),

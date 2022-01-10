@@ -42,7 +42,6 @@ export default function Router() {
       element: <DashboardLayout />,
       children: [
         { element: <Navigate to="/" replace /> },
-        // { path: '/unix', element: <PageOne /> },
         { path: 'launchpad', element: <PageTwo /> },
         { path: 'dao', element: <PageThree /> },
         { path: 'roadmap', element: <PageFour /> },
@@ -60,7 +59,8 @@ export default function Router() {
         { path: 'slp-donation', element: <BlogPost7 /> },
         { path: 'thetan-arena', element: <BlogPost8 /> },
         { path: 'alliance-coalition', element: <BlogPost9 /> },
-        { path: 'add-game', element: <AddGame /> }
+        { path: 'add-game', element: <AddGame /> },
+        { path: 'axie-infinity', element: <Slug /> }
       ]
     },
 
@@ -104,5 +104,6 @@ const BlogPost7 = Loadable(lazy(() => import('../pages/BlogPost7')));
 const BlogPost8 = Loadable(lazy(() => import('../pages/BlogPost8')));
 const BlogPost9 = Loadable(lazy(() => import('../pages/BlogPost9')));
 const AddGame = Loadable(lazy(() => import('../pages/AddGame')));
+const Slug = Loadable(lazy(() => import('../pages/Slug')));
 // Main
 const LandingPage = Loadable(lazy(() => import('../pages/LandingPage')));

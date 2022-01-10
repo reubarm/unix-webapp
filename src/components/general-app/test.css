@@ -43,11 +43,15 @@
   display: none !important;
 }
 .coinmarketcap-currency-widget {
+  width: 80% !important;
+  margin: 40px auto !important;
+}
+/* .coinmarketcap-currency-widget {
   width: 40% !important;
   margin-top: 40px !important;
   flex: 30%;
   float: right;
-}
+} */
 .livecoinwatch-widget-1 {
   width: 40% !important;
   flex: 30%;
