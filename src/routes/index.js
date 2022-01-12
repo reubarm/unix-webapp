@@ -59,6 +59,9 @@ export default function Router() {
         { path: 'slp-donation', element: <BlogPost7 /> },
         { path: 'thetan-arena', element: <BlogPost8 /> },
         { path: 'alliance-coalition', element: <BlogPost9 /> },
+        { path: 'how-crypto-works', element: <BlogPost10 /> },
+        { path: 'polygon-crypto-gaming', element: <BlogPost11 /> },
+        { path: 'how-launchpads-work', element: <BlogPost12 /> },
         { path: 'add-game', element: <AddGame /> },
         { path: 'axie-infinity', element: <Slug /> }
       ]
@@ -103,6 +106,9 @@ const BlogPost6 = Loadable(lazy(() => import('../pages/BlogPost6')));
 const BlogPost7 = Loadable(lazy(() => import('../pages/BlogPost7')));
 const BlogPost8 = Loadable(lazy(() => import('../pages/BlogPost8')));
 const BlogPost9 = Loadable(lazy(() => import('../pages/BlogPost9')));
+const BlogPost10 = Loadable(lazy(() => import('../pages/BlogPost10')));
+const BlogPost11 = Loadable(lazy(() => import('../pages/BlogPost11')));
+const BlogPost12 = Loadable(lazy(() => import('../pages/BlogPost12')));
 const AddGame = Loadable(lazy(() => import('../pages/AddGame')));
 const Slug = Loadable(lazy(() => import('../pages/Slug')));
 // Main

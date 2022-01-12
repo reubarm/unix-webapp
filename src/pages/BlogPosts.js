@@ -61,29 +61,50 @@ export default function BlogPosts() {
         <Grid container spacing={3}>
           <BlogPostCard
             key={1}
+            title="How Crypto PlayToEarn Guilds Work"
+            cover="https://images.unsplash.com/photo-1640187128454-1d7c462ede26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3432&q=80"
+            url="/unix/how-crypto-works"
+            index={0}
+          />
+          <BlogPostCard
+            key={1}
+            title="Why is polygon exploding for crypto gaming?"
+            cover="https://images.pexels.com/photos/8369601/pexels-photo-8369601.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+            url="/unix/polygon-crypto-gaming"
+            index={0}
+          />
+          <BlogPostCard
+            key={1}
+            title="What is a crypto launchpad and how it works"
+            cover="https://images.pexels.com/photos/7887800/pexels-photo-7887800.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+            url="/unix/how-launchpads-work"
+            index={1}
+          />
+          <BlogPostCard
+            key={1}
             title="UniX Gaming partners with DeHorizon, engaging in a competitive GvG universe"
-            cover="https://miro.medium.com/max/1400/1*LzZvI8Czyyp7pQ87U5cImA.jpeg"
+            cover="https://blockworks.co/wp-content/uploads/2021/10/2021-10-12-metaverse-shutterstock_1993168292.png"
             url="/unix/dehorizon-partnership"
             index={0}
           />
           <BlogPostCard
             key={1}
             title="UniX Gaming x Thetan Arena — A Partnership For The Future"
-            cover="https://miro.medium.com/max/1400/1*FN8sts3240gCTw8eU62cIQ.jpeg"
+            cover="https://play-lh.googleusercontent.com/LtdV8uQUy4S515xH0XsZa7o7L-1vHyD_9oRPqniKqQY9YvBYi0z_GyAT2ghE9bfhKYXL"
             url="/unix/thetan-arena"
-            index={0}
+            index={1}
           />
           <BlogPostCard
             key={1}
             title="UniX donates 100% of SLP profits to its members throughout December"
-            cover="https://miro.medium.com/max/1400/1*GDvXy5LZHW6u-cIOhXsipQ.jpeg"
+            cover="https://cdn3.vectorstock.com/i/1000x1000/40/27/donation-box-with-money-vector-26364027.jpg"
             url="/unix/slp-donation"
             index={1}
           />
           <BlogPostCard
             key={1}
             title="UniX Gaming and Blockchain Alliance Coalition"
-            cover="https://miro.medium.com/max/1400/0*szXuwcZe4opQwlgf"
+            cover="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpVE3UhhU0CvAeesRPLWsX4pXy_hKiOIa53Q&usqp=CAU"
             url="/unix/alliance-coalition"
             index={1}
           />

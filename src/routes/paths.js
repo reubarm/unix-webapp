@@ -32,6 +32,9 @@ export const PATH_DASHBOARD = {
     BlogPost7: path(ROOTS_DASHBOARD, '/slp-donation'),
     BlogPost8: path(ROOTS_DASHBOARD, '/thetan-arena'),
     BlogPost9: path(ROOTS_DASHBOARD, '/alliance-coalition'),
+    BlogPost10: path(ROOTS_DASHBOARD, '/how-crypto-works'),
+    BlogPost11: path(ROOTS_DASHBOARD, '/polygon-crypto-gaming'),
+    BlogPost12: path(ROOTS_DASHBOARD, '/how-launchpads-work'),
     AddGame: path(ROOTS_DASHBOARD, '/add-game'),
     Slug: path(ROOTS_DASHBOARD, '/axie-infinity')
   },
