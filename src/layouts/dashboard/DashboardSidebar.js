@@ -100,21 +100,50 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
-  const [moedas, setMoedas] = useState([]);
+  // const [moedas, setMoedas] = useState([]);
+
+  // useEffect(() => {
+  //   axios
+  //     .get(
+  //       'https://api.coingecko.com/api/v3/coins/unix?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true'
+  //     )
+  //     .then((res) => {
+  //       setMoedas(res.data.market_data.current_price.usd);
+  //       // console.log(res.data.market_data.current_price.usd);
+  //     })
+  //     .catch((error) => console.log(error));
+  // }, []);
+  // // console.log(moedas);
+  // const test = JSON.stringify(moedas);
+
+  const [data, dataSet] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(
-        'https://api.coingecko.com/api/v3/coins/unix?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true'
-      )
-      .then((res) => {
-        setMoedas(res.data.market_data.current_price.usd);
-        // console.log(res.data.market_data.current_price.usd);
-      })
-      .catch((error) => console.log(error));
+    async function fetchMyAPI() {
+      let response = await fetch('api/data');
+      response = await response.json();
+      dataSet(response);
+    }
+
+    async function unixPrice() {
+      let response = await fetch(new Request('https://api.livecoinwatch.com/coins/single'), {
+        method: 'POST',
+        headers: new Headers({
+          'content-type': 'application/json',
+          'x-api-key': '9fc74072-857c-4793-bdf3-5b89847df788'
+        }),
+        body: JSON.stringify({
+          currency: 'USD',
+          code: '_UNIX',
+          meta: true
+        })
+      });
+      response = await response.json();
+      dataSet(response.rate.toFixed(4));
+      console.log(response);
+    }
+    unixPrice();
   }, []);
-  // console.log(moedas);
-  const test = JSON.stringify(moedas);
 
   const renderContent = (
     <Scrollbar
@@ -161,8 +190,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
               <Avatar alt="My Avatar" src="https://img.api.cryptorank.io/coins/unix%20gaming1637920085802.png" />
               <Box sx={{ ml: 2 }}>
                 <Typography variant="subtitle1" sx={{ color: 'text.primary' }}>
-                  {/* <b>${test}</b> */}
-                  <b>$0.3285</b>
+                  <b>${data}</b>
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                   Current Price ($UniX)
