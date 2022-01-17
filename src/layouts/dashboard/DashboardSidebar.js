@@ -162,7 +162,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
               <Box sx={{ ml: 2 }}>
                 <Typography variant="subtitle1" sx={{ color: 'text.primary' }}>
                   {/* <b>${test}</b> */}
-                  <b>$0.3327</b>
+                  <b>$0.3285</b>
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                   Current Price ($UniX)
