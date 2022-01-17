@@ -161,7 +161,8 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
               <Avatar alt="My Avatar" src="https://img.api.cryptorank.io/coins/unix%20gaming1637920085802.png" />
               <Box sx={{ ml: 2 }}>
                 <Typography variant="subtitle1" sx={{ color: 'text.primary' }}>
-                  <b>${test}</b>
+                  {/* <b>${test}</b> */}
+                  <b>$0.3327</b>
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                   Current Price ($UniX)
