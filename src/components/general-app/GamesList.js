@@ -167,6 +167,7 @@ export default function GamesList() {
   const [heroes, setHeroes] = useState([]);
   const [guild, setGuild] = useState([]);
   const [bfk, setBfk] = useState([]);
+  const [decentraland, setDecentraland] = useState([]);
 
   useEffect(() => {
     axios
@@ -263,6 +264,15 @@ export default function GamesList() {
       .get('https://api.coingecko.com/api/v3/simple/price?ids=bfk-warzone&vs_currencies=usd')
       .then((res) => {
         setBfk(res.data['bfk-warzone'].usd);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get('https://api.coingecko.com/api/v3/simple/price?ids=decentraland&vs_currencies=usd')
+      .then((res) => {
+        setDecentraland(res.data.decentraland.usd);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -758,6 +768,9 @@ export default function GamesList() {
                       </div>
                       <div className={game.Ticker.includes('bfk-warzone') ? '' : 'hide'}>
                         <b>${game.Ticker.includes('bfk-warzone') ? bfk : 'NA'}</b>
+                      </div>
+                      <div className={game.Ticker.includes('decentraland') ? '' : 'hide'}>
+                        <b>${game.Ticker.includes('decentraland') ? decentraland : 'NA'}</b>
                       </div>
                     </TableCell>
                     <TableCell align="right">
