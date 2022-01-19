@@ -120,7 +120,7 @@ export default function BlogPostHero({ title, image, ...other }) {
           <Avatar alt="Unix" src={image} sx={{ width: 48, height: 48 }} />
           <Box sx={{ ml: 2 }}>
             <Typography variant="subtitle1" sx={{ color: 'common.white' }}>
-              Reuben Armstrong
+              Unix Gaming
             </Typography>
           </Box>
         </Box>

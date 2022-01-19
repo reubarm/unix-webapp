@@ -61,6 +61,13 @@ export default function BlogPosts() {
         <Grid container spacing={3}>
           <BlogPostCard
             key={1}
+            title="Top 5 Upcoming Games of 2022"
+            cover="https://images.pexels.com/photos/735911/pexels-photo-735911.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+            url="/unix/top-5-upcoming-games-of-2022"
+            index={0}
+          />
+          <BlogPostCard
+            key={1}
             title="How Crypto PlayToEarn Guilds Work"
             cover="https://images.unsplash.com/photo-1640187128454-1d7c462ede26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3432&q=80"
             url="/unix/how-crypto-works"
@@ -71,7 +78,7 @@ export default function BlogPosts() {
             title="Why is polygon exploding for crypto gaming?"
             cover="https://images.pexels.com/photos/8369601/pexels-photo-8369601.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
             url="/unix/polygon-crypto-gaming"
-            index={0}
+            index={1}
           />
           <BlogPostCard
             key={1}
@@ -85,12 +92,12 @@ export default function BlogPosts() {
             title="UniX Gaming partners with DeHorizon, engaging in a competitive GvG universe"
             cover="https://blockworks.co/wp-content/uploads/2021/10/2021-10-12-metaverse-shutterstock_1993168292.png"
             url="/unix/dehorizon-partnership"
-            index={0}
+            index={1}
           />
           <BlogPostCard
             key={1}
             title="UniX Gaming x Thetan Arena — A Partnership For The Future"
-            cover="https://play-lh.googleusercontent.com/LtdV8uQUy4S515xH0XsZa7o7L-1vHyD_9oRPqniKqQY9YvBYi0z_GyAT2ghE9bfhKYXL"
+            cover="https://miro.medium.com/max/1400/1*FN8sts3240gCTw8eU62cIQ.jpeg"
             url="/unix/thetan-arena"
             index={1}
           />

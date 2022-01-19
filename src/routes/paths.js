@@ -35,6 +35,7 @@ export const PATH_DASHBOARD = {
     BlogPost10: path(ROOTS_DASHBOARD, '/how-crypto-works'),
     BlogPost11: path(ROOTS_DASHBOARD, '/polygon-crypto-gaming'),
     BlogPost12: path(ROOTS_DASHBOARD, '/how-launchpads-work'),
+    BlogPost13: path(ROOTS_DASHBOARD, '/top-5-upcoming-games-of-2022'),
     AddGame: path(ROOTS_DASHBOARD, '/add-game'),
     Slug: path(ROOTS_DASHBOARD, '/axie-infinity')
   },

@@ -124,7 +124,7 @@ export default function BlogPostCard({ cover, title, url, post, index }) {
             }}
           >
             <Typography gutterBottom variant="caption" sx={{ color: 'text.disabled', display: 'block' }}>
-              20th December
+              Unix Gaming
             </Typography>
 
             <TitleStyle
