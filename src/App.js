@@ -19,12 +19,10 @@ export default function App() {
   return (
     <ThemeConfig>
       <ThemePrimaryColor>
-        <RtlLayout>
-          <GlobalStyles />
-          <ProgressBarStyle />
-          <ScrollToTop />
-          <Router />
-        </RtlLayout>
+        <GlobalStyles />
+        <ProgressBarStyle />
+        <ScrollToTop />
+        <Router />
       </ThemePrimaryColor>
     </ThemeConfig>
   );
