@@ -313,7 +313,11 @@ export default function AppSlider() {
         </CardContent>
       </RootStyle2>
       <RootStyle3>
-        <CardContent
+        <CardContent>
+          <a href="https://cointelegraph.com/press-releases/unix-gaming-announces-strategic-partnership-with-the-sandbox">
+            <img src="/sandbox.jpeg" alt="sandbox" style={{ maxHeight: '250px', margin: '0 auto' }} />
+          </a>
+          {/* <CardContent
           sx={{
             p: { md: 10 },
             color: 'grey.800'
@@ -352,7 +356,7 @@ export default function AppSlider() {
             style={{ width: '200px', marginBottom: '15px', marginRight: '10px' }}
           >
             Read our Press Release
-          </Button>
+          </Button> */}
         </CardContent>
         {/* eslint-disable */}
         {/* <div style={{}}>
