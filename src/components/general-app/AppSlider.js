@@ -11,8 +11,8 @@ import mockData from '../../utils/mock-data';
 //
 import { varFadeInRight, MotionContainer } from '../animate';
 import { CarouselControlsPaging1, CarouselControlsArrowsBasic1 } from '../carousel';
-import Ticker from './Ticker';
-import Chart from './Chart';
+// import Ticker from './Ticker';
+// import Chart from './Chart';
 import './test.css';
 
 // ----------------------------------------------------------------------
@@ -313,9 +313,49 @@ export default function AppSlider() {
         </CardContent>
       </RootStyle2>
       <RootStyle3>
-        <CardContent>
-          {/* eslint-disable */}
-          <div style={{}}>
+        <CardContent
+          sx={{
+            p: { md: 10 },
+            color: 'grey.800'
+          }}
+        >
+          <Typography
+            gutterBottom
+            variant="h3"
+            sx={{ color: 'white!important', lineHeight: '1', marginBottom: '20px' }}
+          >
+            Unix officially partnerships with
+            <img
+              src="/sandbox.png"
+              height="50px"
+              alt="Sandbox"
+              style={{ display: 'inline', margin: '0 0 -15px 15px' }}
+            />
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{
+              pb: { xs: 3, xl: 5 },
+              maxWidth: 520,
+              color: 'white!important',
+              fontSize: '16px',
+              lineHeight: '1.3'
+            }}
+          >
+            Our gaming studio (1Mhz Studios) will be helping develop LAND in The Sandbox. Exciting times ahead!
+          </Typography>
+          <Button
+            variant="contained"
+            target="_blank"
+            href="https://cointelegraph.com/press-releases/unix-gaming-announces-strategic-partnership-with-the-sandbox"
+            color="secondary"
+            style={{ width: '200px', marginBottom: '15px', marginRight: '10px' }}
+          >
+            Read our Press Release
+          </Button>
+        </CardContent>
+        {/* eslint-disable */}
+        {/* <div style={{}}>
             <div
               class="livecoinwatch-widget-1"
               lcw-coin="_UNIX"
@@ -328,8 +368,8 @@ export default function AppSlider() {
               lcw-border-w="1"
             ></div>
             <Chart />
-          </div>
-          {/* <div style={{}}>
+          </div> */}
+        {/* <div style={{}}>
             <div
               class="coinmarketcap-currency-widget"
               data-currencyid="14915"
@@ -344,7 +384,6 @@ export default function AppSlider() {
             ></div>
             <Ticker />
           </div> */}
-        </CardContent>
       </RootStyle3>
     </Slider>
   );
