@@ -328,7 +328,7 @@ export default function AppSlider() {
             variant="h3"
             sx={{ color: 'white!important', lineHeight: '1', marginBottom: '20px' }}
           >
-            Unix officially partnerships with
+            Unix officially partners with
             <img
               src="/sandbox.png"
               height="50px"

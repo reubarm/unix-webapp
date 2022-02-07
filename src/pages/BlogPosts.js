@@ -61,17 +61,45 @@ export default function BlogPosts() {
         <Grid container spacing={3}>
           <BlogPostCard
             key={1}
+            title="January 2022 Treasury Update"
+            cover="https://miro.medium.com/max/1400/0*qjYH3nPaFU2aQmFb"
+            url="/unix/treasury-update"
+            index={0}
+          />
+          <BlogPostCard
+            key={1}
+            title="First CEX listing for UniX: We’re now on Bittrex!"
+            cover="https://miro.medium.com/max/1400/1*d5EmHAv5xd240FvLXZqX0A.jpeg"
+            url="/unix/cex-listing"
+            index={0}
+          />
+          <BlogPostCard
+            key={1}
+            title="UniX announces strategic partnership with The Sandbox"
+            cover="https://miro.medium.com/max/1400/1*VAfGG-OwGxblsSrXiW6lrw.jpeg"
+            url="/unix/sandbox-partnership"
+            index={1}
+          />
+          <BlogPostCard
+            key={1}
+            title="UniX Gaming partners with MonkeyBall in a play-to-earn gaming strategy"
+            cover="https://miro.medium.com/max/1400/1*TIUNgWEdNbZ2U3kezlXqBw.jpeg"
+            url="/unix/monkeyball-partnership"
+            index={1}
+          />
+          <BlogPostCard
+            key={1}
             title="Top 5 Upcoming Games of 2022"
             cover="https://images.pexels.com/photos/735911/pexels-photo-735911.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
             url="/unix/top-5-upcoming-games-of-2022"
-            index={0}
+            index={1}
           />
           <BlogPostCard
             key={1}
             title="How Crypto PlayToEarn Guilds Work"
             cover="https://images.unsplash.com/photo-1640187128454-1d7c462ede26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3432&q=80"
             url="/unix/how-crypto-works"
-            index={0}
+            index={1}
           />
           <BlogPostCard
             key={1}
