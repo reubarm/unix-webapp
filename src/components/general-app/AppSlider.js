@@ -313,11 +313,7 @@ export default function AppSlider() {
         </CardContent>
       </RootStyle2>
       <RootStyle3>
-        <CardContent>
-          <a href="https://cointelegraph.com/press-releases/unix-gaming-announces-strategic-partnership-with-the-sandbox">
-            <img src="/sandbox.jpeg" alt="sandbox" style={{ maxHeight: '250px', margin: '0 auto' }} />
-          </a>
-          {/* <CardContent
+        <CardContent
           sx={{
             p: { md: 10 },
             color: 'grey.800'
@@ -328,12 +324,12 @@ export default function AppSlider() {
             variant="h3"
             sx={{ color: 'white!important', lineHeight: '1', marginBottom: '20px' }}
           >
-            Unix officially partners with
+            Unix Official <span style={{ color: 'rgb(238 172 255)' }}>Launchpad</span> with
             <img
-              src="/sandbox.png"
-              height="50px"
+              src="https://uploads-ssl.webflow.com/620354aa22ac35cbb67066ea/620367abfb1e3a8dfa4f71a2_logo_with_word%201.png"
+              height="35px"
               alt="Sandbox"
-              style={{ display: 'inline', margin: '0 0 -15px 15px' }}
+              style={{ display: 'inline', margin: '0 0 -10px 15px' }}
             />
           </Typography>
           <Typography
@@ -346,17 +342,17 @@ export default function AppSlider() {
               lineHeight: '1.3'
             }}
           >
-            Our gaming studio (1Mhz Studios) will be helping develop LAND in The Sandbox. Exciting times ahead!
+            Enter for your chance to win a whitelist spot on the Karmaverse IGO before it goes live on public exchanges.
           </Typography>
           <Button
             variant="contained"
             target="_blank"
-            href="https://cointelegraph.com/press-releases/unix-gaming-announces-strategic-partnership-with-the-sandbox"
+            href="https://www.unixgaming.games/"
             color="secondary"
             style={{ width: '200px', marginBottom: '15px', marginRight: '10px' }}
           >
-            Read our Press Release
-          </Button> */}
+            Whitelist Now
+          </Button>
         </CardContent>
         {/* eslint-disable */}
         {/* <div style={{}}>

@@ -36,52 +36,47 @@ export default function AppWelcome({ displayName }) {
     <RootStyle>
       <CardContent
         sx={{
-          p: { md: 0 },
-          pl: { md: 5 },
+          p: { md: 10 },
           color: 'grey.800'
         }}
       >
         <Typography gutterBottom variant="h3" sx={{ color: 'white!important', lineHeight: '1', marginBottom: '20px' }}>
-          Join the Play to Earn Revolution
+          Unix Official <span style={{ color: 'rgb(238 172 255)' }}>Launchpad</span> with
+          <img
+            src="https://uploads-ssl.webflow.com/620354aa22ac35cbb67066ea/620367abfb1e3a8dfa4f71a2_logo_with_word%201.png"
+            height="35px"
+            alt="Sandbox"
+            style={{ display: 'inline', margin: '15px 0 0 0' }}
+          />
         </Typography>
         <Typography
           variant="body2"
           sx={{
             pb: { xs: 3, xl: 5 },
-            maxWidth: 480,
-            mx: 'auto',
+            maxWidth: 520,
             color: 'white!important',
             fontSize: '16px',
             lineHeight: '1.3'
           }}
         >
-          Our mission is to be the biggest play to earn guild optimising its community owned assets for maximum utility.
+          Enter for your chance to win a whitelist spot on the Karmaverse IGO before it goes live on public exchanges.
         </Typography>
         <Button
           variant="contained"
           target="_blank"
-          href="https://app.uniswap.org/#/swap?inputCurrency=0xddd6a0ecc3c6f6c102e5ea3d8af7b801d1a77ac8&outputCurrency=ETH"
+          href="https://www.unixgaming.games/"
           color="secondary"
           style={{ width: '200px', marginBottom: '15px', marginRight: '10px' }}
         >
-          Available On Uniswap
-        </Button>
-        <Button
-          variant="contained"
-          href="https://yield.unixgaming.org"
-          color="secondary"
-          target="_blank"
-          style={{ width: '200px', marginBottom: '15px', marginRight: '10px' }}
-        >
-          Staking Platform
+          Whitelist Now
         </Button>
       </CardContent>
 
       <img
         className="test"
-        src="/logo.png"
+        src="https://uploads-ssl.webflow.com/620354aa22ac35cbb67066ea/620367ac5ea47b5791fc2c28_KarmaVerse%201.png"
         alt="unixgaming"
-        style={{ margin: '30px', width: '100%', maxWidth: '300px' }}
+        style={{ margin: '30px', width: '100%', maxWidth: '350px' }}
       />
     </RootStyle>
   );
