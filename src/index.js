@@ -41,6 +41,9 @@ fbq('track','PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=595883771729210&ev=PageView&noscript=1" /></noscript>
+  <meta http-equiv='cache-control' content='no-cache'>
+  <meta http-equiv='expires' content='0'>
+  <meta http-equiv='pragma' content='no-cache'>
 `;
 
 // ----------------------------------------------------------------------
