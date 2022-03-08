@@ -312,7 +312,7 @@ export default function AppSlider() {
           <Form />
         </CardContent>
       </RootStyle2>
-      <RootStyle3>
+      {/* <RootStyle3>
         <CardContent
           sx={{
             p: { md: 10 },
@@ -384,7 +384,7 @@ export default function AppSlider() {
             ></div>
             <Ticker />
           </div> */}
-      </RootStyle3>
+      </RootStyle3> */}
     </Slider>
   );
 }
