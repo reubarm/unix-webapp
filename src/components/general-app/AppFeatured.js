@@ -15,10 +15,7 @@ import { CarouselControlsPaging1, CarouselControlsArrowsBasic1 } from '../carous
 // ----------------------------------------------------------------------
 
 const TITLES = ['UniX Axie Infinity Cup', 'Over 4000 UniX Holders'];
-const URLS = [
-  'https://twitter.com/unixplaytoearn/status/1468151371807408131',
-  'https://twitter.com/unixplaytoearn'
-];
+const URLS = ['https://twitter.com/unixplaytoearn/status/1468151371807408131', 'https://twitter.com/unixplaytoearn'];
 
 const MOCK_APPS = [...Array(3)].map((_, index) => ({
   id: mockData.id(index),
