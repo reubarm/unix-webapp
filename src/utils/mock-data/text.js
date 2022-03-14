@@ -1,7 +1,6 @@
 // ----------------------------------------------------------------------
 
 export const title = [
-  'Gate.io, Kucoin, Kraken, ByBit, OKEx',
   '64 participants for Amateur Division and 56 participants for Pro Division',
   'Thanks to everyone who believed in UniX Gaming'
 ];

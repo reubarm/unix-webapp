@@ -14,9 +14,8 @@ import { CarouselControlsPaging1, CarouselControlsArrowsBasic1 } from '../carous
 
 // ----------------------------------------------------------------------
 
-const TITLES = ['These exchanges coming soon', 'UniX Axie Infinity Cup', 'Over 4000 UniX Holders'];
+const TITLES = ['UniX Axie Infinity Cup', 'Over 4000 UniX Holders'];
 const URLS = [
-  'https://twitter.com/unixplaytoearn',
   'https://twitter.com/unixplaytoearn/status/1468151371807408131',
   'https://twitter.com/unixplaytoearn'
 ];
